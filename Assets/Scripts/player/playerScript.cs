@@ -18,6 +18,7 @@ public class playerScript : MonoBehaviour
     private bool crouchCooldown = false;
     private Coroutine crouchRoutine;
 
+    //test
     void Start()
     {
         animator = GetComponent<Animator>();
