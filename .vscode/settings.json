@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "charlie's homebase.sln"
+    "dotnet.defaultSolution": "Pawventures.sln"
 }
