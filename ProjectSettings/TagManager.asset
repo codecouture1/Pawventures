@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Kill
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Obstacle
+  - Hunter
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3942644045
+    locked: 0
+  - name: Middleground
+    uniqueID: 2800540467
+    locked: 0
+  - name: Foreground
+    uniqueID: 1509257937
+    locked: 0
+  - name: Final Layer
+    uniqueID: 3622829941
+    locked: 0
+  m_RenderingLayers:
+  - Default

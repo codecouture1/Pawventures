@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/ScenesJohanna/StartGame.unity
+    guid: 8a4ae88e5ac25894ebbb06aa58f6b61b
+  - enabled: 1
+    path: Assets/ScenesJohanna/MainMenuHomebase1.unity
+    guid: aa184c705f44be340add298e14ea3c8c
+  - enabled: 1
+    path: Assets/ScenesJohanna/Shop.unity
+    guid: c7c927862424c9a428c76c30a67e0c7c
+  - enabled: 1
+    path: Assets/ScenesJohanna/Level1.unity
+    guid: 64f3fc0508030364483a8d90da74e3cb
+  - enabled: 1
+    path: Assets/ScenesJohanna/Level2.unity
+    guid: ef59fae8cb0789d499c04b232fd5b74b
+  - enabled: 1
+    path: Assets/ScenesJohanna/Level3.unity
+    guid: 57d3dc17b7d980941bf6e5d69901a7c7
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_UseUCBPForAssetBundles: 0
