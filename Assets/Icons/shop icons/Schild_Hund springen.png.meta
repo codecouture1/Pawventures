@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Schild_Hund springen_0: 6974553916358664576
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

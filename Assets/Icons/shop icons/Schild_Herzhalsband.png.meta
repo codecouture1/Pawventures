@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Schild_Herzhalsband_0: 5551451356384368817
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

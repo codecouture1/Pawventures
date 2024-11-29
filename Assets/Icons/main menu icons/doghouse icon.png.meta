@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      doghouse icon_0: -162252924850221651
+      doghouse icon_1: 9119406474382383941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

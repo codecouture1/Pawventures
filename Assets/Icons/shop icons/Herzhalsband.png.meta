@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Herzhalsband_0: 460075198585688346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
