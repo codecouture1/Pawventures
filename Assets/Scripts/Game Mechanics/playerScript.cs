@@ -11,12 +11,15 @@ public class playerScript : MonoBehaviour
 
     public float jumpStrength;
     public float moveSpeed;
+    public bool slowed = false;
 
-    public int health = 1;
-    public bool doubleJump = false;
     private bool isCrouching = false;
     private bool crouchCooldown = false;
     private Coroutine crouchRoutine;
+
+    public int health = 1;
+    public bool doubleJump = false;
+    
 
     //test
     void Start()
@@ -29,7 +32,13 @@ public class playerScript : MonoBehaviour
         if (alive())
         {
             //rennen
-            run(moveSpeed);
+            if (!slowed)
+            {
+                run(moveSpeed);
+            } else
+            {
+                run(15f);
+            }
 
             //springen
             if (Input.GetKeyDown(KeyCode.W) == true && isGrounded())
@@ -65,10 +74,11 @@ public class playerScript : MonoBehaviour
     //ground check
     public Vector2 boxSize;
     public LayerMask groundLayer;
+    public LayerMask obstacleLayer;
     public float castDistance;
     public bool isGrounded() 
     { 
-        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
+        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer) || Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, obstacleLayer))
         {
             return true;
         } 

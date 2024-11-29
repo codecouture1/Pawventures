@@ -1,23 +1,16 @@
 using UnityEngine;
 
-public class cameraScript : MonoBehaviour
+public class HideMouse : MonoBehaviour
 {
-
-    private GameObject player;
-    private playerScript pScript;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.Find("Player");
-        pScript = player.GetComponent<playerScript>();
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-
-    
 }

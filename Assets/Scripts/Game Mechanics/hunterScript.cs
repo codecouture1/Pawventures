@@ -16,20 +16,26 @@ public class hunterScript : MonoBehaviour
     public Vector2 boxSize;
     public LayerMask groundLayer;
     public float castDistance;
-    public bool jumping = false;
+    private bool jumping = false;
+
+    public GameObject player;
+    private playerScript pScript;
 
     void Start()
     {
         //Ignore the collisions between layer 0 (default) and layer 8 (custom layer you set in Inspector window)
         //TODO: Player sollte auch auf Hindernissen grounded() = true sein dürfen
         Physics2D.IgnoreLayerCollision(8, 7);
+        pScript = player.GetComponent<playerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //rennen
-        run(moveSpeed);
+        if(pScript.health != 0)
+        {
+            run(moveSpeed);
+        }
         jump();
     }
 
