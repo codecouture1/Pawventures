@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      interview icon_0: 5042643767197485150
+      interview icon_1: 3411445857703834485
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

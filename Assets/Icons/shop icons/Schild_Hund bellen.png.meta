@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Schild_Hund bellen_0: 7118687946245845488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

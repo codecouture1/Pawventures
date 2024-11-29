@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      himmel_0: 5042666070868374719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

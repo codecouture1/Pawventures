@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Button_Instagram_0: -2926892457414839433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

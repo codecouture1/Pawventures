@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Schild_Magnet_0: 2327677200796599092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
