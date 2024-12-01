@@ -9,6 +9,7 @@ public class stumbleScript : MonoBehaviour
     private BoxCollider2D coll;
     private GameObject player;
     private playerScript pScript;
+    private AnimationManager animationManager;
     public GameObject camera;
     private cameraScript camScript;
 
@@ -16,8 +17,9 @@ public class stumbleScript : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        coll = GetComponent<BoxCollider2D>();
         pScript = player.GetComponent<playerScript>();
+        coll = GetComponent<BoxCollider2D>();
+        animationManager = player.GetComponent<AnimationManager>();
         camScript = camera.GetComponent<cameraScript>();
     }
 
@@ -29,6 +31,8 @@ public class stumbleScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        animationManager.DoStumbleAnimation();
+        pScript.stopCrouch();
         StartCoroutine(SlowDownCoroutine(15.5f, 0.6f));
         StartCoroutine(camScript.Rumble(4f, 0.6f));
     }
@@ -44,5 +48,4 @@ public class stumbleScript : MonoBehaviour
         yield return new WaitForSeconds(slowTime);
         pScript.moveSpeed = pScript.DEFAULT_MOVESPEED;
     }
-
 }

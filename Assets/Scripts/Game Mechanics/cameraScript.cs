@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Unity.Cinemachine;
+using System.Runtime.CompilerServices;
 
 public class cameraScript : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class cameraScript : MonoBehaviour
     CinemachineBasicMultiChannelPerlin perlin;
     CinemachinePositionComposer posComp;
 
+    public readonly float DEFAULT_TARGET_OFFSET_X = 12.2f;
     public readonly float DEFAULT_FOV = 17.5f;
 
     void Awake()
@@ -36,14 +38,16 @@ public class cameraScript : MonoBehaviour
 
     }
 
-    public IEnumerator Zoom(float endFOV, float duration)
+    public IEnumerator Zoom(float endFOV, float endTargetOffset, float duration)
     {
+        Vector3 newOffset = new Vector3(endTargetOffset, 0f, 0f);
         float time = 0;
         while (time < duration)
         {
             //TODO: X und Y Offset smooth anpassen während dem Zoom
             //try: podComp.Offset = Vector3.Lerp <--Reinfuchsen
             cinemachineCamera.Lens.OrthographicSize = Mathf.Lerp(cinemachineCamera.Lens.OrthographicSize, endFOV, time / duration);
+            posComp.TargetOffset = Vector3.Lerp(posComp.TargetOffset, newOffset, time / duration);
             yield return null;
             time += Time.deltaTime;
         }

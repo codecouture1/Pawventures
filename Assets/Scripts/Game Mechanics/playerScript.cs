@@ -13,13 +13,15 @@ public class playerScript : MonoBehaviour
     public float moveSpeed;
     public readonly float DEFAULT_MOVESPEED = 30f;
 
-    private bool isCrouching = false;
+    public bool isCrouching = false;
     private bool crouchCooldown = false;
     private Coroutine crouchRoutine;
 
     public int health = 1;
     public bool doubleJump = false;
-    public bool canJump = true;
+    public bool canJump = true; //disabled when player is slowed
+    public bool slowed = false; //if true, hunter will slow down with player
+    public bool slowChallengeFailed = false;
     
 
     //test
@@ -53,7 +55,7 @@ public class playerScript : MonoBehaviour
             }
 
             //ducken
-            if (Input.GetKey(KeyCode.S) == true && isGrounded())
+            if (Input.GetKey(KeyCode.S) == true && isGrounded() && !slowed)
             {
                 if (!isCrouching && !crouchCooldown)
                 {
@@ -108,7 +110,6 @@ public class playerScript : MonoBehaviour
 
         //crouch height
         setCollider(6f, 2.4f, 0f, -1.2f);
-        animator.SetBool("crouch", true);
 
         float elapsedTime = 0f;
         while (elapsedTime < duration)
@@ -128,7 +129,7 @@ public class playerScript : MonoBehaviour
         isCrouching = false;
     }
 
-    void stopCrouch()
+    public void stopCrouch()
     {
         if (crouchRoutine != null)
         {
@@ -136,7 +137,6 @@ public class playerScript : MonoBehaviour
         }
 
         setCollider(6f, 4.8f, 0f, 0f);
-        animator.SetBool("crouch", false);
 
         isCrouching = false;
         StartCoroutine(CrouchCooldown());
@@ -158,7 +158,6 @@ public class playerScript : MonoBehaviour
     {
         if (health <= 0)
         {
-            animator.SetTrigger("death");
             return false;
         }
         return true;
