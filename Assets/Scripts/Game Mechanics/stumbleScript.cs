@@ -1,17 +1,17 @@
-using TMPro.Examples;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using Unity.Cinemachine;
 
-public class slowScript : MonoBehaviour
+public class stumbleScript : MonoBehaviour
 {
     private BoxCollider2D coll;
     private GameObject player;
     private playerScript pScript;
     public GameObject camera;
     private cameraScript camScript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,19 +29,20 @@ public class slowScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        StartCoroutine(camScript.Zoom(10f, 1.25f));
-        camScript.Rumble(3f);
-        pScript.moveSpeed = 15f;
-        pScript.canJump = false;
-        //TODO
+        StartCoroutine(SlowDownCoroutine(15.5f, 0.6f));
+        StartCoroutine(camScript.Rumble(4f, 0.6f));
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        StartCoroutine(camScript.Zoom(camScript.DEFAULT_FOV, 0.75f));
-        camScript.Rumble(0f);
+
+    }
+
+    private IEnumerator SlowDownCoroutine(float slowAmount, float slowTime)
+    {
+        pScript.moveSpeed = slowAmount;
+        yield return new WaitForSeconds(slowTime);
         pScript.moveSpeed = pScript.DEFAULT_MOVESPEED;
-        pScript.canJump = true;
     }
 
 }

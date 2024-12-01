@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Kill
   - Slow
+  - Stumble
   layers:
   - Default
   - TransparentFX

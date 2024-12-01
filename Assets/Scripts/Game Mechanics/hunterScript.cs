@@ -11,6 +11,9 @@ public class hunterScript : MonoBehaviour
     public Rigidbody2D myRigidbody;
     private BoxCollider2D coll;
 
+    public GameObject player;
+    private playerScript pScript;
+
     public float jumpStrength;
     public float moveSpeed;
     public Vector2 boxSize;
@@ -18,15 +21,14 @@ public class hunterScript : MonoBehaviour
     public float castDistance;
     private bool jumping = false;
 
-    public GameObject player;
-    private playerScript pScript;
-
     void Start()
     {
+        pScript = player.GetComponent<playerScript>();
+        moveSpeed = pScript.DEFAULT_MOVESPEED;
+
         //Ignore the collisions between layer 0 (default) and layer 8 (custom layer you set in Inspector window)
         //TODO: Player sollte auch auf Hindernissen grounded() = true sein dürfen
         Physics2D.IgnoreLayerCollision(8, 7);
-        pScript = player.GetComponent<playerScript>();
     }
 
     // Update is called once per frame

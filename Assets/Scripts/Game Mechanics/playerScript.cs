@@ -11,7 +11,7 @@ public class playerScript : MonoBehaviour
 
     public float jumpStrength;
     public float moveSpeed;
-    public bool slowed = false;
+    public readonly float DEFAULT_MOVESPEED = 30f;
 
     private bool isCrouching = false;
     private bool crouchCooldown = false;
@@ -19,11 +19,13 @@ public class playerScript : MonoBehaviour
 
     public int health = 1;
     public bool doubleJump = false;
+    public bool canJump = true;
     
 
     //test
     void Start()
     {
+        moveSpeed = DEFAULT_MOVESPEED;
         animator = GetComponent<Animator>();
     }
     // Update is called once per frame
@@ -32,16 +34,10 @@ public class playerScript : MonoBehaviour
         if (alive())
         {
             //rennen
-            if (!slowed)
-            {
-                run(moveSpeed);
-            } else
-            {
-                run(15f);
-            }
+            run(moveSpeed);          
 
             //springen
-            if (Input.GetKeyDown(KeyCode.W) == true && isGrounded())
+            if (Input.GetKeyDown(KeyCode.W) == true && isGrounded() && canJump)
             {
                 if (isCrouching)
                 {
