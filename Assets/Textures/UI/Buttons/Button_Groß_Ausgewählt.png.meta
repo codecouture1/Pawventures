@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Button_Gro\xDF_Ausgew\xE4hlt_0": 5015540680500242794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

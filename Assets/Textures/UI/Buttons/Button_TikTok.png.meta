@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Button_TikTok_0: 3156187343962192941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
