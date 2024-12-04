@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Winkle Overview_0: -9184210953642053360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
