@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.Cinemachine;
 using System.Runtime.CompilerServices;
 
+
 public class cameraScript : MonoBehaviour
 {
     private CinemachineCamera cinemachineCamera;
@@ -33,18 +34,14 @@ public class cameraScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    void Update(){}
     public IEnumerator Zoom(float endFOV, float endTargetOffset, float duration)
     {
         Vector3 newOffset = new Vector3(endTargetOffset, 0f, 0f);
         float time = 0;
         while (time < duration)
         {
-            //TODO: X und Y Offset smooth anpassen während dem Zoom
+            //TODO: X und Y Offset smooth anpassen wï¿½hrend dem Zoom
             //try: podComp.Offset = Vector3.Lerp <--Reinfuchsen
             cinemachineCamera.Lens.OrthographicSize = Mathf.Lerp(cinemachineCamera.Lens.OrthographicSize, endFOV, time / duration);
             posComp.TargetOffset = Vector3.Lerp(posComp.TargetOffset, newOffset, time / duration);
