@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      main menu foreground_0: -4938192887715184317
+      main menu foreground_1: 799558634141558320
+      main menu foreground_2: -1803135658421921732
+      main menu foreground_3: -6280234424296398476
+      main menu foreground_4: 1383609289943733660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
