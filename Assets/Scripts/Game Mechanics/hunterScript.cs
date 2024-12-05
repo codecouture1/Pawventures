@@ -52,7 +52,7 @@ public class hunterScript : MonoBehaviour
             moveSpeed = pScript.moveSpeed;
         }
 
-        if (pScript.health != 0 && !isTransitioning)
+        if (pScript.alive() && !isTransitioning)
         {
             run(moveSpeed);
         }

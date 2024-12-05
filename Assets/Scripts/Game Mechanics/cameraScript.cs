@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Unity.Cinemachine;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 
 
 public class cameraScript : MonoBehaviour
@@ -11,7 +12,13 @@ public class cameraScript : MonoBehaviour
     CinemachineBasicMultiChannelPerlin perlin;
     CinemachinePositionComposer posComp;
 
-    public readonly float DEFAULT_TARGET_OFFSET_X = 12.2f;
+    private CinemachineConfiner2D confiner;
+    private CamConfiner confinerScript;
+
+    private bool _playerInConfiner = false;
+    public bool PlayerInConfiner { get { return _playerInConfiner; } }
+
+    public readonly float DEFAULT_TARGET_OFFSET_X = 6f;
     public readonly float DEFAULT_FOV = 17.5f;
 
     void Awake()
@@ -19,6 +26,10 @@ public class cameraScript : MonoBehaviour
         cinemachineCamera = GetComponent<CinemachineCamera>();
         perlin = cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>();
         posComp = cinemachineCamera.GetComponent<CinemachinePositionComposer>();
+
+        //confiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();
+        //confinerScript = confiner.BoundingShape2D.gameObject.GetComponent<CamConfiner>();
+        //if (confinerScript == null) Debug.Log("confinerShape not found");
     }
 
     public void Rumble(float intensity)
@@ -34,10 +45,12 @@ public class cameraScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){}
-    public IEnumerator Zoom(float endFOV, float endTargetOffset, float duration)
+    void Update()
     {
-        Vector3 newOffset = new Vector3(endTargetOffset, 0f, 0f);
+    }
+    public IEnumerator Zoom(float endFOV, float endTargetOffsetX, float duration)
+    {
+        Vector3 newOffset = new Vector3(endTargetOffsetX, 0f);
         float time = 0;
         while (time < duration)
         {
