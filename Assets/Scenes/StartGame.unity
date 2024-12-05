@@ -178,8 +178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: pawventures
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc50383472a24df479c2229c2826f471, type: 2}
-  m_sharedMaterial: {fileID: -8320477972159772676, guid: fc50383472a24df479c2229c2826f471, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f2d0156c4620f7e40b8cb6ed7c7c2e32, type: 2}
+  m_sharedMaterial: {fileID: 8028377491515189161, guid: f2d0156c4620f7e40b8cb6ed7c7c2e32, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -526,8 +526,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: adopt, don't shop.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5df8a2999310bbe40ab8f12539e823ce, type: 2}
-  m_sharedMaterial: {fileID: -6230776632563022016, guid: 5df8a2999310bbe40ab8f12539e823ce, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 741c5e22837fae54fa7e45ae89916933, type: 2}
+  m_sharedMaterial: {fileID: -1937653503598501436, guid: 741c5e22837fae54fa7e45ae89916933, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -698,10 +698,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1432712981}
+  - {fileID: 246146482}
   - {fileID: 70425679}
   - {fileID: 540505976}
   - {fileID: 984323017}
-  - {fileID: 246146482}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -791,8 +791,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: press a to start the game.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5df8a2999310bbe40ab8f12539e823ce, type: 2}
-  m_sharedMaterial: {fileID: -6230776632563022016, guid: 5df8a2999310bbe40ab8f12539e823ce, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 741c5e22837fae54fa7e45ae89916933, type: 2}
+  m_sharedMaterial: {fileID: -1937653503598501436, guid: 741c5e22837fae54fa7e45ae89916933, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
