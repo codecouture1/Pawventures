@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gulli_0: 8542669272652981007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

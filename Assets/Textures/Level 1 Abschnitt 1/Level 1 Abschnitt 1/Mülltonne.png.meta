@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "M\xFClltonne_0": 3273120356864982998
+      "M\xFClltonne_1": 749960251448406419
+      "M\xFClltonne_2": 8325907474022429201
+      "M\xFClltonne_3": 7478754040510682331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
