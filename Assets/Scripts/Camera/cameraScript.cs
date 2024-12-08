@@ -19,6 +19,7 @@ public class cameraScript : MonoBehaviour
     public bool PlayerInConfiner { get { return _playerInConfiner; } }
 
     public readonly float DEFAULT_TARGET_OFFSET_X = 6f;
+    public readonly float DEFAULT_TARGET_OFFSET_Y = 6f;
     public readonly float DEFAULT_FOV = 17.5f;
 
     void Awake()
@@ -48,19 +49,34 @@ public class cameraScript : MonoBehaviour
     void Update()
     {
     }
-    public IEnumerator Zoom(float endFOV, float endTargetOffsetX, float duration)
+    public IEnumerator Zoom(float endFOV, float endTargetOffsetX, float endTargetOffsetY, float duration, bool enableDeadzone)
     {
-        Vector3 newOffset = new Vector3(endTargetOffsetX, 0f);
+        Vector3 newOffset = new Vector3(endTargetOffsetX, endTargetOffsetY);
         float time = 0;
-        while (time < duration)
+
+        if (enableDeadzone == true)
         {
-            //TODO: X und Y Offset smooth anpassen w�hrend dem Zoom
-            //try: podComp.Offset = Vector3.Lerp <--Reinfuchsen
-            cinemachineCamera.Lens.OrthographicSize = Mathf.Lerp(cinemachineCamera.Lens.OrthographicSize, endFOV, time / duration);
-            posComp.TargetOffset = Vector3.Lerp(posComp.TargetOffset, newOffset, time / duration);
-            yield return null;
-            time += Time.deltaTime;
+            while (time < duration)
+            {
+                cinemachineCamera.Lens.OrthographicSize = Mathf.Lerp(cinemachineCamera.Lens.OrthographicSize, endFOV, time / duration);
+                posComp.TargetOffset = Vector3.Lerp(posComp.TargetOffset, newOffset, time / duration);
+
+                yield return null;
+                time += Time.deltaTime;
+            }
+            posComp.Composition.DeadZone.Enabled = enableDeadzone;
+        } else 
+        {
+            posComp.Composition.DeadZone.Enabled = enableDeadzone;
+            while (time < duration)
+            {
+                cinemachineCamera.Lens.OrthographicSize = Mathf.Lerp(cinemachineCamera.Lens.OrthographicSize, endFOV, time / duration);
+                posComp.TargetOffset = Vector3.Lerp(posComp.TargetOffset, newOffset, time / duration);
+
+                yield return null;
+                time += Time.deltaTime;
+            }
+
         }
     }
-
 }

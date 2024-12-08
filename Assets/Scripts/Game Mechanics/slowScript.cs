@@ -10,7 +10,7 @@ public class slowScript : MonoBehaviour
     private BoxCollider2D coll;
     private GameObject player;
     private playerScript pScript;
-    public GameObject camera;
+    public GameObject m_Camera;
     private cameraScript camScript;
 
     private Coroutine zoomCoroutine;
@@ -25,12 +25,13 @@ public class slowScript : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         player = GameObject.Find("Player");
         pScript = player.GetComponent<playerScript>();
-        camScript = camera.GetComponent<cameraScript>();
+        camScript = m_Camera.GetComponent<cameraScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if camera zoom is set to default if a zoom coroutine is currently active
         if (!pScript.alive() && !done)
         {
             if (zoomCoroutine != null)
@@ -38,7 +39,7 @@ public class slowScript : MonoBehaviour
                 StopCoroutine(zoomCoroutine);
                 zoomCoroutine = null;
             }
-            StartCoroutine(camScript.Zoom(camScript.DEFAULT_FOV, camScript.DEFAULT_TARGET_OFFSET_X, 0.75f));
+            StartCoroutine(camScript.Zoom(camScript.DEFAULT_FOV, camScript.DEFAULT_TARGET_OFFSET_X, camScript.DEFAULT_TARGET_OFFSET_Y, 0.75f, true));
             camScript.Rumble(0f);
             done = true;
         }
@@ -49,22 +50,21 @@ public class slowScript : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("enter");
             pScript.stopCrouch();
             pScript.slowChallengeFailed = false;
             pScript.slowed = true;
 
-            //zoom Coroutine
+            //zoom Coroutine (zooming in)
             if (zoomCoroutine != null)
             {
                 StopCoroutine(zoomCoroutine);
             }
-            zoomCoroutine = StartCoroutine(camScript.Zoom(12f, 5f, 20f));
+            zoomCoroutine = StartCoroutine(camScript.Zoom(10f, 0f, 0f, 5f, false));
+            camScript.Rumble(1.25f);
 
             //slow Challeenge Coroutine
             slowChallengeCoroutine = StartCoroutine(SlowChallenge());
 
-            camScript.Rumble(2f);
             pScript.moveSpeed = slowSpeed;
             pScript.canJump = false;
         }
@@ -73,26 +73,24 @@ public class slowScript : MonoBehaviour
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player")){
-            Debug.Log("exit");
-            pScript.slowed = false;
 
+            //zoom Coroutine (zooming out)
             if (zoomCoroutine != null)
             {
                 StopCoroutine(zoomCoroutine);
                 zoomCoroutine = null;
             }
-            StartCoroutine(camScript.Zoom(camScript.DEFAULT_FOV, camScript.DEFAULT_TARGET_OFFSET_X, 0.75f));
+            StartCoroutine(camScript.Zoom(camScript.DEFAULT_FOV, camScript.DEFAULT_TARGET_OFFSET_X, camScript.DEFAULT_TARGET_OFFSET_Y, 0.75f, true));
+            camScript.Rumble(0f);
 
+            //stop slow Challeenge Coroutine
             if (slowChallengeCoroutine != null)
             {
                 StopCoroutine(slowChallengeCoroutine);
                 slowChallengeCoroutine = null;
             }
 
-            camScript.Rumble(0f);
-
-            pScript.moveSpeed = pScript.DEFAULT_MOVESPEED;
-            pScript.canJump = true;
+            StartCoroutine(ResetPlayerSpeed(0.75f)); //MUST have same value as zooming out duration
         }
         
     }
@@ -113,6 +111,15 @@ public class slowScript : MonoBehaviour
         }
         Debug.Log("Slow Challenge Failed");
         pScript.slowChallengeFailed = true;
+    }
+
+    //delay player regaining default movementspeed in order for the zooming out to work properly
+    private IEnumerator ResetPlayerSpeed(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        pScript.slowed = false;
+        pScript.moveSpeed = pScript.DEFAULT_MOVESPEED;
+        pScript.canJump = true;
     }
 
 }

@@ -10,7 +10,7 @@ public class stumbleScript : MonoBehaviour
     private GameObject player;
     private playerScript pScript;
     private AnimationManager animationManager;
-    public GameObject camera;
+    public GameObject m_Camera;
     private cameraScript camScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,7 +20,7 @@ public class stumbleScript : MonoBehaviour
         pScript = player.GetComponent<playerScript>();
         coll = GetComponent<BoxCollider2D>();
         animationManager = player.GetComponent<AnimationManager>();
-        camScript = camera.GetComponent<cameraScript>();
+        camScript = m_Camera.GetComponent<cameraScript>();
     }
 
     // Update is called once per frame
