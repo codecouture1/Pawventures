@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Powerup_Leckerli_0: -428629420815153710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

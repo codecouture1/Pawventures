@@ -59,7 +59,7 @@ public class slowScript : MonoBehaviour
             {
                 StopCoroutine(zoomCoroutine);
             }
-            zoomCoroutine = StartCoroutine(camScript.Zoom(10f, 0f, 0f, 5f, false));
+            zoomCoroutine = StartCoroutine(camScript.Zoom(27f, 0f, 0f, 5f, false));
             camScript.Rumble(1.25f);
 
             //slow Challeenge Coroutine

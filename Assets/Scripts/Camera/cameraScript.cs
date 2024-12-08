@@ -20,7 +20,7 @@ public class cameraScript : MonoBehaviour
 
     public readonly float DEFAULT_TARGET_OFFSET_X = 6f;
     public readonly float DEFAULT_TARGET_OFFSET_Y = 6f;
-    public readonly float DEFAULT_FOV = 17.5f;
+    public readonly float DEFAULT_FOV = 45f;
 
     void Awake()
     {
@@ -58,7 +58,7 @@ public class cameraScript : MonoBehaviour
         {
             while (time < duration)
             {
-                cinemachineCamera.Lens.OrthographicSize = Mathf.Lerp(cinemachineCamera.Lens.OrthographicSize, endFOV, time / duration);
+                cinemachineCamera.Lens.FieldOfView = Mathf.Lerp(cinemachineCamera.Lens.FieldOfView, endFOV, time / duration);
                 posComp.TargetOffset = Vector3.Lerp(posComp.TargetOffset, newOffset, time / duration);
 
                 yield return null;
@@ -70,7 +70,7 @@ public class cameraScript : MonoBehaviour
             posComp.Composition.DeadZone.Enabled = enableDeadzone;
             while (time < duration)
             {
-                cinemachineCamera.Lens.OrthographicSize = Mathf.Lerp(cinemachineCamera.Lens.OrthographicSize, endFOV, time / duration);
+                cinemachineCamera.Lens.FieldOfView = Mathf.Lerp(cinemachineCamera.Lens.FieldOfView, endFOV, time / duration);
                 posComp.TargetOffset = Vector3.Lerp(posComp.TargetOffset, newOffset, time / duration);
 
                 yield return null;
