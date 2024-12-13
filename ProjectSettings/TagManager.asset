@@ -8,6 +8,7 @@ TagManager:
   - Slow
   - Stumble
   - Coin
+  - Camera
   layers:
   - Default
   - TransparentFX
