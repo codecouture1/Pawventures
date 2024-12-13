@@ -5,38 +5,50 @@ using UnityEngine;
 
 public class playerScript : MonoBehaviour
 {
+    //-------Objects & Components-------
     public Rigidbody2D myRigidbody2D;
     public BoxCollider2D myBoxCollider2D;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    private GameObject m_Camera;
+    private cameraScript camScript;
 
+    //--------------Stats---------------
     public float jumpStrength;
     public float moveSpeed;
     public readonly float DEFAULT_MOVESPEED = 30f;
+    public int health = 1;
+    [HideInInspector] public bool iFrameActive = false;
 
-    public bool isCrouching = false;
+    //-------------movement-------------
+    [HideInInspector] public bool isCrouching = false;
     private bool crouchCooldown = false;
     private Coroutine crouchRoutine;
+    [HideInInspector] public bool canJump = true; //disabled when player is slowed
+    [HideInInspector] public bool slowed = false; //if true, hunter will slow down with player
+    [HideInInspector] public bool slowChallengeFailed = false;
 
-    public int health = 1;
-    public bool doubleJump = false;
-    public bool canJump = true; //disabled when player is slowed
-    public bool slowed = false; //if true, hunter will slow down with player
-    public bool slowChallengeFailed = false;
-    
+    //-----------ground check------------
+    public Vector2 boxSize;
+    public LayerMask groundLayer;
+    public LayerMask obstacleLayer;
+    public float castDistance;
 
-    //test
     void Start()
     {
         moveSpeed = DEFAULT_MOVESPEED;
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        m_Camera = GameObject.FindGameObjectWithTag("Camera");
+        camScript = m_Camera.GetComponent<cameraScript>();
     }
-    // Update is called once per frame
+  
     void Update()
     {
         if (alive())
         {
-            //rennen
-            run(moveSpeed);          
+            //player rennt automatisch
+            run(moveSpeed);
 
             //springen
             if (Input.GetKeyDown(KeyCode.W) == true && isGrounded() && canJump)
@@ -63,20 +75,19 @@ public class playerScript : MonoBehaviour
                 }
             }
 
-        } else
-        {
-
+            //iFrames
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                StartCoroutine(iFrames());
+            }
         }
     }
 
-    //ground check
-    public Vector2 boxSize;
-    public LayerMask groundLayer;
-    public LayerMask obstacleLayer;
-    public float castDistance;
+    //***************************ground check***************************
     public bool isGrounded() 
     { 
-        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer) || Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, obstacleLayer))
+        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer) || 
+            Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, obstacleLayer))
         {
             return true;
         } 
@@ -90,20 +101,19 @@ public class playerScript : MonoBehaviour
         Gizmos.DrawWireCube(transform.position - transform.up * castDistance, boxSize);
     }
 
-    //running
+    //******************************running******************************
     void run(float multiplier)
     {
         transform.position = transform.position + (Vector3.right * multiplier) * Time.deltaTime;
     }
 
-    //set collider size & offset (for crouching)
+    //*****************************crouching*****************************
     void setCollider(float sizeX, float sizeY, float offsetX, float offsetY)
     {
         myBoxCollider2D.size = new Vector2(sizeX, sizeY);
         myBoxCollider2D.offset = new Vector2(offsetX, offsetY);
     }
 
-    //crouch Coroutine
     IEnumerator crouch(float duration)
     {
         isCrouching = true;
@@ -146,14 +156,14 @@ public class playerScript : MonoBehaviour
     {
         crouchCooldown = true;
 
-        // Wait for the cooldown duration
+        // Wait for the cooldown duration until player can crouch again
         yield return new WaitForSeconds(0.3f);
 
         crouchCooldown = false;
     }
 
 
-    //check if player alive
+    //***************************check if player alive***************************
     public bool alive()
     {
         if (health <= 0)
@@ -163,5 +173,38 @@ public class playerScript : MonoBehaviour
         return true;
     }
 
+    //**********************************iFrames**********************************
+
+    public IEnumerator iFrames()
+    {
+        Debug.Log("iFrames active");
+        float elapsedTime = 0f;
+        while (elapsedTime < 2f)
+        {
+            iFrameActive = true;
+            Physics2D.IgnoreLayerCollision(0, 8, true); //ignore collision with obstacles
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        Physics2D.IgnoreLayerCollision(0, 8, false);
+        iFrameActive = false;
+        Debug.Log("iFrames stopped");
+    }
+
+
+    //***************************Damage from Obstacles***************************
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Kill")
+        {
+            Debug.Log("KILL");
+            StartCoroutine(camScript.Rumble(4f, 0.6f));
+            if (health > 1)
+            {
+                StartCoroutine(iFrames());
+            }
+            health--;                 
+        }
+    }
 }
 

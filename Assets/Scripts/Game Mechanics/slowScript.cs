@@ -5,12 +5,12 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using Unity.Cinemachine;
 
-public class slowScript : MonoBehaviour
+public class SlowScript : MonoBehaviour
 {
     private BoxCollider2D coll;
     private GameObject player;
     private playerScript pScript;
-    public GameObject m_Camera;
+    private GameObject m_Camera;
     private cameraScript camScript;
 
     private Coroutine zoomCoroutine;
@@ -22,6 +22,7 @@ public class slowScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        m_Camera = GameObject.FindGameObjectWithTag("Camera");
         coll = GetComponent<BoxCollider2D>();
         player = GameObject.Find("Player");
         pScript = player.GetComponent<playerScript>();
@@ -59,7 +60,7 @@ public class slowScript : MonoBehaviour
             {
                 StopCoroutine(zoomCoroutine);
             }
-            zoomCoroutine = StartCoroutine(camScript.Zoom(27f, 0f, 0f, 5f, false));
+            zoomCoroutine = StartCoroutine(camScript.Zoom(30f, 0f, 0f, 15f, false));
             camScript.Rumble(1.25f);
 
             //slow Challeenge Coroutine

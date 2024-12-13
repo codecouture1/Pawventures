@@ -9,17 +9,18 @@ public class stumbleScript : MonoBehaviour
     private BoxCollider2D coll;
     private GameObject player;
     private playerScript pScript;
-    private AnimationManager animationManager;
-    public GameObject m_Camera;
+    private PlayerAnimationManager animationManager;
+    private GameObject m_Camera;
     private cameraScript camScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        m_Camera = GameObject.FindGameObjectWithTag("Camera");
         player = GameObject.Find("Player");
         pScript = player.GetComponent<playerScript>();
         coll = GetComponent<BoxCollider2D>();
-        animationManager = player.GetComponent<AnimationManager>();
+        animationManager = player.GetComponent<PlayerAnimationManager>();
         camScript = m_Camera.GetComponent<cameraScript>();
     }
 

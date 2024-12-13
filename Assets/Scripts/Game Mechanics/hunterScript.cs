@@ -21,23 +21,29 @@ public class hunterScript : MonoBehaviour
     public Vector2 boxSize;
     public LayerMask groundLayer;
     public float castDistance;
+    public float offset;
+    private float offsetPositionX;
+    private Vector3 offsetPosition;
+
+
     private bool jumping = false;
 
-    public float transitionSpeed = 5f;
-    private Vector3 targetPosition;
-    private bool isTransitioning = false;
+    //public float transitionSpeed = 5f;
+    //private Vector3 targetPosition;
+    //private bool isTransitioning = false;
 
     void Start()
     {
         pScript = player.GetComponent<playerScript>();
 
         //Ignore the collisions between layer 0 (default) and layer 8 (custom layer you set in Inspector window)
-        Physics2D.IgnoreLayerCollision(8, 7);
+        Physics2D.IgnoreLayerCollision(9, 8);
     }
 
     // Update is called once per frame
     void Update()
     {
+
         //for testing purposes only / anpassen wenn Gigabeller implementiert
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -52,7 +58,7 @@ public class hunterScript : MonoBehaviour
             moveSpeed = pScript.moveSpeed;
         }
 
-        if (pScript.alive() && !isTransitioning)
+        if (pScript.alive() || jumping) //&& !isTransitioning
         {
             run(moveSpeed);
         }
@@ -64,7 +70,9 @@ public class hunterScript : MonoBehaviour
     //ground check
     public bool isGrounded()
     {
-        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
+        offsetPositionX = transform.position.x + offset;
+        offsetPosition = new(offsetPositionX, transform.position.y, transform.position.z);
+        if (Physics2D.BoxCast(offsetPosition, boxSize, 0, -transform.up, castDistance, groundLayer))
         {
             return true;
         }
@@ -76,7 +84,9 @@ public class hunterScript : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position - transform.up * castDistance, boxSize);
+        offsetPositionX = transform.position.x + offset;
+        offsetPosition = new(offsetPositionX, transform.position.y, transform.position.z);
+        Gizmos.DrawWireCube(offsetPosition - transform.up * castDistance, boxSize);
     }
 
     //running
