@@ -197,13 +197,17 @@ public class playerScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Kill")
         {
-            Debug.Log("KILL");
             StartCoroutine(camScript.Rumble(4f, 0.6f));
             if (health > 1)
             {
                 StartCoroutine(iFrames());
             }
             health--;                 
+        }
+
+        if (collision.gameObject.tag == "Instakill")
+        {
+            health = 0;  
         }
     }
 }

@@ -5,10 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Kill
+  - Instakill
   - Slow
   - Stumble
   - Coin
   - Camera
+  - Abgrund
   layers:
   - Default
   - TransparentFX
@@ -54,6 +56,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1509257937
+    locked: 0
+  - name: Player
+    uniqueID: 3961311643
     locked: 0
   - name: Final Layer
     uniqueID: 3622829941
