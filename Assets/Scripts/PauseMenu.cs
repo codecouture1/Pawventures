@@ -25,6 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        //Schließt bisher nur das PausemenuPanel...
         if (pauseMenuPanel != null)
       {
          bool isActive = pauseMenuPanel.activeSelf;
@@ -47,6 +48,21 @@ public class PauseMenu : MonoBehaviour
             {
 
                 Panel.SetActive(true);
+            }
+
+    }
+
+    public void OpenPauseMenuAfterSettings(GameObject Panel){
+
+            if (pauseMenuPanel != null)
+            {
+                pauseMenuPanel.SetActive(true);
+            }
+
+            if (Panel != null)
+            {
+                bool isActive = Panel.activeSelf;
+                Panel.SetActive(!isActive);
             }
 
     }
