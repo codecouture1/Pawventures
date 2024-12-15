@@ -17,7 +17,7 @@ public class playerScript : MonoBehaviour
     public float jumpStrength;
     public float moveSpeed;
     public readonly float DEFAULT_MOVESPEED = 30f;
-    public int health = 1;
+    [HideInInspector] public int health = 1;
     [HideInInspector] public bool iFrameActive = false;
 
     //-------------movement-------------
@@ -195,7 +195,7 @@ public class playerScript : MonoBehaviour
     //***************************Damage from Obstacles***************************
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Kill")
+        if (collision.gameObject.tag == "Damage")
         {
             StartCoroutine(camScript.Rumble(4f, 0.6f));
             if (health > 1)
@@ -205,7 +205,7 @@ public class playerScript : MonoBehaviour
             health--;                 
         }
 
-        if (collision.gameObject.tag == "Instakill")
+        if (collision.gameObject.tag == "Kill")
         {
             health = 0;  
         }

@@ -5,12 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Kill
-  - Instakill
+  - Damage
   - Slow
   - Stumble
   - Coin
   - Camera
-  - Abgrund
   layers:
   - Default
   - TransparentFX

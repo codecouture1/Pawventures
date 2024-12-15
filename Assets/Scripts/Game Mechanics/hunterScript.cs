@@ -7,51 +7,50 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class hunterScript : MonoBehaviour
+public class HunterScript : MonoBehaviour
 {
-    public Rigidbody2D myRigidbody;
-    private BoxCollider2D coll;
-
-    public GameObject player;
+    //-------Objects & Components-------
+    private Rigidbody2D myRigidbody;
+    private GameObject player;
     private playerScript pScript;
 
+    //--------------Stats---------------
     public float jumpStrength;
-    public float moveSpeed;
+    private float moveSpeed;
+    private bool jumping = false;
 
+    //----------ground check------------
     public Vector2 boxSize;
+    private Vector3 offsetPosition;
     public LayerMask groundLayer;
     public float castDistance;
     public float offset;
     private float offsetPositionX;
-    private Vector3 offsetPosition;
-
-
-    private bool jumping = false;
-
-    //public float transitionSpeed = 5f;
-    //private Vector3 targetPosition;
-    //private bool isTransitioning = false;
 
     void Start()
     {
-        pScript = player.GetComponent<playerScript>();
+        myRigidbody = GetComponent<Rigidbody2D>();
 
-        //Ignore the collisions between layer 0 (default) and layer 8 (custom layer you set in Inspector window)
-        Physics2D.IgnoreLayerCollision(9, 8);
+        player = GameObject.FindGameObjectWithTag("Player");
+        pScript = player.GetComponent<playerScript>();
+        
+        //Physics2D.IgnoreLayerCollision(9, 8);
+        //moveSpeed = pScript.DEFAULT_MOVESPEED;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        //for testing purposes only / anpassen wenn Gigabeller implementiert
         if (Input.GetKeyDown(KeyCode.T))
         {
-            //TODO: smooth transition
-            transform.position = player.transform.position + (Vector3.left * 22f);
+            moveSpeed = 0;
+
+            //transform.position = Vector3.Lerp(transform.position, newOffset, time / duration);
+            //player.transform.position + (Vector3.left * 22f);
         }
 
-        moveSpeed = pScript.DEFAULT_MOVESPEED;
+        
 
         if (pScript.slowed && !pScript.slowChallengeFailed)
         {
@@ -108,6 +107,8 @@ public class hunterScript : MonoBehaviour
             jumping = false;
         }
     }
+
+  
 }
 
     

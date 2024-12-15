@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 154e73615fda94d49aabd8e9e1d43349
+guid: 41310034fa384bd4b9cb933e7035fc0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7700600901537574106
-    second: Inventory_Switch_0
+      213: -6887174757575765701
+    second: Inventory_Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Inventory_Switch_0
+      name: Inventory_Background_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 13
-        width: 379
-        height: 495
+        x: 75
+        y: 52
+        width: 1725
+        height: 1252
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: adc233d68b70eda60800000000000000
-      internalID: 7700600901537574106
+      spriteID: b31d8ac3c07db60a0800000000000000
+      internalID: -6887174757575765701
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Inventory_Switch_0: 7700600901537574106
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

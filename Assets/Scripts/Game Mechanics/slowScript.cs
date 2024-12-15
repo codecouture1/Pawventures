@@ -24,7 +24,7 @@ public class SlowScript : MonoBehaviour
     {
         m_Camera = GameObject.FindGameObjectWithTag("Camera");
         coll = GetComponent<BoxCollider2D>();
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         pScript = player.GetComponent<playerScript>();
         camScript = m_Camera.GetComponent<cameraScript>();
     }

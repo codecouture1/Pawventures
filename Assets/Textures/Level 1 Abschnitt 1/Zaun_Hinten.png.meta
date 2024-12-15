@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zaun_Hinten_0: -2700750357025469118
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class CollectibleManager : MonoBehaviour
 {
-
     public CoinManager coinManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +21,14 @@ public class CollectibleManager : MonoBehaviour
         if (coll.gameObject.CompareTag("Coin"))
         {
             Destroy(coll.gameObject);
-            coinManager.AddCoins(1);   
+            coinManager.AddCoins(1);
         }
+
+        if (coll.gameObject.CompareTag("Powerup"))
+        {
+            Destroy(coll.gameObject);
+            coinManager.AddCoins(1);
+        }
+
     }
 }

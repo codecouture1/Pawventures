@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: edb5add0c9fb4e54da582a1f998fc6bd
+guid: 53a4863148a8fc644b52e2fc4c02db8d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4056903346573627109
-    second: Zaun_Vorne_0
+      213: -1849662046355174149
+    second: Item_Slot_Big_0
+  - first:
+      213: 2680759677550831449
+    second: Item_Slot_Big_1
+  - first:
+      213: 7239920921614689220
+    second: Item_Slot_Big_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zaun_Vorne_0
+      name: Item_Slot_Big_0
       rect:
         serializedVersion: 2
-        x: 993
-        y: 55
-        width: 661
-        height: 1585
+        x: 112
+        y: 112
+        width: 818
+        height: 819
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b11b26396ebf2b7c0800000000000000
-      internalID: -4056903346573627109
+      spriteID: bfc4a743b2ea456e0800000000000000
+      internalID: -1849662046355174149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Slot_Big_1
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 83
+        width: 890
+        height: 890
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 957ab9439b8f33520800000000000000
+      internalID: 2680759677550831449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Slot_Big_2
+      rect:
+        serializedVersion: 2
+        x: 2155
+        y: 83
+        width: 890
+        height: 890
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c323ce28bd597460800000000000000
+      internalID: 7239920921614689220
       vertices: []
       indices: 
       edges: []
@@ -134,8 +184,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Zaun_Vorne_0: -4056903346573627109
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
