@@ -6,7 +6,7 @@ public class Parallax : MonoBehaviour
     private float length, startpos;
     public GameObject cam;
     private CinemachineCamera cinemachineCamera;
-    private cameraScript camScript;
+    private CameraScript camScript;
     public float parallaxEffect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,7 +14,7 @@ public class Parallax : MonoBehaviour
     {
         length = GetComponent<SpriteRenderer>().bounds.size.x;
         cinemachineCamera = cam.GetComponent<CinemachineCamera>();
-        camScript = cinemachineCamera.GetComponent<cameraScript>();
+        camScript = cinemachineCamera.GetComponent<CameraScript>();
         startpos = transform.position.x;
     }
 

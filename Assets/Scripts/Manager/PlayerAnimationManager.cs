@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerAnimationManager : MonoBehaviour
 {
     private Animator animator;
-    private playerScript pScript;
+    private PlayerScript pScript;
     private SpriteRenderer spriteRenderer;
     private bool isIFrameAnimationRunning = false;
 
@@ -12,7 +12,7 @@ public class PlayerAnimationManager : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        pScript = GetComponent<playerScript>();
+        pScript = GetComponent<PlayerScript>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

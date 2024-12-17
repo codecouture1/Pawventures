@@ -9,9 +9,9 @@ public class SlowScript : MonoBehaviour
 {
     private BoxCollider2D coll;
     private GameObject player;
-    private playerScript pScript;
+    private PlayerScript pScript;
     private GameObject m_Camera;
-    private cameraScript camScript;
+    private CameraScript camScript;
 
     private Coroutine zoomCoroutine;
     private Coroutine slowChallengeCoroutine;
@@ -25,8 +25,8 @@ public class SlowScript : MonoBehaviour
         m_Camera = GameObject.FindGameObjectWithTag("Camera");
         coll = GetComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
-        pScript = player.GetComponent<playerScript>();
-        camScript = m_Camera.GetComponent<cameraScript>();
+        pScript = player.GetComponent<PlayerScript>();
+        camScript = m_Camera.GetComponent<CameraScript>();
     }
 
     // Update is called once per frame

@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 public class HideMouse : MonoBehaviour
 {
     public GameObject player;
-    private playerScript pScript;
+    private PlayerScript pScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pScript = player.GetComponent<playerScript>();
+        pScript = player.GetComponent<PlayerScript>();
     }
 
     // Update is called once per frame

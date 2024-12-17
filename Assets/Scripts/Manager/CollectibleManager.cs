@@ -24,11 +24,6 @@ public class CollectibleManager : MonoBehaviour
             coinManager.AddCoins(1);
         }
 
-        if (coll.gameObject.CompareTag("Powerup"))
-        {
-            Destroy(coll.gameObject);
-            coinManager.AddCoins(1);
-        }
 
     }
 }

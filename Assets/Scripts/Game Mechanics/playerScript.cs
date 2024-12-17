@@ -3,7 +3,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class playerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     //-------Objects & Components-------
     public Rigidbody2D myRigidbody2D;
@@ -11,7 +11,7 @@ public class playerScript : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private GameObject m_Camera;
-    private cameraScript camScript;
+    private CameraScript camScript;
 
     //--------------Stats---------------
     public float jumpStrength;
@@ -40,7 +40,7 @@ public class playerScript : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         m_Camera = GameObject.FindGameObjectWithTag("Camera");
-        camScript = m_Camera.GetComponent<cameraScript>();
+        camScript = m_Camera.GetComponent<CameraScript>();
     }
   
     void Update()

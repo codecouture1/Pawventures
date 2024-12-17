@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 
 
-public class cameraScript : MonoBehaviour
+public class CameraScript : MonoBehaviour
 {
     private CinemachineCamera cinemachineCamera;
     CinemachineBasicMultiChannelPerlin perlin;

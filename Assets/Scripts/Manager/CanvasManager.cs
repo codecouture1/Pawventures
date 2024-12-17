@@ -5,11 +5,11 @@ public class CanvasManager : MonoBehaviour
 {
     public GameObject spamW;
     public GameObject player;
-    private playerScript pScript;
+    private PlayerScript pScript;
     public GameObject deathScreen;
     void Start()
     {
-        pScript = player.GetComponent<playerScript>();
+        pScript = player.GetComponent<PlayerScript>();
     }
 
     // Update is called once per frame

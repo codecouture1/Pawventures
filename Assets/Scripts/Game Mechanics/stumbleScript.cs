@@ -4,30 +4,24 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using Unity.Cinemachine;
 
-public class stumbleScript : MonoBehaviour
+public class StumbleScript : MonoBehaviour
 {
     private BoxCollider2D coll;
     private GameObject player;
-    private playerScript pScript;
+    private PlayerScript pScript;
     private PlayerAnimationManager animationManager;
     private GameObject m_Camera;
-    private cameraScript camScript;
+    private CameraScript camScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         m_Camera = GameObject.FindGameObjectWithTag("Camera");
         player = GameObject.Find("Player");
-        pScript = player.GetComponent<playerScript>();
+        pScript = player.GetComponent<PlayerScript>();
         coll = GetComponent<BoxCollider2D>();
         animationManager = player.GetComponent<PlayerAnimationManager>();
-        camScript = m_Camera.GetComponent<cameraScript>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        camScript = m_Camera.GetComponent<CameraScript>();
     }
 
     void OnTriggerEnter2D(Collider2D col)

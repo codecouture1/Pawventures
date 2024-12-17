@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -12,12 +13,13 @@ public class HunterScript : MonoBehaviour
     //-------Objects & Components-------
     private Rigidbody2D myRigidbody;
     private GameObject player;
-    private playerScript pScript;
+    private PlayerScript pScript;
 
     //--------------Stats---------------
     public float jumpStrength;
     private float moveSpeed;
     private bool jumping = false;
+    private float CurrentXPosition;
 
     //----------ground check------------
     public Vector2 boxSize;
@@ -32,25 +34,23 @@ public class HunterScript : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
 
         player = GameObject.FindGameObjectWithTag("Player");
-        pScript = player.GetComponent<playerScript>();
-        
-        //Physics2D.IgnoreLayerCollision(9, 8);
-        //moveSpeed = pScript.DEFAULT_MOVESPEED;
+        pScript = player.GetComponent<PlayerScript>();
+
+        Physics2D.IgnoreLayerCollision(9, 8);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        moveSpeed = pScript.DEFAULT_MOVESPEED;
+
         if (Input.GetKeyDown(KeyCode.T))
         {
-            moveSpeed = 0;
-
-            //transform.position = Vector3.Lerp(transform.position, newOffset, time / duration);
-            //player.transform.position + (Vector3.left * 22f);
+            StartCoroutine(ResetPositionCoroutine());
         }
 
-        
+
 
         if (pScript.slowed && !pScript.slowChallengeFailed)
         {
@@ -95,7 +95,7 @@ public class HunterScript : MonoBehaviour
     }
 
     //jumping
-    void jump()
+    private void jump()
     {
         if (!isGrounded() && !jumping)
         {
@@ -108,7 +108,43 @@ public class HunterScript : MonoBehaviour
         }
     }
 
-  
+    public bool positionResetComplete { get; private set; } = false;
+
+    public IEnumerator ResetPositionCoroutine()
+    {
+        float duration = 6f;
+        moveSpeed = 0;
+        float tolerance = 0.01f; // Define a small margin of error
+
+        float time = 0;
+        while (time < duration)
+        {
+            // Calculate target position
+            float targetPosition = player.transform.position.x - 21f;
+
+            // Interpolate towards the target
+            Vector3 currentPosition = transform.position;
+            currentPosition.x = Mathf.Lerp(transform.position.x, targetPosition, time / duration);
+
+            // Update position
+            transform.position = currentPosition;
+
+            // Check if we are close enough to the target
+            if (Mathf.Abs(transform.position.x - targetPosition) < tolerance)
+            {
+                break; // Exit the loop early
+            }
+
+            // Continue with the loop
+            yield return null;
+            time += Time.deltaTime;
+        }
+
+        // Restore the player's move speed
+        moveSpeed = pScript.moveSpeed;
+        positionResetComplete = true;
+        positionResetComplete = false;
+    }
 }
 
     

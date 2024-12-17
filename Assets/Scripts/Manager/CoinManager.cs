@@ -39,8 +39,6 @@ public class CoinManager : MonoBehaviour
 
         // Write JSON to a file
         File.WriteAllText(savePath, json);
-
-        Debug.Log("Coins saved to " + savePath);
     }
 
     private void LoadCoins()
