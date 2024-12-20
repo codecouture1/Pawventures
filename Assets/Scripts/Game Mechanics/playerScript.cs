@@ -25,8 +25,11 @@ public class PlayerScript : MonoBehaviour
     private bool crouchCooldown = false;
     private Coroutine crouchRoutine;
     [HideInInspector] public bool canJump = true; //disabled when player is slowed
+    [HideInInspector] public bool doubleJump = false;
+    private Coroutine doubleJumpCoroutine;
     [HideInInspector] public bool slowed = false; //if true, hunter will slow down with player
-    [HideInInspector] public bool slowChallengeFailed = false;
+    [HideInInspector] public bool slowChallengeFailed = false; //if slow challenge is failed hunter will catch up with player
+    
 
     //-----------ground check------------
     public Vector2 boxSize;
@@ -45,19 +48,27 @@ public class PlayerScript : MonoBehaviour
   
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            doubleJump = true;
+        }
+
         if (alive())
         {
             //player rennt automatisch
             run(moveSpeed);
 
             //springen
-            if (Input.GetKeyDown(KeyCode.W) == true && isGrounded() && canJump)
+            if (canJump)
             {
-                if (isCrouching)
+                if (doubleJump && doubleJumpCoroutine == null)
                 {
-                    stopCrouch();
+                    doubleJumpCoroutine = StartCoroutine(DoubleJump());                   
+                } 
+                else
+                {
+                    Jump();
                 }
-                myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;
             }
 
             //schnelles landen
@@ -105,6 +116,46 @@ public class PlayerScript : MonoBehaviour
     void run(float multiplier)
     {
         transform.position = transform.position + (Vector3.right * multiplier) * Time.deltaTime;
+    }
+
+    //******************************jumping******************************
+
+    void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.W) == true && isGrounded())
+        {
+            if (isCrouching)
+            {
+                stopCrouch();
+            }
+            myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;
+        }
+    }
+    IEnumerator DoubleJump()
+    {
+        int jumpCounter = isGrounded() ? 0 : 1; // Start at 1 if not grounded, else 0
+
+        while (jumpCounter < 2)
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (jumpCounter < 2) // Ensure jumpCounter is within limits
+                {
+                    jumpCounter++;
+                    Debug.Log($"Grounded: {isGrounded()}, JumpCounter: {jumpCounter}");
+                    if (isCrouching)
+                    {
+                        stopCrouch();
+                    }
+                    myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;                
+                    yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.W)); // Wait for key release before proceeding
+                    yield return null;
+                }
+            }
+            yield return null; // Wait for the next frame
+        }
+        doubleJumpCoroutine = null;
+        doubleJump = false; // Reset double jump state
     }
 
     //*****************************crouching*****************************

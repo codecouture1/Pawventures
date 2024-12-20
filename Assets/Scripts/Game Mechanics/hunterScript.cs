@@ -45,13 +45,6 @@ public class HunterScript : MonoBehaviour
     {
         moveSpeed = pScript.DEFAULT_MOVESPEED;
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StartCoroutine(ResetPositionCoroutine());
-        }
-
-
-
         if (pScript.slowed && !pScript.slowChallengeFailed)
         {
             moveSpeed = pScript.moveSpeed;

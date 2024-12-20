@@ -7,7 +7,6 @@ public abstract class PowerUp : MonoBehaviour
 {
 
     //TODO: Destroy when action complete?
-
     private SpriteRenderer spriteRenderer;
 
     public abstract void ApplyPowerup();

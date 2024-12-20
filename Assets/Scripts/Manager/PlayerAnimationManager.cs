@@ -45,6 +45,12 @@ public class PlayerAnimationManager : MonoBehaviour
             StartCoroutine(IFrameAnimation());
         }
 
+        //halsband
+        if(pScript.health > 1)
+        {
+            //Halsband Animation
+        }
+
     }
 
     //stumble

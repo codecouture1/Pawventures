@@ -20,6 +20,7 @@ public class GigaBeller : PowerUp
     public override void  ApplyPowerup()
     {
         StartCoroutine(hunterScript.ResetPositionCoroutine());
+        StartCoroutine(camScript.Rumble(5f, 0.5f));
     }
 
 }
