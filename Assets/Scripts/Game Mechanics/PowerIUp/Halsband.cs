@@ -1,17 +1,22 @@
 using UnityEngine;
 
-public class Halsband : PowerUp
+public class Halsband : IPowerUp
 {
-    private GameObject player;
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+
     private PlayerScript pScript;
 
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        pScript = player.GetComponent<PlayerScript>();
-    }
-    public override void ApplyPowerup()
+    public void ApplyPowerup()
     {
         pScript.health++;
+    }
+
+    public void SetUp()
+    {
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+
+        pScript = referenceManager.playerScript;
     }
 }

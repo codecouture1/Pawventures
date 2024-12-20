@@ -1,26 +1,27 @@
 using System.Collections;
 using UnityEngine;
 
-public class GigaBeller : PowerUp
+public class GigaBeller : IPowerUp
 {
-    private GameObject hunter;
-    private HunterScript hunterScript;
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
 
-    private GameObject m_camera;
+    private HunterScript hunterScript;
     private CameraScript camScript;
 
-    void Start()
+    public void SetUp()
     {
-        hunter = GameObject.Find("Hunter");
-        hunterScript = hunter.GetComponent<HunterScript>();
-        m_camera = GameObject.FindGameObjectWithTag("Camera");
-        camScript = m_camera.GetComponent<CameraScript>();
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+
+        hunterScript = referenceManager.hunterScript;
+        camScript = referenceManager.cameraScript;
     }
 
-    public override void  ApplyPowerup()
+    public void  ApplyPowerup()
     {
-        StartCoroutine(hunterScript.ResetPositionCoroutine());
-        StartCoroutine(camScript.Rumble(5f, 0.5f));
+        SetUp();
+        hunterScript.StartCoroutine(hunterScript.ResetPositionCoroutine());
+        camScript.StartCoroutine(camScript.Rumble(5f, 0.5f));
     }
-
 }

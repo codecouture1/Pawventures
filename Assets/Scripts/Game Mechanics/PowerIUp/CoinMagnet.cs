@@ -1,9 +1,14 @@
 using UnityEngine;
 
-public class CoinMagnet : PowerUp
+public class CoinMagnet : IPowerUp
 {
-    public override void ApplyPowerup()
+    public void ApplyPowerup()
     {
+        
+    }
 
+    public void SetUp()
+    {
+      
     }
 }

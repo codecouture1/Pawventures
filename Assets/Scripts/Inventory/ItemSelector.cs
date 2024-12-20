@@ -3,8 +3,8 @@ using UnityEngine.UIElements;
 
 public class ItemSelector : MonoBehaviour
 {
-    [HideInInspector] public PowerUp primaryPowerup;
-    [HideInInspector] public PowerUp secondaryPowerup;
+    [HideInInspector] public IPowerUp primaryPowerup;
+    [HideInInspector] public IPowerUp secondaryPowerup;
 
     public GameObject primaryIcon;
     private Animator primaryIconAnimator;
@@ -18,8 +18,6 @@ public class ItemSelector : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-
         switchAnimator = switchIcon.GetComponent<Animator>();
         primaryIconAnimator = primaryIcon.GetComponent<Animator>();
         secondaryIconAnimator = secondaryIcon.GetComponent<Animator>();
@@ -44,14 +42,14 @@ public class ItemSelector : MonoBehaviour
 
     private void SwitchItems()
     {
-        PowerUp primaryChache = primaryPowerup;
-        PowerUp secondaryChache = secondaryPowerup;
+        IPowerUp primaryChache = primaryPowerup;
+        IPowerUp secondaryChache = secondaryPowerup;
         SetItem(1, secondaryChache);
         SetItem(2, primaryChache);
         switchAnimator.SetTrigger("switch");
     }
 
-    private void SetItem(int slot, PowerUp powerUp)
+    private void SetItem(int slot, IPowerUp powerUp)
     {
         switch (slot)
         {
@@ -64,6 +62,23 @@ public class ItemSelector : MonoBehaviour
         }
     }
 
+    public void AddItem(IPowerUp powerUp)
+    {
+        if(primaryPowerup == null)
+        {
+            primaryPowerup = powerUp;
+        } 
+        else if (secondaryPowerup == null)
+        {
+            secondaryPowerup = powerUp;
+        } else
+        {
+            powerUp.ApplyPowerup();
+        }
+    }
+
+
+    //animation
     private void DisplayItem()
     {
         if (primaryPowerup is GigaBeller)

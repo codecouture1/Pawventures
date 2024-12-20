@@ -1,18 +1,23 @@
 using UnityEngine;
 
-public class Doppelsprung : PowerUp
+public class Doppelsprung : IPowerUp
 {
-    private GameObject player;
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+
     private PlayerScript pScript;
 
-    void Start()
+    public void ApplyPowerup()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        pScript = player.GetComponent<PlayerScript>();
+        SetUp();
+        pScript.doubleJump = true;
     }
 
-    public override void ApplyPowerup()
+    public void SetUp()
     {
-        pScript.doubleJump = true;
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+
+        pScript = referenceManager.playerScript;
     }
 }
