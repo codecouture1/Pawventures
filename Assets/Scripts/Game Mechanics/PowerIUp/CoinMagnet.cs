@@ -2,13 +2,22 @@ using UnityEngine;
 
 public class CoinMagnet : IPowerUp
 {
-    public void ApplyPowerup()
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+
+    public Sprite sprite
     {
-        
+        get { return referenceManager.münzmagnet; }
     }
 
-    public void SetUp()
+    public void ApplyPowerup()
     {
-      
+
+    }
+
+    public CoinMagnet()
+    {
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
     }
 }

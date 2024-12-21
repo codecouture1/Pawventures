@@ -7,13 +7,17 @@ public class Doppelsprung : IPowerUp
 
     private PlayerScript pScript;
 
+    public Sprite sprite
+    {
+        get { return referenceManager.doppelsprung; }
+    }
+
     public void ApplyPowerup()
     {
-        SetUp();
         pScript.doubleJump = true;
     }
 
-    public void SetUp()
+    public Doppelsprung()
     {
         referenceManagerObj = GameObject.Find("ReferenceManager");
         referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();

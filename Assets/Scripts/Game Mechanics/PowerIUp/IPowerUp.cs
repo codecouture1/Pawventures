@@ -5,7 +5,7 @@ using UnityEngine;
 
 public interface IPowerUp
 {
-    public abstract void ApplyPowerup();
+    public Sprite sprite { get;}
 
-    public abstract void SetUp();
+    public abstract void ApplyPowerup();
 }

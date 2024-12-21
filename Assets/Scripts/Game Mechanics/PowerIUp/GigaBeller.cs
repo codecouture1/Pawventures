@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class GigaBeller : IPowerUp
@@ -9,7 +10,12 @@ public class GigaBeller : IPowerUp
     private HunterScript hunterScript;
     private CameraScript camScript;
 
-    public void SetUp()
+    public Sprite sprite 
+    { 
+        get { return referenceManager.gigaBeller; }
+    }
+
+    public GigaBeller()
     {
         referenceManagerObj = GameObject.Find("ReferenceManager");
         referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
@@ -18,9 +24,8 @@ public class GigaBeller : IPowerUp
         camScript = referenceManager.cameraScript;
     }
 
-    public void  ApplyPowerup()
+    public void ApplyPowerup()
     {
-        SetUp();
         hunterScript.StartCoroutine(hunterScript.ResetPositionCoroutine());
         camScript.StartCoroutine(camScript.Rumble(5f, 0.5f));
     }

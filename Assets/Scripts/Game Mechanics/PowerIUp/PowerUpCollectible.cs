@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PowerUpCollectible : MonoBehaviour
@@ -5,22 +6,24 @@ public class PowerUpCollectible : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public ItemSelector itemSelector;
     private IPowerUp powerUp;
+    private IPowerUp[] powerUps = new IPowerUp[5];
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SetPowerUp(new GigaBeller());
-    }
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        powerUps[0] = null;
+        powerUps[1] = new Halsband();
+        powerUps[2] = new GigaBeller();
+        powerUps[3] = new Doppelsprung();
+        powerUps[4] = new CoinMagnet();
+
+        SetPowerUp(1);
+        spriteRenderer.sprite = powerUp.sprite;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (collision.CompareTag("Player"))
         {
@@ -31,15 +34,11 @@ public class PowerUpCollectible : MonoBehaviour
             }
             else
                 Debug.Log("PowerUp undefined");
-           
         }
     }
 
-    public void SetPowerUp(IPowerUp collectedPowerup)
+    public void SetPowerUp(int index)
     {
-        powerUp = collectedPowerup;
+        powerUp = powerUps[index];
     }
-
-    
-
 }

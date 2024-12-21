@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class ItemSelector : MonoBehaviour
@@ -19,6 +20,7 @@ public class ItemSelector : MonoBehaviour
     void Start()
     {
         switchAnimator = switchIcon.GetComponent<Animator>();
+
         primaryIconAnimator = primaryIcon.GetComponent<Animator>();
         secondaryIconAnimator = secondaryIcon.GetComponent<Animator>();
     }
@@ -76,7 +78,6 @@ public class ItemSelector : MonoBehaviour
             powerUp.ApplyPowerup();
         }
     }
-
 
     //animation
     private void DisplayItem()

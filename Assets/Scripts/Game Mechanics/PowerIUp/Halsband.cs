@@ -7,12 +7,17 @@ public class Halsband : IPowerUp
 
     private PlayerScript pScript;
 
+    public Sprite sprite
+    {
+        get { return referenceManager.halsband; }
+    }
+
     public void ApplyPowerup()
     {
         pScript.health++;
     }
 
-    public void SetUp()
+    public Halsband()
     {
         referenceManagerObj = GameObject.Find("ReferenceManager");
         referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
