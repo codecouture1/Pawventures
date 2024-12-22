@@ -14,7 +14,7 @@ public class Halsband : IPowerUp
 
     public void ApplyPowerup()
     {
-        pScript.health++;
+        pScript.health = 2;
     }
 
     public Halsband()

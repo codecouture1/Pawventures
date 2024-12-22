@@ -1,34 +1,37 @@
 fileFormatVersion: 2
-guid: b6086b706749f5843aeab473deac375d
+guid: 6e7dcc5587d6aac4eac75ec0b3212975
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4086711348863222884
-    second: Items_Placeholder_0
+      213: -5633749683135456233
+    second: Items_Placeholdeer_0
   - first:
-      213: -1130805091259620966
-    second: Items_Placeholder_1
+      213: -7289597224145085756
+    second: Items_Placeholdeer_1
   - first:
-      213: -2162820789595003482
-    second: Items_Placeholder_2
+      213: 5871278270872998761
+    second: Items_Placeholdeer_2
   - first:
-      213: 4547531382920259414
-    second: Items_Placeholder_3
+      213: -2509953547359164008
+    second: Items_Placeholdeer_3
   - first:
-      213: -1194457265292608786
-    second: Items_Placeholder_4
+      213: 6724940116706284399
+    second: Items_Placeholdeer_4
   - first:
-      213: -4467121204235173875
-    second: Items_Placeholder_5
+      213: 2749591292141920495
+    second: Items_Placeholdeer_5
   - first:
-      213: 7594715329018242700
-    second: Items_Placeholder_6
+      213: -1153050437233817376
+    second: Items_Placeholdeer_6
   - first:
-      213: -8364155521715816774
-    second: Items_Placeholder_7
+      213: -5827037083983155572
+    second: Items_Placeholdeer_7
   - first:
-      213: -7869760544416648473
-    second: Items_Placeholder_8
+      213: 4831151149083038715
+    second: Items_Placeholdeer_8
+  - first:
+      213: -702210364326322956
+    second: Items_Placeholdeer_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -137,10 +140,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c9b33773ea51947c0800000000000000
-      internalID: -4086711348863222884
+      spriteID: 83a6e675db2beed4b99702c122a99168
+      internalID: 1008570064
       vertices: []
       indices: 
       edges: []
@@ -159,10 +162,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a916441c2c29e40f0800000000000000
-      internalID: -1130805091259620966
+      spriteID: 9a841937e5184f74381dfb11451e6083
+      internalID: -1331107064
       vertices: []
       indices: 
       edges: []
@@ -181,10 +184,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6a52c5373fd1cf1e0800000000000000
-      internalID: -2162820789595003482
+      spriteID: dc2c2554ab2528f43bad5c102e26d71f
+      internalID: 597182422
       vertices: []
       indices: 
       edges: []
@@ -203,10 +206,32 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 65727ebe2b31c1f30800000000000000
-      internalID: 4547531382920259414
+      spriteID: 4baa3684685ad5e4d9fa8a0b8cbd68e0
+      internalID: 1864102195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_Placeholder_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5849ca87a7a48cf49aabd91d37460290
+      internalID: -323844947
       vertices: []
       indices: 
       edges: []
@@ -215,7 +240,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cc00bd6f8e1b54e41a39a6df500bbf00
+    spriteID: aafc0fbe9d479ee43a705c035205cf1a
     internalID: 0
     vertices: []
     indices: 
@@ -225,10 +250,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Items_Placeholder_0: -4086711348863222884
-      Items_Placeholder_1: -1130805091259620966
-      Items_Placeholder_2: -2162820789595003482
-      Items_Placeholder_3: 4547531382920259414
+      Items_Placeholder_0: 1008570064
+      Items_Placeholder_1: -1331107064
+      Items_Placeholder_2: 597182422
+      Items_Placeholder_3: 1864102195
+      Items_Placeholder_4: -323844947
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

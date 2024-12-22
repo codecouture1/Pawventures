@@ -17,15 +17,19 @@ public class ReferenceManager : MonoBehaviour
     public GameObject m_camera;
     public CameraScript cameraScript { get; private set; }
 
+    public GameObject itemSelector;
+    public ItemSelector itemSelectorScript { get; private set; }
+
     public Sprite halsband;
     public Sprite gigaBeller;
     public Sprite doppelsprung;
     public Sprite münzmagnet;
 
-    void Start()
+    void Awake()
     {
         playerScript = player.GetComponent<PlayerScript>();
         hunterScript = hunter.GetComponent<HunterScript>();
         cameraScript = m_camera.GetComponent<CameraScript>();
+        itemSelectorScript = itemSelector.GetComponent<ItemSelector>();
     }
 }

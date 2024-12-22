@@ -12,7 +12,7 @@ public class CoinMagnet : IPowerUp
 
     public void ApplyPowerup()
     {
-
+        Debug.Log("TODO");
     }
 
     public CoinMagnet()
