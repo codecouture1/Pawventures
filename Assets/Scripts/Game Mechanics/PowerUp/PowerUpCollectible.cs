@@ -31,7 +31,6 @@ public class PowerUpCollectible : MonoBehaviour
 
         SetPowerUp();
         spriteRenderer.sprite = powerUp.sprite; //assigns the correct PowerUp sprite to the game object
-        Debug.Log(itemSelector);
     }
 
     void Update()

@@ -170,7 +170,7 @@ public class PlayerScript : MonoBehaviour
         isCrouching = true;
 
         //crouch height
-        setCollider(6f, 2.4f, 0f, -1.2f);
+        setCollider(0.65f, 0.25f, 0f, -0.125f);
 
         float elapsedTime = 0f;
         while (elapsedTime < duration)
@@ -197,7 +197,7 @@ public class PlayerScript : MonoBehaviour
             StopCoroutine(crouchRoutine);
         }
 
-        setCollider(6f, 4.8f, 0f, 0f);
+        setCollider(0.65f, 0.5f, 0f, 0f);
 
         isCrouching = false;
         StartCoroutine(CrouchCooldown());

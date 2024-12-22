@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerAnimationManager : MonoBehaviour
@@ -14,11 +15,14 @@ public class PlayerAnimationManager : MonoBehaviour
         animator = GetComponent<Animator>();
         pScript = GetComponent<PlayerScript>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        animator.SetBool("slowed", false);
     }
 
     // Update is called once per frame
     void Update()
     {
+
         //crouch
         animator.SetBool("crouch", false);
         if (pScript.isCrouching)
@@ -27,10 +31,16 @@ public class PlayerAnimationManager : MonoBehaviour
         }
 
         //slow
-        animator.SetBool("slowed", false);
-        if (pScript.slowed)
+        if(!pScript.slowed && animator.GetBool("slowed"))      
+            animator.SetBool("slowed", false);       
+        if (pScript.slowed && !animator.GetBool("slowed"))       
+            animator.SetBool("slowed", true);       
+
+        //jump
+        animator.SetBool("jump", false);
+        if (!pScript.isGrounded())
         {
-            animator.SetBool("slowed", true);
+            animator.SetBool("jump", true);
         }
 
         //death

@@ -100,7 +100,7 @@ public class SlowScript : MonoBehaviour
     {
         float elapsedTime = 0f;
         yield return new WaitForSeconds(0.75f); //wait to give player time to react
-        Debug.Log("Slow Challenge Started");
+        //Debug.Log("Slow Challenge Started");
         while (elapsedTime < 0.15f)
         {
             if (Input.GetKey(KeyCode.W)) //spam w to reset timer
@@ -110,7 +110,7 @@ public class SlowScript : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Slow Challenge Failed");
+        //Debug.Log("Slow Challenge Failed");
         pScript.slowChallengeFailed = true;
     }
 
