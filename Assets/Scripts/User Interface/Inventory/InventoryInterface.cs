@@ -55,8 +55,8 @@ public class InventoryInterface : MonoBehaviour
                 if(primaryItem != null)
                 {
                     currentItem = primaryItem;
-                    inventory[(int)currentItem.powerUp].amount++;
-                }                          
+                    inventory[(int)currentItem.powerUp - 1].amount++;
+                }
                 primaryItem = item;
                 inventorySpriteManager.DisplayPrimaryPowerUp(item);
                 item.amount--;
@@ -67,7 +67,7 @@ public class InventoryInterface : MonoBehaviour
                 if (secondaryItem != null)
                 {
                     currentItem = secondaryItem;
-                    inventory[(int)currentItem.powerUp].amount++;                   
+                    inventory[(int)currentItem.powerUp - 1].amount++;                   
                 }
                 inventorySpriteManager.DisplaySecondaryPowerUp(item);
                 secondaryItem = item;
@@ -87,8 +87,16 @@ public class InventoryInterface : MonoBehaviour
     //safe equipped items to player data. Execute on level start
     public void SaveItemsToPlayerData()
     {
-        playerData.firstPowerUp = primaryItem.powerUp;
-        playerData.secondPowerUp = secondaryItem.powerUp;
+        if (primaryItem != null)
+            playerData.firstPowerUp = primaryItem.powerUp;
+        else
+            playerData.firstPowerUp = PowerUps.None;
+
+        if (secondaryItem != null)
+            playerData.secondPowerUp = secondaryItem.powerUp;
+        else
+            playerData.secondPowerUp = PowerUps.None;
+
         PlayerDataManager.SaveData(playerData);
     }
 

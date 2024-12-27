@@ -2,6 +2,7 @@ using UnityEngine;
 
 public enum PowerUps
 {
+    None,
     Halsband,
     Doppelsprung,
     GigaBeller,

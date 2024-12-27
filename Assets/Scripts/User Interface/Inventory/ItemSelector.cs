@@ -75,6 +75,9 @@ public class ItemSelector : MonoBehaviour
                 return new GigaBeller();
             case PowerUps.CoinMagnet:
                 return new CoinMagnet();
+            case PowerUps.None:
+                Debug.Log("No PowerUp Equipped");
+                return null;
             default:
                 Debug.LogError("PowerUp does not Exist");
                 return null;
