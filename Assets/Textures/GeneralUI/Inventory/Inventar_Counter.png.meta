@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 72358fd6bbe66d443ac9718d05d6de20
+guid: 765088013659ee642b5d440d1913a76b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2426622176156874229
-    second: "Button_X_Ausgew\xE4hlt-20_0"
+      213: 8580000370017824404
+    second: Inventar_Counter_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Button_X_Ausgew\xE4hlt-20_0"
+      name: Inventar_Counter_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 17
-        width: 487
-        height: 487
+        x: 0
+        y: 0
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f57aed23081da120800000000000000
-      internalID: 2426622176156874229
+      spriteID: 49ee1a3b0e8421770800000000000000
+      internalID: 8580000370017824404
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "Button_X_Ausgew\xE4hlt-20_0": 2426622176156874229
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

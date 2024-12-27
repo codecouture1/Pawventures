@@ -1,9 +1,12 @@
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class ItemSelector : MonoBehaviour
 {
+    private PlayerData playerData = new();
+
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
 
@@ -25,9 +28,13 @@ public class ItemSelector : MonoBehaviour
     public GameObject switchIcon;
     private Animator switchAnimator;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
+        playerData = PlayerDataManager.LoadData();
+    }
+
+    void Start()
+    {     
         referenceManagerObj = GameObject.Find("ReferenceManager");
         referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
 
@@ -35,8 +42,8 @@ public class ItemSelector : MonoBehaviour
         secondaryImage = secondaryIcon.GetComponent<Image>();
         switchAnimator = switchIcon.GetComponent<Animator>();
 
-        //primaryIconAnimator = primaryIcon.GetComponent<Animator>();
-        //secondaryIconAnimator = secondaryIcon.GetComponent<Animator>();
+        primaryPowerup = GetPowerUp(playerData.firstPowerUp);
+        secondaryPowerup = GetPowerUp(playerData.secondPowerUp);
     }
 
     // Update is called once per frame
@@ -53,6 +60,25 @@ public class ItemSelector : MonoBehaviour
         {
             primaryPowerup.ApplyPowerup();
             primaryPowerup = null;
+        }
+    }
+
+    private IPowerUp GetPowerUp(PowerUps powerUpEnum)
+    {
+        switch (powerUpEnum)
+        {
+            case PowerUps.Halsband:
+                return new Halsband();
+            case PowerUps.Doppelsprung:
+                return new Doppelsprung();
+            case PowerUps.GigaBeller:
+                return new GigaBeller();
+            case PowerUps.CoinMagnet:
+                return new CoinMagnet();
+            default:
+                Debug.LogError("PowerUp does not Exist");
+                return null;
+
         }
     }
 
@@ -112,58 +138,6 @@ public class ItemSelector : MonoBehaviour
         }
         else
             secondaryImage.enabled = false;
-
-
-        //    if (primaryPowerup is GigaBeller)
-        //    {
-        //        primaryIconAnimator.SetTrigger("Gigabeller");
-        //    }
-
-        //    if (primaryPowerup is Halsband)
-        //    {
-        //        primaryIconAnimator.SetTrigger("Halsband");
-        //    }
-
-        //    if (primaryPowerup is CoinMagnet)
-        //    {
-        //        primaryIconAnimator.SetTrigger("Magnet");
-        //    }
-
-        //    if (primaryPowerup is Doppelsprung)
-        //    {
-        //        primaryIconAnimator.SetTrigger("Doppelsprung");
-        //    }
-
-        //    if (primaryPowerup == null)
-        //    {
-        //        primaryIconAnimator.SetTrigger("Empty");
-        //    }
-
-
-        //    if (secondaryPowerup is GigaBeller)
-        //    {
-        //        secondaryIconAnimator.SetTrigger("Gigabeller");
-        //    }
-
-        //    if (secondaryPowerup is Halsband)
-        //    {
-        //        secondaryIconAnimator.SetTrigger("Halsband");
-        //    }
-
-        //    if (secondaryPowerup is CoinMagnet)
-        //    {
-        //        secondaryIconAnimator.SetTrigger("Magnet");
-        //    }
-
-        //    if (secondaryPowerup is Doppelsprung)
-        //    {
-        //        secondaryIconAnimator.SetTrigger("Doppelsprung");
-        //    }
-
-        //    if (secondaryPowerup == null)
-        //    {
-        //        secondaryIconAnimator.SetTrigger("Empty");
-        //    }
     }
 
 }
