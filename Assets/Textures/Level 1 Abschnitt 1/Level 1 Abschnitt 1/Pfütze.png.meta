@@ -106,10 +106,10 @@ TextureImporter:
       name: "Pf\xFCtze_0"
       rect:
         serializedVersion: 2
-        x: 1489
+        x: 1487
         y: 963
-        width: 778
-        height: 228
+        width: 866
+        height: 233
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,33 +124,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: "Pf\xFCtze_1"
-      rect:
-        serializedVersion: 2
-        x: 2246
-        y: 1003
-        width: 99
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ba6a43e8b27e01b0800000000000000
-      internalID: -5688483140909503819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: db3f51bf1e3ccaa439cdf83ca5fc76f2
     internalID: 0
     vertices: []
     indices: 
