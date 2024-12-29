@@ -6,10 +6,10 @@ TagManager:
   tags:
   - Kill
   - Damage
-  - Slow
-  - Stumble
   - Coin
   - Camera
+  - CoinContainer
+  - PowerUp
   layers:
   - Default
   - TransparentFX
