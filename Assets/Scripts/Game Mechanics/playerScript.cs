@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     public BoxCollider2D myBoxCollider2D;
     private GameObject m_Camera;
     private CameraScript camScript;
+    private AudioSource audioSource;
 
     //--------------Stats---------------
     public float jumpStrength;
@@ -22,12 +23,13 @@ public class PlayerScript : MonoBehaviour
     [HideInInspector] public bool isCrouching = false;
     private bool crouchCooldown = false;
     private Coroutine crouchRoutine;
+
     [HideInInspector] public bool canJump = true; //disabled when player is slowed
     [HideInInspector] public bool doubleJump = false;
     private Coroutine doubleJumpCoroutine;
+
     [HideInInspector] public bool slowed = false; //if true, hunter will slow down with player
     [HideInInspector] public bool slowChallengeFailed = false; //if slow challenge is failed hunter will catch up with player
-    
 
     //-----------ground check------------
     public Vector2 boxSize;
@@ -35,11 +37,19 @@ public class PlayerScript : MonoBehaviour
     public LayerMask obstacleLayer;
     public float castDistance;
 
+    //--------------Sounds---------------
+    public AudioClip jumpSound;
+    public AudioClip slideSound;
+
     void Start()
     {
         moveSpeed = DEFAULT_MOVESPEED;
         m_Camera = GameObject.FindGameObjectWithTag("Camera");
         camScript = m_Camera.GetComponent<CameraScript>();
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = null;
+        audioSource.playOnAwake = false;
     }
   
     void Update()
@@ -79,6 +89,9 @@ public class PlayerScript : MonoBehaviour
                 if (!isCrouching && !crouchCooldown)
                 {
                     crouchRoutine = StartCoroutine(crouch(1.0f));
+                    audioSource.Stop();
+                    audioSource.clip = slideSound;
+                    audioSource.Play();
                 }
             }
 
@@ -87,6 +100,10 @@ public class PlayerScript : MonoBehaviour
             {
                 StartCoroutine(iFrames());
             }
+        }
+        else
+        {
+            audioSource.Stop();
         }
     }
 
@@ -130,6 +147,9 @@ public class PlayerScript : MonoBehaviour
                 stopCrouch();
             }
             myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;
+            audioSource.Stop();
+            audioSource.clip = jumpSound;
+            audioSource.Play();
         }
     }
     IEnumerator DoubleJump()

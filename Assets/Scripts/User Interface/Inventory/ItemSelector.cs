@@ -7,9 +7,6 @@ public class ItemSelector : MonoBehaviour
 {
     private PlayerData playerData = new();
 
-    private GameObject referenceManagerObj;
-    private ReferenceManager referenceManager;
-
     [HideInInspector] public IPowerUp primaryPowerup;
     [HideInInspector] public IPowerUp secondaryPowerup;
 
@@ -21,23 +18,19 @@ public class ItemSelector : MonoBehaviour
     private Image primaryImage;
     private Image secondaryImage;
 
-
-    //private Animator primaryIconAnimator;
-    // private Animator secondaryIconAnimator;
-
     public GameObject switchIcon;
     private Animator switchAnimator;
+
+    private AudioSource audioSource;
 
     private void Awake()
     {
         playerData = PlayerDataManager.LoadData();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
     {     
-        referenceManagerObj = GameObject.Find("ReferenceManager");
-        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
-
         primaryImage = primaryIcon.GetComponent<Image>();
         secondaryImage = secondaryIcon.GetComponent<Image>();
         switchAnimator = switchIcon.GetComponent<Animator>();
@@ -59,6 +52,8 @@ public class ItemSelector : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && primaryPowerup != null)
         {
             primaryPowerup.ApplyPowerup();
+            audioSource.clip = primaryPowerup.sound;
+            audioSource.Play();
             primaryPowerup = null;
         }
     }
@@ -76,10 +71,8 @@ public class ItemSelector : MonoBehaviour
             case PowerUps.CoinMagnet:
                 return new CoinMagnet();
             case PowerUps.None:
-                Debug.Log("No PowerUp Equipped");
                 return null;
             default:
-                Debug.LogError("PowerUp does not Exist");
                 return null;
 
         }

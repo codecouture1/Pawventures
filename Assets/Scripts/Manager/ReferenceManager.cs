@@ -27,6 +27,11 @@ public class ReferenceManager : MonoBehaviour
     public Sprite doppelsprung;
     public Sprite münzmagnet;
 
+    public AudioClip halsbandSound;
+    public AudioClip gigaBellerSound;
+    public AudioClip doppelsprungSound;
+    public AudioClip münzmagnetSound;
+
     void Awake()
     {
         playerScript = player.GetComponent<PlayerScript>();

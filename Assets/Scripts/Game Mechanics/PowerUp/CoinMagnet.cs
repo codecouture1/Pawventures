@@ -10,6 +10,11 @@ public class CoinMagnet : IPowerUp
         get { return referenceManager.münzmagnet; }
     }
 
+    public AudioClip sound
+    {
+        get { return referenceManager.münzmagnetSound; }
+    }
+
     public void ApplyPowerup()
     {
         Debug.Log("TODO");

@@ -8,6 +8,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject player;
     private PlayerScript pScript;
     public GameObject deathScreen;
+    public AudioSource deathSound;
     private Coroutine displayDeathscreen;
     void Start()
     {
@@ -27,6 +28,7 @@ public class CanvasManager : MonoBehaviour
     { 
         yield return new WaitForSeconds(1f);
         deathScreen.SetActive(true);
+        deathSound.Play();
         yield return null;
     }
 

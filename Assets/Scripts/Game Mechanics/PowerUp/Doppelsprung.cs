@@ -12,6 +12,11 @@ public class Doppelsprung : IPowerUp
         get { return referenceManager.doppelsprung; }
     }
 
+    public AudioClip sound
+    {
+        get { return referenceManager.doppelsprungSound; }
+    }
+
     public void ApplyPowerup()
     {
         pScript.doubleJump = true;

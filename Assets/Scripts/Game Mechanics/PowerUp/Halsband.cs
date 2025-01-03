@@ -12,6 +12,11 @@ public class Halsband : IPowerUp
         get { return referenceManager.halsband; }
     }
 
+    public AudioClip sound
+    {
+        get { return referenceManager.halsbandSound; }
+    }
+
     public void ApplyPowerup()
     {
         pScript.health = 2;

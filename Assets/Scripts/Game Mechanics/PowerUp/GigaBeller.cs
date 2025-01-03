@@ -15,6 +15,11 @@ public class GigaBeller : IPowerUp
         get { return referenceManager.gigaBeller; }
     }
 
+    public AudioClip sound
+    {
+        get { return referenceManager.gigaBellerSound; }
+    }
+
     public GigaBeller()
     {
         referenceManagerObj = GameObject.Find("ReferenceManager");
