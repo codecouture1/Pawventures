@@ -28,11 +28,6 @@ public class InventorySpriteManager : MonoBehaviour
         inventoryInterface = GetComponent<InventoryInterface>();
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void DisplayItemSlots()
     {
         InventoryItem[] inventory = inventoryInterface.GetInventory();

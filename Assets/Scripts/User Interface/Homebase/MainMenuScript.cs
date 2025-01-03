@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 // Integration Scenen
 using UnityEngine.SceneManagement;
 
 public class MainMenü : MonoBehaviour
 {
+    public Animator exitAnimator;
+
     //-------------Menu-------------
 
     public void BackToMenu()
@@ -38,14 +41,25 @@ public class MainMenü : MonoBehaviour
         SceneManager.LoadScene(10);
     }
 
-
-
     public void LoadSceneByIndex(int index)
     {
         SceneManager.LoadScene(index);
     }
+    public void LoadSceneWithDelay(int sceneIndex)
+    {
+        StartCoroutine(WaitThenLoadScene(2f, sceneIndex));
+        exitAnimator.SetTrigger("SceneExit");
+    }
 
-     public void Exit()
+    private IEnumerator WaitThenLoadScene(float seconds, int sceneIndex)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(sceneIndex);
+        yield return null;
+    }
+
+
+    public void Exit()
     {
 #if UNITY_EDITOR
         // Im Unity Editor wird dieser Code ausgeführt

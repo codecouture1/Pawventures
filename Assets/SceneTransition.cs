@@ -18,13 +18,10 @@ public class SceneTransition : MonoBehaviour
 
     void Start()
     {
-        LevelAndChapter.text = $"Level {level.ToString()} - Kapitel {chapter.ToString()}";
-        Title.text = title;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(LevelAndChapter != null && Title != null)
+        {
+            LevelAndChapter.text = $"Level {level.ToString()} - Kapitel {chapter.ToString()}";
+            Title.text = title;
+        }
     }
 }
