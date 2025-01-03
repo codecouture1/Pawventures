@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: f7086d76f66250d4c8b1999849aaac06
+guid: a865082be164de24e82056c073c97b45
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3326306867289964469
-    second: character_placeholder_tripping_0
+      213: -6597404498399561785
+    second: "Charli_J\xE4ger_0"
+  - first:
+      213: 4676528237184957640
+    second: "Charli_J\xE4ger_1"
+  - first:
+      213: 8490262104441686012
+    second: "Charli_J\xE4ger_2"
+  - first:
+      213: 1594149039918150075
+    second: "Charli_J\xE4ger_3"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +57,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -96,40 +105,93 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_placeholder_tripping_0
+      name: "Charli_J\xE4ger_0"
       rect:
         serializedVersion: 2
-        x: 28
-        y: 86
-        width: 664
-        height: 548
+        x: 0
+        y: 0
+        width: 720
+        height: 1040
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5bfb2c6e87a692e20800000000000000
-      internalID: 3326306867289964469
+      spriteID: afbbb358d3610be499bd61736d2c2e87
+      internalID: 818691908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Charli_J\xE4ger_1"
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 720
+        height: 1040
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e3b1469653c0044bb7767069e9344d
+      internalID: 1573596192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Charli_J\xE4ger_2"
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 720
+        height: 1040
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c93a04cf41f6840ab6ab0e3d6cf673
+      internalID: -760789716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Charli_J\xE4ger_3"
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 720
+        height: 1040
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e05f4994f8ef5d4dade8a63291f60b3
+      internalID: 1125746592
       vertices: []
       indices: 
       edges: []
@@ -138,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5c3b4201584af344bb1506532231c6f2
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      character_placeholder_tripping_0: 3326306867289964469
+      "Charli_J\xE4ger_0": 818691908
+      "Charli_J\xE4ger_1": 1573596192
+      "Charli_J\xE4ger_2": -760789716
+      "Charli_J\xE4ger_3": 1125746592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

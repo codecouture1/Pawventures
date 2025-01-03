@@ -14,6 +14,7 @@ public class HunterScript : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private GameObject player;
     private PlayerScript pScript;
+    private Animator animator;
 
     //--------------Stats---------------
     public float jumpStrength;
@@ -37,6 +38,7 @@ public class HunterScript : MonoBehaviour
         pScript = player.GetComponent<PlayerScript>();
 
         Physics2D.IgnoreLayerCollision(9, 8);
+        animator = GetComponent<Animator>();
 
     }
 
@@ -53,6 +55,9 @@ public class HunterScript : MonoBehaviour
         if (pScript.alive() || jumping) //&& !isTransitioning
         {
             run(moveSpeed);
+        } else
+        {
+            animator.SetTrigger("stand");
         }
 
         //jumps automatically if not grounded
@@ -60,16 +65,18 @@ public class HunterScript : MonoBehaviour
     }
 
     //ground check
-    public bool isGrounded()
+    public bool IsGrounded()
     {
         offsetPositionX = transform.position.x + offset;
         offsetPosition = new(offsetPositionX, transform.position.y, transform.position.z);
         if (Physics2D.BoxCast(offsetPosition, boxSize, 0, -transform.up, castDistance, groundLayer))
         {
+            animator.SetBool("jumping", false);
             return true;
         }
         else
         {
+            animator.SetBool("jumping", true);
             return false;
         }
     }
@@ -90,12 +97,12 @@ public class HunterScript : MonoBehaviour
     //jumping
     private void jump()
     {
-        if (!isGrounded() && !jumping)
+        if (!IsGrounded() && !jumping)
         {
             myRigidbody.linearVelocity = Vector2.up * jumpStrength;
             jumping = true;
         }
-        if (isGrounded())
+        if (IsGrounded())
         {
             jumping = false;
         }
@@ -113,7 +120,7 @@ public class HunterScript : MonoBehaviour
         while (time < duration)
         {
             // Calculate target position
-            float targetPosition = player.transform.position.x - 21f;
+            float targetPosition = player.transform.position.x - 22f;
 
             // Interpolate towards the target
             Vector3 currentPosition = transform.position;

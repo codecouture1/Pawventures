@@ -8,8 +8,6 @@ public class PlayerScript : MonoBehaviour
     //-------Objects & Components-------
     public Rigidbody2D myRigidbody2D;
     public BoxCollider2D myBoxCollider2D;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
     private GameObject m_Camera;
     private CameraScript camScript;
 
@@ -40,8 +38,6 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         moveSpeed = DEFAULT_MOVESPEED;
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         m_Camera = GameObject.FindGameObjectWithTag("Camera");
         camScript = m_Camera.GetComponent<CameraScript>();
     }
@@ -116,6 +112,11 @@ public class PlayerScript : MonoBehaviour
     void run(float multiplier)
     {
         transform.position = transform.position + (Vector3.right * multiplier) * Time.deltaTime;
+    }
+
+    private float GetMoveSpeed()
+    {
+        return moveSpeed;
     }
 
     //******************************jumping******************************

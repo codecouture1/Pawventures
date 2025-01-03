@@ -6,32 +6,63 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+    private PlayerScript pScript;
+
+    public bool Opened { get; private set; } //returns true if pause menu is currently opened
+
+    private void Awake()
+    {
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+    }
+
     void Update()
     {
-        // Öffnet das Pausenmenü bei Druck auf "P"
-        if (Input.GetKeyDown(KeyCode.P))
+        if (referenceManager.deathscreen.activeSelf)
         {
-            if (pauseMenuPanel != null)
+            ClosePauseMenu();
+        } else
+        {
+            // Öffnet das Pausenmenü bei Druck auf "P" oder "ESC"
+            if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && pauseMenuPanel != null)
             {
-                pauseMenuPanel.SetActive(true);
+                if (!Opened)
+                {
+                    OpenPauseMenu();
+                }
+                else
+                {
+                    ClosePauseMenu();
+                }
             }
+        }
+    }
+
+    public void OpenPauseMenu()
+    {
+        if (pauseMenuPanel != null)
+        {
+            pauseMenuPanel.SetActive(true);
+            Opened = true;
+            Time.timeScale = 0;
+        }
+    }
+
+    public void ClosePauseMenu()
+    {
+        if (pauseMenuPanel != null)
+        {
+            pauseMenuPanel.SetActive(false);
+            Opened = false;
+            Time.timeScale = 1;
         }
     }
 
     public void BackToMenu()
     {
         SceneManager.LoadScene(1);
-    }
-
-    public void ResumeGame()
-    {
-        //Schließt bisher nur das PausemenuPanel...
-        if (pauseMenuPanel != null)
-      {
-         bool isActive = pauseMenuPanel.activeSelf;
-         pauseMenuPanel.SetActive(!isActive);
-      }
-
     }
     
     public void OpenInstagram(){

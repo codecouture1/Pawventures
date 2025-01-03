@@ -4,20 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenü : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void StartLevelOne()
-    {
-        SceneManager.LoadScene(3);
-    }
+    //-------------Menu-------------
 
-     public void StartLevelTwo()
+    public void BackToMenu()
     {
-            SceneManager.LoadScene(4);
-    }
-
-     public void StartLevelThree()
-    {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(1);
     }
 
     public void LoadShopScene()
@@ -27,12 +18,31 @@ public class MainMenü : MonoBehaviour
 
     public void LoadInterviewSequence()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(3);
     }
 
-    public void BackToMenu()
+    //-------------Level-------------
+
+    public void StartLevelOne()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
+    }
+
+     public void StartLevelTwo()
+    {
+        SceneManager.LoadScene(7);
+    }
+
+     public void StartLevelThree()
+    {
+        SceneManager.LoadScene(10);
+    }
+
+
+
+    public void LoadSceneByIndex(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 
      public void Exit()

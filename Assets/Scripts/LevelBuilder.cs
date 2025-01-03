@@ -39,7 +39,6 @@ public class LevelBuilder : MonoBehaviour
     {
         for (int c = 0; c < numberOfModules; c++)
         {
-            Debug.Log($"---------------Current Module : {c}.---------------");
             //pick a random Module from modules[]
             currentModule = modules[Random.Range(0, modules.Length)];
 
@@ -55,7 +54,6 @@ public class LevelBuilder : MonoBehaviour
             */
 
             currentModule.Spawn(LevelModule.Collectible.PowerUp, ChanceOf(powerupSpawnChance));
-            Debug.Log(currentModule.ContainsPowerUp);
             if(!currentModule.ContainsPowerUp)
                 currentModule.Spawn(LevelModule.Collectible.Coins, ChanceOf(coinSpawnChance));
 

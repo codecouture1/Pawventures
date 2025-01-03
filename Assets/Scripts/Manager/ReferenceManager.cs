@@ -20,6 +20,8 @@ public class ReferenceManager : MonoBehaviour
     public GameObject itemSelector;
     public ItemSelector itemSelectorScript { get; private set; }
 
+    public GameObject deathscreen;
+
     public Sprite halsband;
     public Sprite gigaBeller;
     public Sprite doppelsprung;

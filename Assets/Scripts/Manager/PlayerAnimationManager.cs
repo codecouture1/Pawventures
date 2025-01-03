@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerAnimationManager : MonoBehaviour
 {
+    public RuntimeAnimatorController defaultAnimationController;
+    public RuntimeAnimatorController halsbandAnimationController;
     private Animator animator;
+
     private PlayerScript pScript;
     private SpriteRenderer spriteRenderer;
     private bool isIFrameAnimationRunning = false;
@@ -16,12 +19,15 @@ public class PlayerAnimationManager : MonoBehaviour
         pScript = GetComponent<PlayerScript>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        animator.SetBool("slowed", false);
+        animator.SetBool("slowed", false);     
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.runtimeAnimatorController =
+            pScript.health > 1 ? halsbandAnimationController : defaultAnimationController;
+
 
         //crouch
         animator.SetBool("crouch", false);
@@ -53,12 +59,6 @@ public class PlayerAnimationManager : MonoBehaviour
         if (pScript.iFrameActive && !isIFrameAnimationRunning)
         {
             StartCoroutine(IFrameAnimation());
-        }
-
-        //halsband
-        if(pScript.health > 1)
-        {
-            //Halsband Animation
         }
 
     }
