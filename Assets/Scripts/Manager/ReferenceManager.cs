@@ -21,6 +21,9 @@ public class ReferenceManager : MonoBehaviour
     public ItemSelector itemSelectorScript { get; private set; }
 
     public GameObject deathscreen;
+    public GameObject pauseMenu;
+
+    public Animator exitAnimator;
 
     public Sprite halsband;
     public Sprite gigaBeller;

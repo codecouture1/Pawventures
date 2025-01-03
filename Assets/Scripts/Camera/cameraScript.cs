@@ -8,12 +8,13 @@ using Unity.VisualScripting;
 
 public class CameraScript : MonoBehaviour
 {
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+
     private CinemachineCamera cinemachineCamera;
     CinemachineBasicMultiChannelPerlin perlin;
     CinemachinePositionComposer posComp;
-
-    private CinemachineConfiner2D confiner;
-    private CamConfiner confinerScript;
+    CameraTarget cameraTarget;
 
     private bool _playerInConfiner = false;
     public bool PlayerInConfiner { get { return _playerInConfiner; } }
@@ -24,13 +25,17 @@ public class CameraScript : MonoBehaviour
 
     void Awake()
     {
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+
         cinemachineCamera = GetComponent<CinemachineCamera>();
         perlin = cinemachineCamera.GetComponent<CinemachineBasicMultiChannelPerlin>();
         posComp = cinemachineCamera.GetComponent<CinemachinePositionComposer>();
+    }
 
-        //confiner = cinemachineCamera.GetComponent<CinemachineConfiner2D>();
-        //confinerScript = confiner.BoundingShape2D.gameObject.GetComponent<CamConfiner>();
-        //if (confinerScript == null) Debug.Log("confinerShape not found");
+    private void Start()
+    {
+        SetTrackingTarget(referenceManager.player.transform);
     }
 
     public void Rumble(float intensity)
@@ -45,10 +50,6 @@ public class CameraScript : MonoBehaviour
         perlin.AmplitudeGain = 0f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
     public IEnumerator Zoom(float endFOV, float endTargetOffsetX, float endTargetOffsetY, float duration, bool enableDeadzone)
     {
         Vector3 newOffset = new Vector3(endTargetOffsetX, endTargetOffsetY);
@@ -78,5 +79,11 @@ public class CameraScript : MonoBehaviour
             }
 
         }
+    }
+
+    public void SetTrackingTarget(Transform transform)
+    {
+        cameraTarget.TrackingTarget = transform;
+        cinemachineCamera.Target = cameraTarget;
     }
 }

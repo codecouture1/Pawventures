@@ -111,6 +111,8 @@ public class ItemSelector : MonoBehaviour
             secondaryPowerup = powerUp;
         } else
         {
+            audioSource.clip = powerUp.sound;
+            audioSource.Play();
             powerUp.ApplyPowerup();
         }
     }
