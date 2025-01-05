@@ -1357,6 +1357,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &920394648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7445991427973974458, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
+  m_PrefabInstance: {fileID: 872930359986179604}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1003038980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2910,6 +2915,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2531852814510602096}
     m_Modifications:
+    - target: {fileID: 555826316009976343, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
+      propertyPath: exitButton
+      value: 
+      objectReference: {fileID: 920394648}
     - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 3
@@ -2921,14 +2930,14 @@ PrefabInstance:
     - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1695390792}
+      objectReference: {fileID: 125041030}
     - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: LoadScene
+      value: LoadSceneWithDelay
       objectReference: {fileID: 0}
     - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: InventoryInterface, Assembly-CSharp
+      value: "MainMen\xFC, Assembly-CSharp"
       objectReference: {fileID: 0}
     - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
@@ -3358,10 +3367,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1419685403}
+  - {fileID: 781566152}
   - {fileID: 125041031}
   - {fileID: 2531852814510602096}
   - {fileID: 1598137879}
   - {fileID: 9926650}
   - {fileID: 1499107596}
   - {fileID: 419844847}
-  - {fileID: 781566152}
