@@ -3,25 +3,31 @@ using UnityEngine.SceneManagement;
 
 public class HideMouse : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+
     private PlayerScript pScript;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private GameObject pauseMenu;
+   
+    private void Awake()
     {
-        pScript = player.GetComponent<PlayerScript>();
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!pScript.alive())
+
+        if (!referenceManager.playerScript.alive() || referenceManager.pauseMenu.activeSelf || referenceManager.inventory.activeSelf)
         {
             Cursor.visible = true;
-        } else
+        }
+        else
         {
             Cursor.visible = false;
         }
     }
+
     void OnDisable()
     {
         // Reset cursor state when the script is disabled or scene changes

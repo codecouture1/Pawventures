@@ -47,7 +47,7 @@ public class MainMenü : MonoBehaviour
     }
     public void LoadSceneWithDelay(int sceneIndex)
     {
-        StartCoroutine(WaitThenLoadScene(2f, sceneIndex));
+        StartCoroutine(WaitThenLoadScene(1f, sceneIndex));
         exitAnimator.SetTrigger("SceneExit");
     }
 

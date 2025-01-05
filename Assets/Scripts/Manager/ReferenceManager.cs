@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ReferenceManager : MonoBehaviour
 {
@@ -19,9 +20,14 @@ public class ReferenceManager : MonoBehaviour
 
     public GameObject itemSelector;
     public ItemSelector itemSelectorScript { get; private set; }
+    
+    public GameObject inventory;
+    public InventoryInterface inventoryScript { get; private set; }
 
     public GameObject deathscreen;
     public GameObject pauseMenu;
+
+    public int LoadOnClick { get; set; } //the scene index that loads when inventory start button is pressed;
 
     public Animator exitAnimator;
 
@@ -37,9 +43,12 @@ public class ReferenceManager : MonoBehaviour
 
     void Awake()
     {
+        LoadOnClick = SceneManager.GetActiveScene().buildIndex;
+
         playerScript = player.GetComponent<PlayerScript>();
         hunterScript = hunter.GetComponent<HunterScript>();
         cameraScript = m_camera.GetComponent<CameraScript>();
         itemSelectorScript = itemSelector.GetComponent<ItemSelector>();
+        inventoryScript = inventory.GetComponent<InventoryInterface>();
     }
 }

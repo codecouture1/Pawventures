@@ -1,29 +1,36 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class FinalModule : MonoBehaviour
+public class TriggerSceneTransition : MonoBehaviour
 {
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
-    InventoryInterface inventorySript;
-    public int nextSceneIndex;
 
     private void Awake()
     {
         referenceManagerObj = GameObject.Find("ReferenceManager");
         referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
-        inventorySript = referenceManager.inventoryScript;
+    }
+
+    private void Update()
+    {
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            referenceManager.LoadOnClick = nextSceneIndex;
-            referenceManager.inventory.SetActive(true);
-            inventorySript.DisplayExitButton(false);
+            referenceManager.cameraScript.SetTrackingTarget(null);
+            StartCoroutine(WaitThenTrigger(1f));
         }
-        Destroy(collision.gameObject);
     }
+
+    private IEnumerator WaitThenTrigger(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        referenceManager.exitAnimator.SetTrigger("SceneExit");
+    }
+
+
 }

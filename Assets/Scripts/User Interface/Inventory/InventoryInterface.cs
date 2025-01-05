@@ -1,12 +1,17 @@
+using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 //This class defines the behavior of the inventory interface that pops up when the player attempts to start a level
 
 public class InventoryInterface : MonoBehaviour
 {
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+
     private PlayerData playerData = new(); //player Data
 
     private InventoryItem[] inventory; //The player's inventory
@@ -15,6 +20,7 @@ public class InventoryInterface : MonoBehaviour
     public Toggle primarySlotToggle; //toggle component of the primary item slot
     private InventorySpriteManager inventorySpriteManager;
 
+    public GameObject exitButton;
     public TextMeshProUGUI[] counters; //display how many of each items the player owns
     public Button[] buttons; //button components of each item slot
 
@@ -115,7 +121,7 @@ public class InventoryInterface : MonoBehaviour
         int counter = 0;
         foreach (TextMeshProUGUI text in counters)
         {            
-            text.text = "x" + inventory[counter].amount.ToString();
+            text.text = $"x{inventory[counter].amount}";
             counter++;
         }
 
@@ -138,5 +144,23 @@ public class InventoryInterface : MonoBehaviour
         return inventory;
     }
 
-   
+    public void DisplayExitButton(bool value)
+    {
+        exitButton.SetActive(value);
+    }
+
+    //dynamically load the scene on start button click by getting LoadOnClick from ReferenceManager. This allows the scene to be changed during runtime
+    public void LoadScene()
+    {
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+        SceneManager.LoadScene(referenceManager.LoadOnClick);
+    }
+
+    //set the scene to be loaded on start button click manually
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
 }
