@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3640273723154903399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5107889886462229319}
+  - component: {fileID: 7978659078909771153}
+  m_Layer: 0
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5107889886462229319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3640273723154903399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7978659078909771153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3640273723154903399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4aabfb6d8711b4fb6b1a2da743d103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfModules: 5
+  coinSpawnChance: 0.4
+  powerupSpawnChance: 0.1
+  modulePrefabs:
+  - {fileID: 4920100596299610098, guid: 674bc5b082ebcd44fa3f43eeb5110a5f, type: 3}
+  - {fileID: 5047004454709743664, guid: 0d18b864a656a984893670b80a1de128, type: 3}
+  - {fileID: 4049313629455070740, guid: 5f2ac95c44c8e3e4ebc0d22dc259f0ea, type: 3}
+  - {fileID: 7001354537155095278, guid: 0711df8afe4aebc458ea5c53edc840c9, type: 3}
+  - {fileID: 8743988792562187768, guid: 95875922e4395174b90858cdb809fc73, type: 3}
+  - {fileID: 3700729146375158097, guid: 33b6922fb71b7cf409169b30970003b1, type: 3}
+  finalModule: {fileID: 262836838208152011, guid: 68ba836d2a46fd3438a206c08432c080, type: 3}

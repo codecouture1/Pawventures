@@ -4,24 +4,32 @@ using UnityEngine.Windows;
 
 public class CanvasManager : MonoBehaviour
 {
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+
     public GameObject spamW;
-    public GameObject player;
     private PlayerScript pScript;
-    public GameObject deathScreen;
+    private GameObject deathScreen;
     public AudioSource deathSound;
     private Coroutine displayDeathscreen;
-    void Start()
+
+    private void Awake()
     {
-        pScript = player.GetComponent<PlayerScript>();
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        pScript = referenceManager.playerScript;
+        deathScreen = referenceManager.deathscreen;
+    }
+
     void Update()
     {
         spamW.SetActive(pScript.slowed && !pScript.slowChallengeFailed);
         if (!pScript.alive() && displayDeathscreen == null)
             displayDeathscreen = StartCoroutine(DisplayDeathScreen());
-        //TODO todessound
     }
 
     private IEnumerator DisplayDeathScreen()
@@ -31,9 +39,4 @@ public class CanvasManager : MonoBehaviour
         deathSound.Play();
         yield return null;
     }
-
-    //private void DisplayDeathScreen(bool input)
-    //{
-    //    deathScreen.SetActive(input);
-    //}
 }

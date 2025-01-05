@@ -131,7 +131,7 @@ public class PlayerScript : MonoBehaviour
         transform.position = transform.position + (Vector3.right * multiplier) * Time.deltaTime;
     }
 
-    private float GetMoveSpeed()
+    public float GetMoveSpeed()
     {
         return moveSpeed;
     }

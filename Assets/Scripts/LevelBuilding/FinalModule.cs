@@ -7,6 +7,7 @@ public class FinalModule : MonoBehaviour
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
     InventoryInterface inventorySript;
+    public bool skipInventoryPopup;
     public int nextSceneIndex;
 
     private void Awake()
@@ -21,8 +22,15 @@ public class FinalModule : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             referenceManager.LoadOnClick = nextSceneIndex;
-            referenceManager.inventory.SetActive(true);
-            inventorySript.DisplayExitButton(false);
+            if (skipInventoryPopup)
+            {
+                SceneManager.LoadScene(nextSceneIndex);
+            }
+            else
+            {
+                referenceManager.inventory.SetActive(true);
+                inventorySript.DisplayExitButton(false);
+            }
         }
         Destroy(collision.gameObject);
     }

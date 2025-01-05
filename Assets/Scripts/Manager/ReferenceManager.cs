@@ -24,6 +24,8 @@ public class ReferenceManager : MonoBehaviour
     public GameObject inventory;
     public InventoryInterface inventoryScript { get; private set; }
 
+    public CoinManager coinManager;
+
     public GameObject deathscreen;
     public GameObject pauseMenu;
 

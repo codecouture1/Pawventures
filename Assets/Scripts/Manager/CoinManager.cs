@@ -4,6 +4,8 @@ using TMPro;
 
 public class CoinManager : MonoBehaviour
 {
+
+
     private PlayerData playerData = new PlayerData();
 
     public TextMeshProUGUI coinText;

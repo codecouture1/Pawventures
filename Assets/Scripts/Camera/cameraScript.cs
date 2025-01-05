@@ -20,7 +20,7 @@ public class CameraScript : MonoBehaviour
     public bool PlayerInConfiner { get { return _playerInConfiner; } }
 
     public readonly float DEFAULT_TARGET_OFFSET_X = 6f;
-    public readonly float DEFAULT_TARGET_OFFSET_Y = 6f;
+    public readonly float DEFAULT_TARGET_OFFSET_Y = 8f;
     public readonly float DEFAULT_FOV = 45f;
 
     void Awake()
