@@ -168,7 +168,10 @@ public class PlayerScript : MonoBehaviour
                     {
                         stopCrouch();
                     }
-                    myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;                
+                    myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;
+                    audioSource.Stop();
+                    audioSource.clip = jumpSound;
+                    audioSource.Play();
                     yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.W)); // Wait for key release before proceeding
                     yield return null;
                 }
