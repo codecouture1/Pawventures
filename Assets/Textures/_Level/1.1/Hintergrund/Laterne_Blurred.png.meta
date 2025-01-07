@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Laterne_Blurred_0: 4923252293339012359
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

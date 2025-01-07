@@ -26,10 +26,13 @@ public class StumbleScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        animationManager.DoStumbleAnimation();
-        pScript.stopCrouch();
-        StartCoroutine(SlowDownCoroutine(15.5f, 0.6f));
-        StartCoroutine(camScript.Rumble(4f, 0.6f));
+        if (col.gameObject.CompareTag("Player"))
+        {
+            animationManager.DoStumbleAnimation();
+            pScript.stopCrouch();
+            StartCoroutine(SlowDownCoroutine(15.5f, 0.6f));
+            StartCoroutine(camScript.Rumble(4f, 0.6f));
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)

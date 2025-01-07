@@ -111,7 +111,7 @@ TextureImporter:
         width: 2121
         height: 1092
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -133,7 +133,7 @@ TextureImporter:
         width: 166
         height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -146,11 +146,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Busch_2
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 156
+        width: 1159
+        height: 1342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06fa2f724f22d7f45838ff511430cf2b
+      internalID: 1553636428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e538b5ee561280f449747ca688e2caac
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +181,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Busch_0: 5240290350564266615
+      Busch_1: 2170391009515491876
+      Busch_2: 1553636428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

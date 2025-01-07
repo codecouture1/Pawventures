@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Busch_Blurred_0: 537192857314793386
+      Busch_Blurred_1: 6345060263677846159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

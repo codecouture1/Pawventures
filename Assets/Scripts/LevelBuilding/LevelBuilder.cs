@@ -16,6 +16,7 @@ public class LevelBuilder : MonoBehaviour
     //Array containing all prefabs that can be spawned. Will be assigned to Modules in modules[]
     public GameObject[] modulePrefabs;
     private LevelModule[] modules;
+
     public GameObject finalModule; //the last module to be spawned
 
     private LevelModule currentModule;

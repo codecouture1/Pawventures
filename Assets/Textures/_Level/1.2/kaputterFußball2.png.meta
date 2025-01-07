@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "kaputterFu\xDFball2_0": 2104230601216520287
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

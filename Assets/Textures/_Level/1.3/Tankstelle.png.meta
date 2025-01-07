@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tankstelle_0: 5985819476684810021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

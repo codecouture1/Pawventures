@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tierheim_0: 555759888695698093
+      Tierheim_1: 1822694610281134976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

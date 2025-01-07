@@ -23,7 +23,8 @@ public class PauseMenu : MonoBehaviour
         if (referenceManager.deathscreen.activeSelf)
         {
             ClosePauseMenu();
-        } else
+        } 
+        else
         {
             // Öffnet das Pausenmenü bei Druck auf "P" oder "ESC"
             if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && pauseMenuPanel != null)

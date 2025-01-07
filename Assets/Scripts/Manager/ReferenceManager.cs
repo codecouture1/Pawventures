@@ -29,6 +29,7 @@ public class ReferenceManager : MonoBehaviour
     public GameObject deathscreen;
     public GameObject pauseMenu;
 
+    public int firstChapterIndex;
     public int LoadOnClick { get; set; } //the scene index that loads when inventory start button is pressed;
 
     public Animator exitAnimator;
@@ -45,7 +46,7 @@ public class ReferenceManager : MonoBehaviour
 
     void Awake()
     {
-        LoadOnClick = SceneManager.GetActiveScene().buildIndex;
+        LoadOnClick = firstChapterIndex;
 
         playerScript = player.GetComponent<PlayerScript>();
         hunterScript = hunter.GetComponent<HunterScript>();

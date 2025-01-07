@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gitterboxen_0: -9007328847305798128
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

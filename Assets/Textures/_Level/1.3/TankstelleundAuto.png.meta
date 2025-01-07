@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TankstelleundAuto_0: -8154211222173045381
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

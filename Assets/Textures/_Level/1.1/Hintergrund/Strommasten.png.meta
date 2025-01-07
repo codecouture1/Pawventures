@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Strommasten_0: 8217922232791682302
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
