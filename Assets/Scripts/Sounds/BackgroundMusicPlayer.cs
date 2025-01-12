@@ -26,7 +26,7 @@ public class BackgroundMusicPlayer : MonoBehaviour
         {
             audioSource.Stop();
         }
-        else if (referenceManager.pauseMenu.activeSelf || referenceManager.strgPanel.activeSelf)
+        else if (PauseMenu.Instance.IsPaused)
         {
             audioSource.Pause();
         }

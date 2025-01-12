@@ -7,7 +7,6 @@ public class HideMouse : MonoBehaviour
     private ReferenceManager referenceManager;
 
     private PlayerScript pScript;
-    private GameObject pauseMenu;
    
     private void Awake()
     {
@@ -18,7 +17,7 @@ public class HideMouse : MonoBehaviour
     void Update()
     {
 
-        if (!referenceManager.playerScript.alive() || referenceManager.pauseMenu.activeSelf || referenceManager.inventory.activeSelf || referenceManager.strgPanel.activeSelf)
+        if (!referenceManager.playerScript.alive() || referenceManager.inventory.activeSelf || PauseMenu.Instance.IsPaused)
         {
             Cursor.visible = true;
         }

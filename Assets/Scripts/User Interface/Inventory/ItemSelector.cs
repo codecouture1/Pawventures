@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ItemSelector : MonoBehaviour
 {
-    private PlayerData playerData = new();
-
     [HideInInspector] public IPowerUp primaryPowerup;
     [HideInInspector] public IPowerUp secondaryPowerup;
 
@@ -25,7 +23,6 @@ public class ItemSelector : MonoBehaviour
 
     private void Awake()
     {
-        playerData = PlayerDataManager.LoadData();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -35,8 +32,8 @@ public class ItemSelector : MonoBehaviour
         secondaryImage = secondaryIcon.GetComponent<Image>();
         switchAnimator = switchIcon.GetComponent<Animator>();
 
-        primaryPowerup = GetPowerUp(playerData.firstPowerUp);
-        secondaryPowerup = GetPowerUp(playerData.secondPowerUp);
+        primaryPowerup = GetPowerUp(GameData.Instance.firstPowerUp);
+        secondaryPowerup = GetPowerUp(GameData.Instance.secondPowerUp);
     }
 
     // Update is called once per frame

@@ -27,8 +27,6 @@ public class ReferenceManager : MonoBehaviour
     public CoinManager coinManager;
 
     public GameObject deathscreen;
-    public GameObject pauseMenu;
-    public GameObject strgPanel;
 
     public int firstChapterIndex;
     public int LoadOnClick { get; set; } //the scene index that loads when inventory start button is pressed;

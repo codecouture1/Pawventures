@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     private Coroutine crouchRoutine;
 
     [HideInInspector] public bool canJump = true; //disabled when player is slowed
+    [HideInInspector] public bool canCrouch = true; //disabled when player is slowed
     [HideInInspector] public bool doubleJump = false;
     private Coroutine doubleJumpCoroutine;
 
@@ -73,7 +74,8 @@ public class PlayerScript : MonoBehaviour
                 } 
                 else
                 {
-                    Jump();
+                    if (Input.GetKeyDown(KeyCode.W) == true && isGrounded())
+                        Jump();
                 }
             }
 
@@ -84,14 +86,11 @@ public class PlayerScript : MonoBehaviour
             }
 
             //ducken
-            if (Input.GetKey(KeyCode.S) == true && isGrounded() && !slowed)
+            if (Input.GetKey(KeyCode.S) == true && isGrounded() && !slowed && canCrouch)
             {
                 if (!isCrouching && !crouchCooldown)
                 {
                     crouchRoutine = StartCoroutine(crouch(1.0f));
-                    audioSource.Stop();
-                    audioSource.clip = slideSound;
-                    audioSource.Play();
                 }
             }
 
@@ -138,20 +137,18 @@ public class PlayerScript : MonoBehaviour
 
     //******************************jumping******************************
 
-    void Jump()
+    public void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.W) == true && isGrounded())
+        if (isCrouching)
         {
-            if (isCrouching)
-            {
-                stopCrouch();
-            }
-            myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;
-            audioSource.Stop();
-            audioSource.clip = jumpSound;
-            audioSource.Play();
+            stopCrouch();
         }
+        myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;
+        audioSource.Stop();
+        audioSource.clip = jumpSound;
+        audioSource.Play();
     }
+
     IEnumerator DoubleJump()
     {
         int jumpCounter = isGrounded() ? 0 : 1; // Start at 1 if not grounded, else 0
@@ -189,9 +186,12 @@ public class PlayerScript : MonoBehaviour
         myBoxCollider2D.offset = new Vector2(offsetX, offsetY);
     }
 
-    IEnumerator crouch(float duration)
+    public IEnumerator crouch(float duration)
     {
         isCrouching = true;
+        audioSource.Stop();
+        audioSource.clip = slideSound;
+        audioSource.Play();
 
         //crouch height
         setCollider(0.65f, 0.25f, 0f, -0.125f);

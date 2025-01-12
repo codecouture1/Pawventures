@@ -187,17 +187,18 @@ MonoBehaviour:
   iFrameActive: 0
   isCrouching: 0
   canJump: 1
+  canCrouch: 1
   doubleJump: 0
   slowed: 0
   slowChallengeFailed: 0
-  boxSize: {x: 5.98, y: 0.6}
+  boxSize: {x: 5.98, y: 0.75}
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
-  castDistance: 2.64
+  castDistance: 2.77
   jumpSound: {fileID: 8300000, guid: fcea715a6ab1ed644819ab9e318f68c7, type: 3}
   slideSound: {fileID: 8300000, guid: a7e1a8eed44898c4791a1ca8daa229f0, type: 3}
 --- !u!95 &253472972684488265
@@ -345,4 +346,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e0cfd0e4b71044faa2af8ed4ad70af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinManager: {fileID: 0}

@@ -6,8 +6,6 @@ using Shop;
 
 public class ShopPanel : MonoBehaviour
 {
-    private PlayerData playerData = new();
-
     public TextMeshProUGUI itemName;
     public TextMeshProUGUI price;
     public Image image;
@@ -28,43 +26,31 @@ public class ShopPanel : MonoBehaviour
 
     public void PurchaseItem()
     {
-        playerData = PlayerDataManager.LoadData();
-        if (playerData.coinCount >= Item.Price)
+        if (GameData.Instance.coinCount >= Item.Price)
         {
             switch (Item)
             {
                 case Shop.Halsband:
-                    playerData.halsBandCount++;
+                    GameData.Instance.halsBandCount++;
                     break;
                 case Shop.Doppelsprung:
-                    playerData.doubleJumpCount++;
+                    GameData.Instance.doubleJumpCount++;
                     break;
                 case Shop.GigaBeller:
-                    playerData.gigaBellerCount++;
+                    GameData.Instance.gigaBellerCount++;
                     break;
                 case Shop.CoinMagnet:
-                    playerData.coinMagnetCount++;
+                    GameData.Instance.coinMagnetCount++;
                     break;
                 default:
                     break;
             }
-            PlayerDataManager.SaveData(playerData);
+            GameData.Instance.SaveData();
             coinManager.RemoveCoins(Item.Price);
         }
         else
         {
             animator.SetTrigger("Broke");
         }
-    }
-
-    private void Awake()
-    {
-        playerData = PlayerDataManager.LoadData();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

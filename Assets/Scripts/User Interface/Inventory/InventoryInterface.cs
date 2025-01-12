@@ -12,8 +12,6 @@ public class InventoryInterface : MonoBehaviour
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
 
-    private PlayerData playerData = new(); //player Data
-
     private InventoryItem[] inventory; //The player's inventory
 
     public GameObject inventoryInterface; //parent object of the inventory
@@ -30,7 +28,6 @@ public class InventoryInterface : MonoBehaviour
 
     private void Awake()
     {
-        playerData = PlayerDataManager.LoadData();
         inventorySpriteManager = GetComponent<InventorySpriteManager>();
         inventory = new InventoryItem[] { new(PowerUps.Halsband), new(PowerUps.Doppelsprung), new(PowerUps.GigaBeller), new(PowerUps.CoinMagnet), };
         UpdatePlayerData();
@@ -85,7 +82,7 @@ public class InventoryInterface : MonoBehaviour
             Debug.Log($"Not Enough {item.powerUp}!");
         }
         UpdatePlayerData();
-        PlayerDataManager.SaveData(playerData);
+        GameData.Instance.SaveData();
         UpdateCounters();
         inventorySpriteManager.DisplayItemSlots();
     }
@@ -94,24 +91,24 @@ public class InventoryInterface : MonoBehaviour
     public void SaveItemsToPlayerData()
     {
         if (primaryItem != null)
-            playerData.firstPowerUp = primaryItem.powerUp;
+            GameData.Instance.firstPowerUp = primaryItem.powerUp;
         else
-            playerData.firstPowerUp = PowerUps.None;
+            GameData.Instance.firstPowerUp = PowerUps.None;
 
         if (secondaryItem != null)
-            playerData.secondPowerUp = secondaryItem.powerUp;
+            GameData.Instance.secondPowerUp = secondaryItem.powerUp;
         else
-            playerData.secondPowerUp = PowerUps.None;
+            GameData.Instance.secondPowerUp = PowerUps.None;
 
-        PlayerDataManager.SaveData(playerData);
+        GameData.Instance.SaveData();
     }
 
     private void UpdatePlayerData()
     {
-        playerData.halsBandCount = inventory[0].amount;
-        playerData.doubleJumpCount = inventory[1].amount;
-        playerData.gigaBellerCount = inventory[2].amount;
-        playerData.coinMagnetCount = inventory[3].amount;
+        GameData.Instance.halsBandCount = inventory[0].amount;
+        GameData.Instance.doubleJumpCount = inventory[1].amount;
+        GameData.Instance.gigaBellerCount = inventory[2].amount;
+        GameData.Instance.coinMagnetCount = inventory[3].amount;
     }
 
 

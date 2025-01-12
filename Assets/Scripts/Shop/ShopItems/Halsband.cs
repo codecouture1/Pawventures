@@ -9,7 +9,7 @@ namespace Shop
 
         public string ItemName { get; } = "Halsband";
 
-        public int Price { get; } = 100;
+        public int Price { get; } = 50;
 
         public Sprite Sprite
         {

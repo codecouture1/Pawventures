@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenü : MonoBehaviour
 {
     public Animator exitAnimator;
+    public GameObject disclaimer;
 
     //-------------Menu-------------
 
@@ -56,6 +57,19 @@ public class MainMenü : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene(sceneIndex);
         yield return null;
+    }
+
+    private void Start()
+    {
+        if (!GameData.Instance.readDisclaimer)
+        {
+            disclaimer.SetActive(true);
+        }
+    }
+
+    public void ReadDisclaimer()
+    {
+        GameData.Instance.readDisclaimer = true;
     }
 
 

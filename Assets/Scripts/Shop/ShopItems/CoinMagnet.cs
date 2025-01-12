@@ -9,7 +9,7 @@ namespace Shop
 
         public string ItemName { get; } = "Münzmagnet";
 
-        public int Price { get; } = 200;
+        public int Price { get; } = 9999;
 
         public Sprite Sprite
         {

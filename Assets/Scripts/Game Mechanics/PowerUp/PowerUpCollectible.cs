@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PowerUpCollectible : MonoBehaviour
 {
+    public bool spawnAsHalsband = false;
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
 
@@ -29,7 +30,11 @@ public class PowerUpCollectible : MonoBehaviour
         powerUps = new IPowerUp[] { null, new Halsband(), new GigaBeller(), new Doppelsprung(), new CoinMagnet() };
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        SetPowerUp();
+        if (spawnAsHalsband)
+            SetAsHalsband();
+        else
+            SetPowerUp();
+
         spriteRenderer.sprite = powerUp.sprite; //assigns the correct PowerUp sprite to the game object
     }
 
@@ -59,5 +64,10 @@ public class PowerUpCollectible : MonoBehaviour
     {
         int powerUpSetter = UnityEngine.Random.Range(1, 5);
         powerUp = powerUps[powerUpSetter];
+    }
+
+    public void SetAsHalsband()
+    {
+        powerUp = new Halsband();
     }
 }

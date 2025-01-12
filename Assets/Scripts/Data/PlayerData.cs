@@ -18,4 +18,7 @@ public class PlayerData
     //equipped powerUps
     public PowerUps firstPowerUp;
     public PowerUps secondPowerUp;
+
+    //other
+    public bool tutorialCompleted;
 }

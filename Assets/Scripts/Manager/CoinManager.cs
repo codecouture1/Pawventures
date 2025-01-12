@@ -4,49 +4,34 @@ using TMPro;
 
 public class CoinManager : MonoBehaviour
 {
-
-
-    private PlayerData playerData = new PlayerData();
-
     public TextMeshProUGUI coinText;
-
-    private void Awake()
-    {
-        playerData = PlayerDataManager.LoadData();
-    }
 
     void Update()
     {
-        coinText.text = playerData.coinCount.ToString();
+        coinText.text = GameData.Instance.coinCount.ToString();
     }
 
     // Add coins and save the updated data
     public void AddCoins(int amount)
     {
-        playerData.coinCount += amount;
-        PlayerDataManager.SaveData(playerData);
+        GameData.Instance.coinCount += amount;
+        GameData.Instance.SaveData();
     }
 
     public void RemoveCoins(int amount)
     {
-        playerData = PlayerDataManager.LoadData();
-        playerData.coinCount -= amount;
-        PlayerDataManager.SaveData(playerData);
+        GameData.Instance.coinCount -= amount;
+        GameData.Instance.SaveData();
     }
 
     public int GetCoinCount()
     {
-        return playerData.coinCount;
-    }
-
-    public void updateCointCount()
-    {
-        playerData = PlayerDataManager.LoadData();
+        return GameData.Instance.coinCount;
     }
 
     public void ResetCoins()
     {
-        playerData.coinCount = 0;
-        PlayerDataManager.SaveData(playerData);
+        GameData.Instance.coinCount = 0;
+        GameData.Instance.SaveData();
     }
 }

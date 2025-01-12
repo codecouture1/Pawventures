@@ -1,62 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenuPanel;
-    private GameObject referenceManagerObj;
-    private ReferenceManager referenceManager;
-    private PlayerScript pScript;
+    public GameObject pauseMenuUI;
 
-    public bool Opened { get; private set; } //returns true if pause menu is currently opened
+    public static PauseMenu Instance { get; private set; } // Singleton instance
+
+    public bool IsPaused { get; private set; } //returns true if pause menu is currently opened
+    private bool pauseCache;
 
     private void Awake()
     {
-        referenceManagerObj = GameObject.Find("ReferenceManager");
-        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+        // Singleton implementation
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // Destroy duplicate instance
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject); // Prevent this object from being destroyed on scene load
     }
 
     void Update()
     {
-        if (referenceManager.deathscreen.activeSelf)
+        if (IsPaused != pauseCache)
+            Debug.Log("Paused" + IsPaused);
+        pauseCache = IsPaused;
+
+        // Öffnet das Pausenmenü bei Druck auf "P" oder "ESC"
+        if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && pauseMenuUI != null)
         {
-            ClosePauseMenu();
-        } 
-        else
-        {
-            // Öffnet das Pausenmenü bei Druck auf "P" oder "ESC"
-            if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && pauseMenuPanel != null)
+            if (!IsPaused)
             {
-                if (!Opened)
-                {
-                    OpenPauseMenu();
-                }
-                else
-                {
-                    ClosePauseMenu();
-                }
+                OpenPauseMenu();
+            }
+            else
+            {
+                ClosePauseMenu();
             }
         }
+        
     }
 
     public void OpenPauseMenu()
     {
-        if (pauseMenuPanel != null)
+        if (pauseMenuUI != null)
         {
-            pauseMenuPanel.SetActive(true);
-            Opened = true;
+            pauseMenuUI.SetActive(true);
+            IsPaused = true;
             Time.timeScale = 0;
         }
     }
 
     public void ClosePauseMenu()
     {
-        if (pauseMenuPanel != null)
+        if (pauseMenuUI != null)
         {
-            pauseMenuPanel.SetActive(false);
-            Opened = false;
+            pauseMenuUI.SetActive(false);
+            IsPaused = false;
             Time.timeScale = 1;
         }
     }
@@ -64,6 +66,7 @@ public class PauseMenu : MonoBehaviour
     public void BackToMenu()
     {
         Time.timeScale = 1;
+        ClosePauseMenu();
         SceneManager.LoadScene(1);
     }
     
@@ -75,28 +78,23 @@ public class PauseMenu : MonoBehaviour
         Application.OpenURL("https://www.tiktok.com/@tierschutzverein_limes?is_from_webapp=1&sender_device=pc");
     }
 
-     public void OpenSettings(GameObject Panel){
+    public void OpenSettings(GameObject Panel)
+    {
+        if (Panel != null)
+        {
 
-            if (Panel != null)
-            {
-
-                Panel.SetActive(true);
-            }
-
+            Panel.SetActive(true);
+        }
     }
 
-    public void OpenPauseMenuAfterSettings(GameObject Panel){
-
-            if (pauseMenuPanel != null)
-            {
-                pauseMenuPanel.SetActive(true);
-            }
-
-            if (Panel != null)
-            {
-                bool isActive = Panel.activeSelf;
-                Panel.SetActive(!isActive);
-            }
-
+    public void Exit()
+    {
+#if UNITY_EDITOR
+        // Im Unity Editor wird dieser Code ausgeführt
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        // Im Build wird dieser Code ausgeführt
+        Application.Quit();
+#endif
     }
 }

@@ -2,13 +2,11 @@ using UnityEngine;
 
 public class InventoryItem
 {
-    PlayerData playerData;
     public PowerUps powerUp;
     public int amount;
 
     public InventoryItem(PowerUps powerUp)
     {
-        this.playerData = PlayerDataManager.LoadData();
         this.powerUp = powerUp;
         this.amount = GetAmount(powerUp);
     }
@@ -18,13 +16,13 @@ public class InventoryItem
         switch (powerUp)
         {
             case PowerUps.Halsband:
-                return playerData.halsBandCount;
+                return GameData.Instance.halsBandCount;
             case PowerUps.Doppelsprung:
-                return playerData.doubleJumpCount;
+                return GameData.Instance.doubleJumpCount;
             case PowerUps.GigaBeller:
-                return playerData.gigaBellerCount;
+                return GameData.Instance.gigaBellerCount;
             case PowerUps.CoinMagnet:
-                return playerData.coinMagnetCount;
+                return GameData.Instance.coinMagnetCount;
             default:
                 Debug.LogError("PowerUp does not Exist");
                 return 0;

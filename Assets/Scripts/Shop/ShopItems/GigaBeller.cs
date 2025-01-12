@@ -9,7 +9,7 @@ namespace Shop
 
         public string ItemName { get; } = "Gigabeller";
 
-        public int Price { get; } = 300;
+        public int Price { get; } = 200;
 
         public Sprite Sprite
         {
