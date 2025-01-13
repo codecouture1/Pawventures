@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.cs text eol=lf
+*.cs text working-tree-encoding=UTF-8
+
