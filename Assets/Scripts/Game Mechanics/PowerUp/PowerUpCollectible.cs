@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class PowerUpCollectible : MonoBehaviour
 {
-    public bool spawnAsHalsband = false;
+    public bool spawnAsHalsband = false; //force to spawn as Halsband (used in the tutorial)
+
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
 
@@ -15,12 +16,6 @@ public class PowerUpCollectible : MonoBehaviour
     //holds all powerups in the game
     private IPowerUp[] powerUps;
 
-
-    void Awake()
-    {
-       
-    }
-
     void Start()
     {
         referenceManagerObj = GameObject.Find("ReferenceManager");
@@ -31,16 +26,11 @@ public class PowerUpCollectible : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (spawnAsHalsband)
-            SetAsHalsband();
+            powerUp = new Halsband();
         else
             SetPowerUp();
 
-        spriteRenderer.sprite = powerUp.sprite; //assigns the correct PowerUp sprite to the game object
-    }
-
-    void Update()
-    {
-
+        spriteRenderer.sprite = powerUp.Sprite; //assigns the correct PowerUp sprite to the game object
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,7 +38,6 @@ public class PowerUpCollectible : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            Debug.Log(powerUp);
             if (powerUp != null)
             {
                 itemSelector.AddItem(powerUp);
@@ -64,10 +53,5 @@ public class PowerUpCollectible : MonoBehaviour
     {
         int powerUpSetter = UnityEngine.Random.Range(1, 5);
         powerUp = powerUps[powerUpSetter];
-    }
-
-    public void SetAsHalsband()
-    {
-        powerUp = new Halsband();
     }
 }

@@ -53,15 +53,6 @@ public class InventorySpriteManager : MonoBehaviour
             slot4.sprite = münzmagnet_EMPTY;
     }
 
-    public void DisplayEmptySlot(int slot)
-    {
-        if (slot == 1)
-            primarySprite.enabled = false;
-
-        if (slot == 2)
-            secondarySprite.enabled = false;
-    }
-
     public void DisplayPrimaryPowerUp(InventoryItem item)
     {
         primarySprite.enabled = true;
@@ -81,6 +72,7 @@ public class InventorySpriteManager : MonoBehaviour
                 primarySprite.sprite = münzmagnet;
                 break;
             default:
+                primarySprite.enabled = false;
                 break;
         }
         
@@ -105,6 +97,7 @@ public class InventorySpriteManager : MonoBehaviour
                 secondarySprite.sprite = münzmagnet;
                 break;
             default:
+                secondarySprite.enabled = false;
                 break;
         }
         

@@ -24,6 +24,8 @@ public class PlayerAnimationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //halsband
         animator.runtimeAnimatorController =
             pScript.health > 1 ? halsbandAnimationController : defaultAnimationController;
 

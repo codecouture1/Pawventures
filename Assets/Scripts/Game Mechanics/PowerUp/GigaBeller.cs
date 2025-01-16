@@ -10,12 +10,17 @@ public class GigaBeller : IPowerUp
     private HunterScript hunterScript;
     private CameraScript camScript;
 
-    public Sprite sprite 
+    public PowerUps PowerUp
+    {
+        get { return PowerUps.GigaBeller; }
+    }
+
+    public Sprite Sprite 
     { 
         get { return referenceManager.gigaBeller; }
     }
 
-    public AudioClip sound
+    public AudioClip Sound
     {
         get { return referenceManager.gigaBellerSound; }
     }

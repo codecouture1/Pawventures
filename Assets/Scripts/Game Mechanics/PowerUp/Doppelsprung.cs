@@ -7,12 +7,17 @@ public class Doppelsprung : IPowerUp
 
     private PlayerScript pScript;
 
-    public Sprite sprite
+    public PowerUps PowerUp
+    {
+        get { return PowerUps.Doppelsprung; }
+    }
+
+    public Sprite Sprite
     {
         get { return referenceManager.doppelsprung; }
     }
 
-    public AudioClip sound
+    public AudioClip Sound
     {
         get { return referenceManager.doppelsprungSound; }
     }

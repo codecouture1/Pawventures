@@ -8,7 +8,7 @@ public class InventoryItem
     public InventoryItem(PowerUps powerUp)
     {
         this.powerUp = powerUp;
-        this.amount = GetAmount(powerUp);
+        amount = GetAmount(powerUp);
     }
 
     private int GetAmount(PowerUps powerUp)

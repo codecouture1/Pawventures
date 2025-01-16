@@ -44,6 +44,10 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        health = GameData.Instance.playerHealth;
+        if (GameData.Instance.playerHealth < 1)
+            health = 1;
+
         moveSpeed = DEFAULT_MOVESPEED;
         m_Camera = GameObject.FindGameObjectWithTag("Camera");
         camScript = m_Camera.GetComponent<CameraScript>();
@@ -277,7 +281,7 @@ public class PlayerScript : MonoBehaviour
             {
                 StartCoroutine(iFrames());
             }
-            health--;                 
+            health--;
         }
 
         if (collision.gameObject.tag == "Kill")

@@ -36,6 +36,9 @@ public class GameData : MonoBehaviour
     public PowerUps firstPowerUp;
     public PowerUps secondPowerUp;
 
+    //player
+    public int playerHealth;
+
     //other
     public bool tutorialCompleted;
     public bool readDisclaimer;
@@ -61,7 +64,7 @@ public class GameData : MonoBehaviour
     {
         string jsonData = JsonUtility.ToJson(this);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/GameData.json", jsonData);
-        Debug.Log("Data saved to " + Application.persistentDataPath);
+        //Debug.Log("Data saved to " + Application.persistentDataPath);
     }
 
     // Example method to load data

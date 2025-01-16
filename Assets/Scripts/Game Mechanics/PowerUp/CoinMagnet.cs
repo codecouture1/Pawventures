@@ -5,12 +5,17 @@ public class CoinMagnet : IPowerUp
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
 
-    public Sprite sprite
+    public PowerUps PowerUp
+    {
+        get { return PowerUps.CoinMagnet; }
+    }
+
+    public Sprite Sprite
     {
         get { return referenceManager.münzmagnet; }
     }
 
-    public AudioClip sound
+    public AudioClip Sound
     {
         get { return referenceManager.münzmagnetSound; }
     }

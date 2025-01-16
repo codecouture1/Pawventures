@@ -134,6 +134,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6534712950361619547}
     m_Modifications:
+    - target: {fileID: 3171650567047836737, guid: ade30a962f06c6a45b2cc934a59f0bc6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.77536625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171650567047836737, guid: ade30a962f06c6a45b2cc934a59f0bc6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4364
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877357272624866431, guid: ade30a962f06c6a45b2cc934a59f0bc6, type: 3}
+      propertyPath: m_Size.y
+      value: 4.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877357272624866431, guid: ade30a962f06c6a45b2cc934a59f0bc6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6162606324602304216, guid: ade30a962f06c6a45b2cc934a59f0bc6, type: 3}
       propertyPath: m_Name
       value: Kissenhaufen

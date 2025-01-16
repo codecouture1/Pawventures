@@ -4,11 +4,12 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+    public GameObject controlsUI;
+    public GameObject settingsPanel;
 
     public static PauseMenu Instance { get; private set; } // Singleton instance
 
     public bool IsPaused { get; private set; } //returns true if pause menu is currently opened
-    private bool pauseCache;
 
     private void Awake()
     {
@@ -24,10 +25,6 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (IsPaused != pauseCache)
-            Debug.Log("Paused" + IsPaused);
-        pauseCache = IsPaused;
-
         // Öffnet das Pausenmenü bei Druck auf "P" oder "ESC"
         if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && pauseMenuUI != null)
         {
@@ -57,9 +54,14 @@ public class PauseMenu : MonoBehaviour
     {
         if (pauseMenuUI != null)
         {
+            settingsPanel.SetActive(false);
             pauseMenuUI.SetActive(false);
             IsPaused = false;
             Time.timeScale = 1;
+        }
+        if(controlsUI != null)
+        {
+            controlsUI.SetActive(false);
         }
     }
 
@@ -76,15 +78,6 @@ public class PauseMenu : MonoBehaviour
 
     public void OpenTikTok(){
         Application.OpenURL("https://www.tiktok.com/@tierschutzverein_limes?is_from_webapp=1&sender_device=pc");
-    }
-
-    public void OpenSettings(GameObject Panel)
-    {
-        if (Panel != null)
-        {
-
-            Panel.SetActive(true);
-        }
     }
 
     public void Exit()

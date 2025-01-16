@@ -61,7 +61,7 @@ public class MainMenü : MonoBehaviour
 
     private void Start()
     {
-        if (!GameData.Instance.readDisclaimer)
+        if (disclaimer != null && !GameData.Instance.readDisclaimer)
         {
             disclaimer.SetActive(true);
         }

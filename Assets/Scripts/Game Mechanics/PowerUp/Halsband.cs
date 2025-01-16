@@ -7,12 +7,17 @@ public class Halsband : IPowerUp
 
     private PlayerScript pScript;
 
-    public Sprite sprite
+    public PowerUps PowerUp
+    {
+        get { return PowerUps.Halsband; }
+    }
+
+    public Sprite Sprite
     {
         get { return referenceManager.halsband; }
     }
 
-    public AudioClip sound
+    public AudioClip Sound
     {
         get { return referenceManager.halsbandSound; }
     }

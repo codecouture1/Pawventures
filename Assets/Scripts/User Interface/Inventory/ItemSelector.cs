@@ -32,8 +32,9 @@ public class ItemSelector : MonoBehaviour
         secondaryImage = secondaryIcon.GetComponent<Image>();
         switchAnimator = switchIcon.GetComponent<Animator>();
 
-        primaryPowerup = GetPowerUp(GameData.Instance.firstPowerUp);
-        secondaryPowerup = GetPowerUp(GameData.Instance.secondPowerUp);
+        //create IPowerup objects based on the gameData;
+        primaryPowerup = IPowerUp.GetPowerUp(GameData.Instance.firstPowerUp);
+        secondaryPowerup = IPowerUp.GetPowerUp(GameData.Instance.secondPowerUp);
     }
 
     // Update is called once per frame
@@ -44,71 +45,80 @@ public class ItemSelector : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SwitchItems();
+            switchAnimator.SetTrigger("switch");
         }
 
         if (Input.GetKeyDown(KeyCode.E) && primaryPowerup != null)
         {
+            //apply the powerup in the primary slot
             primaryPowerup.ApplyPowerup();
-            audioSource.clip = primaryPowerup.sound;
+
+            //play the powerup sound
+            audioSource.clip = primaryPowerup.Sound;
             audioSource.Play();
+
+            //clear the slot after use
             primaryPowerup = null;
+
+            //auto-switch so the primary slot isn't empty
+            SwitchItems();
         }
     }
 
-    private IPowerUp GetPowerUp(PowerUps powerUpEnum)
-    {
-        switch (powerUpEnum)
-        {
-            case PowerUps.Halsband:
-                return new Halsband();
-            case PowerUps.Doppelsprung:
-                return new Doppelsprung();
-            case PowerUps.GigaBeller:
-                return new GigaBeller();
-            case PowerUps.CoinMagnet:
-                return new CoinMagnet();
-            case PowerUps.None:
-                return null;
-            default:
-                return null;
-
-        }
-    }
-
+    //switch positions of the items
     private void SwitchItems()
     {
         IPowerUp primaryChache = primaryPowerup;
-        IPowerUp secondaryChache = secondaryPowerup;
-        SetItem(1, secondaryChache);
+        SetItem(1, secondaryPowerup);
         SetItem(2, primaryChache);
-        switchAnimator.SetTrigger("switch");
     }
 
+    //equip an item in the first or secod slot
     private void SetItem(int slot, IPowerUp powerUp)
     {
         switch (slot)
         {
+            //equip item in slot 1 and update Game Data
             case 1:
                 primaryPowerup = powerUp;
+                if (powerUp != null)
+                    GameData.Instance.firstPowerUp = powerUp.PowerUp;
+                else
+                    GameData.Instance.firstPowerUp = PowerUps.None;
                 break;
+
+            //equip item in slot 2 and update Game Data
             case 2:
                 secondaryPowerup = powerUp;
+                if (powerUp != null)
+                    GameData.Instance.secondPowerUp = powerUp.PowerUp;
+                else
+                    GameData.Instance.secondPowerUp = PowerUps.None;
+                break;
+
+            default:
+                Debug.LogError($"{slot} is an invalid slot number. plase select 1 or 2 as a slot number");
                 break;
         }
     }
 
+    //add item to a slot or apply it directly on pickup
     public void AddItem(IPowerUp powerUp)
     {
+        //if primary slot is empty, item will be added here
         if(primaryPowerup == null)
         {
-            primaryPowerup = powerUp;
+            SetItem(1, powerUp);
         } 
+        //if primary slot is occupied, item will be added here
         else if (secondaryPowerup == null)
         {
-            secondaryPowerup = powerUp;
-        } else
+            SetItem(2, powerUp);
+        }
+        //if both slots are occupied, item is applied directly
+        else
         {
-            audioSource.clip = powerUp.sound;
+            audioSource.clip = powerUp.Sound;
             audioSource.Play();
             powerUp.ApplyPowerup();
         }
@@ -121,7 +131,7 @@ public class ItemSelector : MonoBehaviour
         if (primaryPowerup != null)
         {
             primaryImage.enabled = true;
-            primaryImage.sprite = primaryPowerup.sprite;
+            primaryImage.sprite = primaryPowerup.Sprite;
         }      
         else
             primaryImage.enabled = false;
@@ -129,7 +139,7 @@ public class ItemSelector : MonoBehaviour
         if (secondaryPowerup != null)
         {
             secondaryImage.enabled = true;
-            secondaryImage.sprite = secondaryPowerup.sprite;
+            secondaryImage.sprite = secondaryPowerup.Sprite;
         }
         else
             secondaryImage.enabled = false;

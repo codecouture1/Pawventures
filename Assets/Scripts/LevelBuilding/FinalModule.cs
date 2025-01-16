@@ -6,6 +6,7 @@ public class FinalModule : MonoBehaviour
 {
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
+
     InventoryInterface inventorySript;
     public bool skipInventoryPopup;
     public int nextSceneIndex;
@@ -21,13 +22,21 @@ public class FinalModule : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            //get next scene index from referencemanager
             referenceManager.LoadOnClick = nextSceneIndex;
+
+            //if this is the last chapter of the level, the inventory popup is going to be skipped
             if (skipInventoryPopup)
             {
                 SceneManager.LoadScene(nextSceneIndex);
             }
             else
             {
+                //save player health, so that player may carry their Halsband to the next level
+                GameData.Instance.playerHealth = referenceManager.playerScript.health;
+                GameData.Instance.SaveData();
+
+                //display inventory so the player can set powerups for the next chapter
                 referenceManager.inventory.SetActive(true);
                 inventorySript.DisplayExitButton(false);
             }

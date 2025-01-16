@@ -1667,7 +1667,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryInterface: {fileID: 6336756616422495913}
   primarySlotToggle: {fileID: 2405412303123918168}
-  exitButton: {fileID: 0}
+  secondarySlotToggle: {fileID: 7117311338903815348}
+  exitButton: {fileID: 7445991427973974458}
   counters:
   - {fileID: 5811833187049194019}
   - {fileID: 5808302827565015713}
@@ -2539,10 +2540,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6336756616422495913}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 555826316009976343}
+        m_TargetAssemblyTypeName: InventoryInterface, Assembly-CSharp
+        m_MethodName: CloseInventory
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
