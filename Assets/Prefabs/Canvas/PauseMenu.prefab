@@ -468,6 +468,7 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 2054091314258627378}
   controlsUI: {fileID: 2437154416728824194}
   settingsPanel: {fileID: 3146821535008941272}
+  clickSound: {fileID: 381687319913612229}
 --- !u!1 &387334080301851934
 GameObject:
   m_ObjectHideFlags: 0

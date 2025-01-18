@@ -3,12 +3,14 @@ using UnityEngine;
 public class InventoryItem
 {
     public PowerUps powerUp;
-    public int amount;
+    public int Amount { get; private set; }
+
+    public Sprite Sprite { get; private set; }
 
     public InventoryItem(PowerUps powerUp)
-    {
+    {     
         this.powerUp = powerUp;
-        amount = GetAmount(powerUp);
+        Amount = GetAmount(powerUp);
     }
 
     private int GetAmount(PowerUps powerUp)
@@ -28,5 +30,57 @@ public class InventoryItem
                 return 0;
 
         }
+    }
+
+    //increments the amount based on the input value
+    public void AddAmount(int amount)
+    {
+        this.Amount += amount;
+        UpdatePlayerData();
+    }
+
+    //increments the amount by one
+    public void AddAmount()
+    {
+        Amount++;
+        UpdatePlayerData();
+    }
+
+    //reduces the amount based on the input value
+    public void ReduceAmount(int amount)
+    {
+        this.Amount -= amount;
+        UpdatePlayerData();
+    }
+
+    //reduces the amount based by one
+    public void ReduceAmount()
+    {
+        Amount--;
+        UpdatePlayerData();
+    }
+
+    //sets the item count of the player data to the amount of the inventoryitem 
+    private void UpdatePlayerData()
+    {
+        switch (powerUp)
+        {
+            case PowerUps.Halsband:
+                GameData.Instance.halsBandCount = Amount;
+                break;
+            case PowerUps.Doppelsprung:
+                GameData.Instance.doubleJumpCount = Amount;
+                break;
+            case PowerUps.GigaBeller:
+                GameData.Instance.gigaBellerCount = Amount;
+                break;
+            case PowerUps.CoinMagnet:
+                GameData.Instance.coinMagnetCount = Amount;
+                break;
+            default:
+                Debug.LogError("PowerUp does not Exist");
+                break;
+        }
+        GameData.Instance.SaveData();
     }
 }

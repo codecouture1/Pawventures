@@ -1,5 +1,7 @@
 using System;
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
+using TMPro.Examples;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,8 +13,6 @@ public class InventoryInterface : MonoBehaviour
 {
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
-
-    private InventoryItem[] inventory; //The player's inventory
 
     public GameObject inventoryInterface; //parent object
     public Toggle primarySlotToggle; //toggle component of the primary item slot
@@ -26,88 +26,136 @@ public class InventoryInterface : MonoBehaviour
     public InventoryItem primaryItem;
     public InventoryItem secondaryItem;
 
+    public InventoryItem Halsband { get; private set; }
+    public InventoryItem Doppelsprung { get; private set; }
+    public InventoryItem GigaBeller { get; private set; }
+    public InventoryItem CoinMagnet { get; private set; }
 
     private void Awake()
     {
+        Halsband = new(PowerUps.Halsband);
+        Doppelsprung = new(PowerUps.Doppelsprung);
+        GigaBeller = new(PowerUps.GigaBeller);
+        CoinMagnet = new(PowerUps.CoinMagnet);
+
         inventorySpriteManager = GetComponent<InventorySpriteManager>();
-        inventory = new InventoryItem[] { new(PowerUps.Halsband), new(PowerUps.Doppelsprung), new(PowerUps.GigaBeller), new(PowerUps.CoinMagnet) };
     }
 
     void Start()
     {
+
+        //initialize counters
         UpdateCounters();
-        inventorySpriteManager.DisplayItemSlots();
+
+        //initialize sprites for the inventory slots
+        inventorySpriteManager.DisplayInventorySlots();
 
         //define the behavior of each button.
-        buttons[0].onClick.AddListener(() => EquipItem(inventory[0]));
-        buttons[1].onClick.AddListener(() => EquipItem(inventory[1]));
-        buttons[2].onClick.AddListener(() => EquipItem(inventory[2]));
-        buttons[3].onClick.AddListener(() => EquipItem(inventory[3]));
+        buttons[0].onClick.AddListener(() => EquipItem(Halsband));
+        buttons[1].onClick.AddListener(() => EquipItem(Doppelsprung));
+        buttons[2].onClick.AddListener(() => EquipItem(GigaBeller));
+        buttons[3].onClick.AddListener(() => EquipItem(CoinMagnet));
 
-        if (GameData.Instance.firstPowerUp != 0)
-        {
-            Debug.Log("Hawk");
-            primaryItem = inventory[(int)GameData.Instance.firstPowerUp - 1];
+        //loads the items currently held by the player into the inventory
+        primaryItem = GetItem(GameData.Instance.firstPowerUp);
+        if (primaryItem != null)
             inventorySpriteManager.DisplayPrimaryPowerUp(primaryItem);
-        }
 
-        if (GameData.Instance.secondPowerUp != 0)
-        {
-            Debug.Log("Tuah");
-            secondaryItem = inventory[(int)GameData.Instance.secondPowerUp - 1];
+        secondaryItem = GetItem(GameData.Instance.secondPowerUp);
+        if (secondaryItem != null)
             inventorySpriteManager.DisplaySecondaryPowerUp(secondaryItem);
-        }
+
+        Debug.Log(primaryItem);
     }
 
     private void EquipItem(InventoryItem item)
     {
-        //determines wether the primary or secondary slot is currently selected
-        bool isPrimarySlot = primarySlotToggle.isOn;
-
-        //assigns the value of the currently equipped item (null if there is none)
-        InventoryItem currentItem = isPrimarySlot ? primaryItem : secondaryItem;
-
         //check if player owns at least one of the selected item. 
-        if (item.amount > 0)
+        if (item.Amount > 0)
         {
-            //if a current item has already been set, it gets added back to the inventory
-            if (currentItem != null)
-                inventory[(int)currentItem.powerUp - 1].amount++;
-
-            //the current item is assigned
-            currentItem = item;
+            //current item is unequipped
+            UnequipItem(GetActiveSlot());
 
             //the current item is equipped in the correct slot
-            if (isPrimarySlot)
-            {
-                primaryItem = currentItem;
-                inventorySpriteManager.DisplayPrimaryPowerUp(item);
+            SetItem(GetActiveSlot(), item);
 
-                //automatically switch to the second slot if it's empty;
-                if(secondaryItem == null)
-                {
-                    primarySlotToggle.isOn = false;
-                    secondarySlotToggle.isOn = true;
-                }
-            } 
-            else
+            //automatically switch to the second slot if it's empty;
+            if (secondaryItem == null)
             {
-                secondaryItem = currentItem;
-                inventorySpriteManager.DisplaySecondaryPowerUp(item);
+                primarySlotToggle.isOn = false;
+                secondarySlotToggle.isOn = true;
             }
 
-            //the item is taken out of the inventory
-            item.amount--;
-            Debug.Log($"Equipped Player with {item.powerUp} in {(isPrimarySlot ? "Slot 1" : "Slot 2")}!");
+            //Display the correct sprites
+            inventorySpriteManager.DisplayPrimaryPowerUp(primaryItem);
+            inventorySpriteManager.DisplaySecondaryPowerUp(secondaryItem);
+
+            Debug.Log($"Equipped Player with {item.powerUp} in Slot {GetActiveSlot()}!");
         }
         else    
             Debug.Log($"Not Enough {item.powerUp}!");
-
-        UpdateInventory();
-        GameData.Instance.SaveData();
-        UpdateCounters();
-        inventorySpriteManager.DisplayItemSlots();
     }
+
+    //unequips the item in the selected slot
+    public void UnequipItem(int slot)
+    {
+        if (slot == 1 && primaryItem != null)
+        {
+            GetItem(primaryItem.powerUp).AddAmount();
+            primaryItem = null;
+            Debug.Log($"Unequipped Slot {slot}!");
+        }
+        else if (slot == 2 && secondaryItem != null)
+        {
+            GetItem(secondaryItem.powerUp).AddAmount();
+            secondaryItem = null;
+            Debug.Log($"Unequipped Slot {slot}!");
+        }
+
+        inventorySpriteManager.DisplayPrimaryPowerUp(primaryItem);
+        inventorySpriteManager.DisplaySecondaryPowerUp(secondaryItem);
+        UpdateCounters();
+    }
+
+    private InventoryItem GetItem(PowerUps powerUp)
+    {
+        switch (powerUp)
+        {
+            case (PowerUps.Halsband):
+                return Halsband;
+            case (PowerUps.Doppelsprung):
+                return Doppelsprung;
+            case (PowerUps.GigaBeller):
+                return GigaBeller;
+            case (PowerUps.CoinMagnet):
+                return CoinMagnet;
+            default:
+                return null;
+        }
+    }
+
+    private void SetItem(int slot, InventoryItem item)
+    {
+        if (slot == 1)
+        {
+            primaryItem = item;
+            item.ReduceAmount();
+        }
+        if (slot == 2)
+        {
+            secondaryItem = item;
+            item.ReduceAmount();
+        }
+        UpdateCounters();
+    }
+
+    public int GetActiveSlot()
+    {
+        if (primarySlotToggle.isOn)
+            return 1;
+        return 2;
+    }
+
 
     //safe equipped items to player data. Executed on level start
     public void SaveItemsToPlayerData()
@@ -125,54 +173,31 @@ public class InventoryInterface : MonoBehaviour
         GameData.Instance.SaveData();
     }
 
-    private void UpdateInventory()
-    {
-        GameData.Instance.halsBandCount = inventory[0].amount;
-        GameData.Instance.doubleJumpCount = inventory[1].amount;
-        GameData.Instance.gigaBellerCount = inventory[2].amount;
-        GameData.Instance.coinMagnetCount = inventory[3].amount;
-    }
-
-
     //value of each item counter is initialized depending on how many items the player owns of each type
     private void UpdateCounters()
     {
-        int counter = 0;
-        foreach (TextMeshProUGUI text in counters)
-        {            
-            text.text = $"x{inventory[counter].amount}";
-            counter++;
-        }
-
+        counters[0].text = $"x{Halsband.Amount}";
+        counters[1].text = $"x{Doppelsprung.Amount}";
+        counters[2].text = $"x{GigaBeller.Amount}";
+        counters[3].text = $"x{CoinMagnet.Amount}";
     }
 
     //opens inventory
     public void OpenInventory()
     {
         inventoryInterface.SetActive(true);
+        primarySlotToggle.isOn = true;
+        secondarySlotToggle.isOn = false;
     }
 
     //closes inventory and unequips both items
     public void CloseInventory()
     {
-        if(primaryItem != null)
-        {
-            inventory[(int)primaryItem.powerUp - 1].amount++;
-            primaryItem = null;
-        }
-        if (secondaryItem != null)
-        {
-            inventory[(int)secondaryItem.powerUp - 1].amount++;
-            secondaryItem = null;
-        }
-        UpdateInventory();
+        UnequipItem(1);      
+        UnequipItem(2);
+        
         GameData.Instance.SaveData();
         inventoryInterface.SetActive(false);
-    }
-
-    public InventoryItem[] GetInventory()
-    {
-        return inventory;
     }
 
     //disables the exit button. Exit button is not displayed in chapter transitions

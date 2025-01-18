@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class InventorySpriteManager : MonoBehaviour
 {
-    private InventoryInterface inventoryInterface;
+    private InventoryInterface inventory;
 
     public Sprite halsband;
     public Sprite gigaBeller;
@@ -25,29 +25,27 @@ public class InventorySpriteManager : MonoBehaviour
 
     private void Awake()
     {
-        inventoryInterface = GetComponent<InventoryInterface>();
+        inventory = GetComponent<InventoryInterface>();
     }
 
-    public void DisplayItemSlots()
+    public void DisplayInventorySlots()
     {
-        InventoryItem[] inventory = inventoryInterface.GetInventory();
-
-        if (inventory[0].amount != 0)
+        if (inventory.Halsband.Amount != 0)
             slot1.sprite = halsband;
         else
             slot1.sprite = halsband_EMPTY;
 
-        if (inventory[1].amount != 0)
+        if (inventory.Doppelsprung.Amount != 0)
             slot2.sprite = doppelsprung;
         else
             slot2.sprite = doppelsprung_EMPTY;
 
-        if (inventory[2].amount != 0)
+        if (inventory.GigaBeller.Amount != 0)
             slot3.sprite = gigaBeller;
         else
             slot3.sprite = gigaBeller_EMPTY;
 
-        if (inventory[3].amount != 0)
+        if (inventory.CoinMagnet.Amount != 0)
             slot4.sprite = münzmagnet;
         else
             slot4.sprite = münzmagnet_EMPTY;
@@ -55,51 +53,63 @@ public class InventorySpriteManager : MonoBehaviour
 
     public void DisplayPrimaryPowerUp(InventoryItem item)
     {
-        primarySprite.enabled = true;
-
-        switch (item.powerUp)
+        if (item != null)
         {
-            case PowerUps.Halsband:
-                primarySprite.sprite = halsband;
-                break;
-            case PowerUps.Doppelsprung:
-                primarySprite.sprite = doppelsprung;
-                break;
-            case PowerUps.GigaBeller:
-                primarySprite.sprite = gigaBeller;
-                break;
-            case PowerUps.CoinMagnet:
-                primarySprite.sprite = münzmagnet;
-                break;
-            default:
-                primarySprite.enabled = false;
-                break;
+            primarySprite.enabled = true;
+            switch (item.powerUp)
+            {
+                case PowerUps.Halsband:
+                    primarySprite.sprite = halsband;
+                    break;
+                case PowerUps.Doppelsprung:
+                    primarySprite.sprite = doppelsprung;
+                    break;
+                case PowerUps.GigaBeller:
+                    primarySprite.sprite = gigaBeller;
+                    break;
+                case PowerUps.CoinMagnet:
+                    primarySprite.sprite = münzmagnet;
+                    break;
+                default:
+                    primarySprite.enabled = false;
+                    break;
+            }
         }
-        
+        else
+        {
+            primarySprite.enabled = false;
+        }
     }
+
+
 
     public void DisplaySecondaryPowerUp(InventoryItem item)
     {
-        secondarySprite.enabled = true;
-
-        switch (item.powerUp)
+        if (item != null)
         {
-            case PowerUps.Halsband:
-                secondarySprite.sprite = halsband;
-                break;
-            case PowerUps.Doppelsprung:
-                secondarySprite.sprite = doppelsprung;
-                break;
-            case PowerUps.GigaBeller:
-                secondarySprite.sprite = gigaBeller;
-                break;
-            case PowerUps.CoinMagnet:
-                secondarySprite.sprite = münzmagnet;
-                break;
-            default:
-                secondarySprite.enabled = false;
-                break;
+            secondarySprite.enabled = true;
+            switch (item.powerUp)
+            {
+                case PowerUps.Halsband:
+                    secondarySprite.sprite = halsband;
+                    break;
+                case PowerUps.Doppelsprung:
+                    secondarySprite.sprite = doppelsprung;
+                    break;
+                case PowerUps.GigaBeller:
+                    secondarySprite.sprite = gigaBeller;
+                    break;
+                case PowerUps.CoinMagnet:
+                    secondarySprite.sprite = münzmagnet;
+                    break;
+                default:
+                    secondarySprite.enabled = false;
+                    break;
+            }
         }
-        
+        else
+        {
+            secondarySprite.enabled = false;
+        }        
     }
 }

@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject controlsUI;
     public GameObject settingsPanel;
+    public AudioSource clickSound;
 
     public static PauseMenu Instance { get; private set; } // Singleton instance
 
@@ -45,8 +46,10 @@ public class PauseMenu : MonoBehaviour
         if (pauseMenuUI != null)
         {
             pauseMenuUI.SetActive(true);
+            clickSound.Play();
             IsPaused = true;
             Time.timeScale = 0;
+
         }
     }
 

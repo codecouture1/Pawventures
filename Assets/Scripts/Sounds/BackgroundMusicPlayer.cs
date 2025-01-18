@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -9,8 +10,13 @@ public class BackgroundMusicPlayer : MonoBehaviour
 
     void Awake()
     {
-        referenceManagerObj = GameObject.Find("ReferenceManager");
-        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+        try
+        {
+            referenceManagerObj = GameObject.Find("ReferenceManager");
+            referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+        } 
+        catch (NullReferenceException) { /* No referencemanager found */ }
+
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -22,7 +28,7 @@ public class BackgroundMusicPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!referenceManager.playerScript.alive() )
+        if (referenceManager != null && !referenceManager.playerScript.alive() )
         {
             audioSource.Stop();
         }
