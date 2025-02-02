@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using Unity.Cinemachine;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 
 
 public class CameraScript : MonoBehaviour

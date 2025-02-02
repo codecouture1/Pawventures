@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class Doppelsprung : IPowerUp
@@ -22,9 +23,15 @@ public class Doppelsprung : IPowerUp
         get { return referenceManager.doppelsprungSound; }
     }
 
+    public float Duration
+    {
+        get { return 8f; }
+    }
+
     public void ApplyPowerup()
     {
-        pScript.doubleJump = true;
+        referenceManager.TimerManager.AddTimer(Duration, Sprite);
+        //pScript.doubleJumpCoroutine = pScript.StartCoroutine(pScript.DoubleJump(Duration));
     }
 
     public Doppelsprung()

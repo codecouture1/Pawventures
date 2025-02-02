@@ -145,6 +145,13 @@ public class HunterScript : MonoBehaviour
         positionResetComplete = true;
         positionResetComplete = false;
     }
+
+    public void ResetPosition()
+    {
+        float targetPosition = player.transform.position.x - 22f;
+        Vector3 currentPosition = new(targetPosition, 1f, 0f);
+        transform.position = currentPosition;
+    }
 }
 
     

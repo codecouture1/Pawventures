@@ -11,6 +11,9 @@ public interface IPowerUp
     //the audioclip that plays when the powerup is applied
     public AudioClip Sound { get; }
 
+    //the duration of the effect (may not be assigned if effect is instant)
+    public float Duration { get; }
+
     //define the behavior of this powerup here
     public abstract void ApplyPowerup();
 

@@ -25,6 +25,15 @@ public class GigaBeller : IPowerUp
         get { return referenceManager.gigaBellerSound; }
     }
 
+    public float Duration
+    {
+        get
+        {
+            Debug.LogError("This PowerUp has no duration");
+            return 0f;
+        }
+    }
+
     public GigaBeller()
     {
         referenceManagerObj = GameObject.Find("ReferenceManager");

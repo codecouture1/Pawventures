@@ -44,6 +44,9 @@ public class SlowScript : MonoBehaviour
             camScript.Rumble(0f);
             done = true;
         }
+
+        if (pScript.iFrameActive && slowChallengeCoroutine != null)
+            StopCoroutine(slowChallengeCoroutine);
         
     }
 
@@ -73,7 +76,7 @@ public class SlowScript : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player")){
+        if (col.gameObject.CompareTag("Player") && !pScript.iFrameActive){
 
             //zoom Coroutine (zooming out)
             if (zoomCoroutine != null)

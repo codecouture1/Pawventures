@@ -20,9 +20,15 @@ public class CoinMagnet : IPowerUp
         get { return referenceManager.münzmagnetSound; }
     }
 
+    public float Duration
+    {
+        get { return 10f; }
+    }
+
     public void ApplyPowerup()
     {
         Debug.Log("TODO");
+        referenceManager.TimerManager.AddTimer(Duration, Sprite);
     }
 
     public CoinMagnet()

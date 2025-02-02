@@ -22,6 +22,15 @@ public class Halsband : IPowerUp
         get { return referenceManager.halsbandSound; }
     }
 
+    public float Duration
+    {
+        get
+        {
+            Debug.LogError("This PowerUp has no duration");
+            return 0f;
+        }
+    }
+
     public void ApplyPowerup()
     {
         pScript.health = 2;

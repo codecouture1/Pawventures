@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+
     //-------Objects & Components-------
     public Rigidbody2D myRigidbody2D;
     public BoxCollider2D myBoxCollider2D;
@@ -26,8 +29,7 @@ public class PlayerScript : MonoBehaviour
 
     [HideInInspector] public bool canJump = true; //disabled when player is slowed
     [HideInInspector] public bool canCrouch = true; //disabled when player is slowed
-    [HideInInspector] public bool doubleJump = false;
-    private Coroutine doubleJumpCoroutine;
+    public Coroutine doubleJumpCoroutine;
 
     [HideInInspector] public bool slowed = false; //if true, hunter will slow down with player
     [HideInInspector] public bool slowChallengeFailed = false; //if slow challenge is failed hunter will catch up with player
@@ -41,6 +43,12 @@ public class PlayerScript : MonoBehaviour
     //--------------Sounds---------------
     public AudioClip jumpSound;
     public AudioClip slideSound;
+
+    private void Awake()
+    {
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+    }
 
     void Start()
     {
@@ -59,10 +67,6 @@ public class PlayerScript : MonoBehaviour
   
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            doubleJump = true;
-        }
 
         if (alive())
         {
@@ -70,17 +74,10 @@ public class PlayerScript : MonoBehaviour
             run(moveSpeed);
 
             //springen
-            if (canJump)
+            if (canJump && doubleJumpCoroutine == null)
             {
-                if (doubleJump && doubleJumpCoroutine == null)
-                {
-                    doubleJumpCoroutine = StartCoroutine(DoubleJump());                   
-                } 
-                else
-                {
-                    if (Input.GetKeyDown(KeyCode.W) == true && isGrounded())
-                        Jump();
-                }
+                if (Input.GetKeyDown(KeyCode.W) == true && isGrounded())
+                    Jump();    
             }
 
             //schnelles landen
@@ -153,34 +150,38 @@ public class PlayerScript : MonoBehaviour
         audioSource.Play();
     }
 
-    IEnumerator DoubleJump()
+    public IEnumerator DoubleJump(float duration)
     {
-        int jumpCounter = isGrounded() ? 0 : 1; // Start at 1 if not grounded, else 0
-
-        while (jumpCounter < 2)
+        for (float elapsedTime = 0; elapsedTime <= duration; elapsedTime += Time.deltaTime)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            int jumpCounter = isGrounded() ? 0 : 1; // Start at 1 if not grounded, else 0
+
+            while (jumpCounter < 2)
             {
-                if (jumpCounter < 2) // Ensure jumpCounter is within limits
+                if (Input.GetKeyDown(KeyCode.W))
                 {
-                    jumpCounter++;
-                    Debug.Log($"Grounded: {isGrounded()}, JumpCounter: {jumpCounter}");
-                    if (isCrouching)
+                    if (jumpCounter < 2) // Ensure jumpCounter is within limits
                     {
-                        stopCrouch();
+                        jumpCounter++;
+                        Debug.Log($"Grounded: {isGrounded()}, JumpCounter: {jumpCounter}");
+                        if (isCrouching)
+                        {
+                            stopCrouch();
+                        }
+                        myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;
+                        audioSource.Stop();
+                        audioSource.clip = jumpSound;
+                        audioSource.Play();
+                        yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.W)); // Wait for key release before proceeding
+                        yield return null;
                     }
-                    myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;
-                    audioSource.Stop();
-                    audioSource.clip = jumpSound;
-                    audioSource.Play();
-                    yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.W)); // Wait for key release before proceeding
-                    yield return null;
                 }
+                yield return null; // Wait for the next frame
             }
-            yield return null; // Wait for the next frame
+
+            yield return null;
         }
         doubleJumpCoroutine = null;
-        doubleJump = false; // Reset double jump state
     }
 
     //*****************************crouching*****************************
@@ -250,6 +251,15 @@ public class PlayerScript : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    //***********************************revive***********************************
+    public void Revive()
+    {
+        transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
+        health = 1;
+        referenceManager.hunterScript.ResetPosition();
+        StartCoroutine(iFrames());
     }
 
     //**********************************iFrames**********************************

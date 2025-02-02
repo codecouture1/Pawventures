@@ -28,6 +28,10 @@ public class ReferenceManager : MonoBehaviour
 
     public GameObject deathscreen;
 
+    public TimerManager TimerManager;
+
+    public CanvasManager canvasManager;
+
     public int firstChapterIndex;
     public int LoadOnClick { get; set; } //the scene index that loads when inventory start button is pressed;
 
