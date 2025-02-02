@@ -17,7 +17,7 @@ public class HideMouse : MonoBehaviour
     void Update()
     {
 
-        if (!referenceManager.playerScript.alive() || referenceManager.inventory.activeSelf || PauseMenu.Instance.IsPaused)
+        if (!referenceManager.playerScript.alive() || referenceManager.inventory.activeSelf || PauseMenu.Instance.IsPaused || Time.timeScale == 0)
         {
             Cursor.visible = true;
         }

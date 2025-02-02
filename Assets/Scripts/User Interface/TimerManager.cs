@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class TimerManager : MonoBehaviour
@@ -19,18 +20,35 @@ public class TimerManager : MonoBehaviour
         
     }
 
-
-    public void AddTimer(float duration, Sprite sprite)
+    public void AddTimer(float duration, Sprite sprite, PowerUps powerUp)
     {
+        GameObject inactiveTimerObj = null;
+
         foreach (GameObject timerObj in timers)
         {
-            if (!timerObj.activeSelf)
+            Timer timer = timerObj.GetComponent<Timer>();
+
+            // If a timer for this power-up is found, reset it and return
+            if (timer.powerUp.Equals(powerUp))
             {
                 timerObj.SetActive(true);
-                Timer timer = timerObj.GetComponent<Timer>();
-                timer.Set(duration, sprite);
-                break;
+                timer.Set(duration, sprite, powerUp);
+                return;
             }
+
+            // Store the first available inactive timer
+            if (!timerObj.activeSelf && inactiveTimerObj == null)
+            {
+                inactiveTimerObj = timerObj;
+            }
+        }
+
+        // If no active timer was found, start a new timer if an inactive one exists
+        if (inactiveTimerObj != null)
+        {
+            Timer timer = inactiveTimerObj.GetComponent<Timer>();
+            inactiveTimerObj.SetActive(true);
+            timer.Set(duration, sprite, powerUp);
         }
     }
 

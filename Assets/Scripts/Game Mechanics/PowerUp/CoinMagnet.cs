@@ -28,7 +28,7 @@ public class CoinMagnet : IPowerUp
     public void ApplyPowerup()
     {
         Debug.Log("TODO");
-        referenceManager.TimerManager.AddTimer(Duration, Sprite);
+        referenceManager.TimerManager.AddTimer(Duration, Sprite, PowerUp);
     }
 
     public CoinMagnet()

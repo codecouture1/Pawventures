@@ -6,6 +6,7 @@ public class CanvasManager : MonoBehaviour
 {
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
+    public GameObject checkpoint;
 
     public GameObject spamW;
     private PlayerScript pScript;
@@ -21,6 +22,7 @@ public class CanvasManager : MonoBehaviour
     private void Start()
     {
         pScript = referenceManager.playerScript;
+        checkpoint.SetActive(GameData.Instance.checkPointCount > 0);  
     }
 
     void Update()
@@ -39,7 +41,6 @@ public class CanvasManager : MonoBehaviour
 
     private IEnumerator DisplayDeathScreen()
     {
-        Debug.Log("Start");
         yield return new WaitForSeconds(1f);
         deathScreen.SetActive(true);
         yield return null;

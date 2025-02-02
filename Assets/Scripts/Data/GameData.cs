@@ -31,6 +31,8 @@ public class GameData : MonoBehaviour
     public int doubleJumpCount;
     public int coinMagnetCount;
     public int halsBandCount;
+    public int checkPointCount;
+    public int reviveCount;
 
     //equipped powerUps
     public PowerUps firstPowerUp;
@@ -38,6 +40,8 @@ public class GameData : MonoBehaviour
 
     //player
     public int playerHealth;
+
+    //level checkpoints
 
     //other
     public bool tutorialCompleted;

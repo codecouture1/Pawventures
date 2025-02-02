@@ -6,7 +6,9 @@ public class Timer : MonoBehaviour
 {
     public Image bar; //the progress bar of the timer
 
-    public Image powerUp; //the powerUp sprite (may not be assigned if timer is not used by powerup)
+    public Image powerUpImg; //the powerUp sprite (may not be assigned if timer is not used by powerup)
+
+    public PowerUps powerUp;
 
     public bool changeColor;
 
@@ -27,9 +29,10 @@ public class Timer : MonoBehaviour
     }
 
     //set timer UI with custom Sprite for PowerUps
-    public void Set(float duration, Sprite sprite)
+    public void Set(float duration, Sprite sprite, PowerUps powerUp)
     {
-        powerUp.sprite = sprite;
+        this.powerUp = powerUp;
+        powerUpImg.sprite = sprite;
         if (timerCoroutine != null)
             StopCoroutine(timerCoroutine);
 

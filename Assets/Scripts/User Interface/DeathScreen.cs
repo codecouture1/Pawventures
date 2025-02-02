@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeathScreen : MonoBehaviour
 {
@@ -6,6 +8,7 @@ public class DeathScreen : MonoBehaviour
     public GameObject revive;
     private Timer reviveTimer;
     public GameObject buttons;
+    public TextMeshProUGUI reviveCounter;
 
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
@@ -20,8 +23,17 @@ public class DeathScreen : MonoBehaviour
 
     private void OnEnable()
     {
-        revive.SetActive(true);
-        buttons.SetActive(false);
+        reviveCounter.text = $"x{GameData.Instance.reviveCount}";
+        if(GameData.Instance.reviveCount > 0)
+        {
+            revive.SetActive(true);
+            buttons.SetActive(false);
+        } 
+        else
+        {
+            revive.SetActive(false);
+            buttons.SetActive(true);
+        }
 
         deathSound.Play();
         reviveTimer.Set(4f);
@@ -39,5 +51,7 @@ public class DeathScreen : MonoBehaviour
     public void RevivePlayer()
     {
         referenceManager.playerScript.Revive();
+        GameData.Instance.reviveCount--;
+        GameData.Instance.SaveData();
     }
 }
