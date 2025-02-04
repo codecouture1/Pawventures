@@ -28,6 +28,7 @@ public class DeathScreen : MonoBehaviour
         {
             revive.SetActive(true);
             buttons.SetActive(false);
+            reviveTimer.Set(4f);
         } 
         else
         {
@@ -36,7 +37,6 @@ public class DeathScreen : MonoBehaviour
         }
 
         deathSound.Play();
-        reviveTimer.Set(4f);
     }
 
     private void Update()
@@ -51,6 +51,7 @@ public class DeathScreen : MonoBehaviour
     public void RevivePlayer()
     {
         referenceManager.playerScript.Revive();
+        referenceManager.hunterScript.animator.SetTrigger("restart");
         GameData.Instance.reviveCount--;
         GameData.Instance.SaveData();
     }

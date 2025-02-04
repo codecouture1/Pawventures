@@ -8,8 +8,8 @@ public class FinalModule : MonoBehaviour
     private ReferenceManager referenceManager;
 
     InventoryInterface inventorySript;
-    public bool skipInventoryPopup;
-    public int nextSceneIndex;
+    public bool finalChapter; //set this to true in the editor if this level is a final chapter
+    public int nextSceneIndex; //the scene index of the next chapter
 
     private void Awake()
     {
@@ -22,12 +22,15 @@ public class FinalModule : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //get next scene index from referencemanager
-            referenceManager.LoadOnClick = nextSceneIndex;
 
-            //if this is the last chapter of the level, the inventory popup is going to be skipped
-            if (skipInventoryPopup)
+            if (finalChapter)
             {
+                int thisLevel = MainMenu.GetLevel();
+                //in case of a final chapter, all checkpoints will be deleted upon level completion
+                GameData.Instance.levelStart[thisLevel] = MainMenu.GetFirstChapter(thisLevel);
+                GameData.Instance.levelRemain[thisLevel] = 0;
+
+                //in case of a final chapter, inventory sequence skipped and the next scene is loaded instantly
                 SceneManager.LoadScene(nextSceneIndex);
             }
             else
@@ -39,6 +42,9 @@ public class FinalModule : MonoBehaviour
                 //display inventory so the player can set powerups for the next chapter
                 referenceManager.inventory.SetActive(true);
                 inventorySript.DisplayExitButton(false);
+
+                //change the scene that gets loaded to the next scene
+                referenceManager.inventoryScript.LoadOnClick = nextSceneIndex;
             }
         }
         Destroy(collision.gameObject);

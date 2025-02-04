@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ReferenceManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class ReferenceManager : MonoBehaviour
     public PlayerScript playerScript { get; private set; }
 
     public GameObject hunter;
-    public HunterScript hunterScript { get; private set; }
+    public HunterScript hunterScript { get; set; }
 
     public GameObject m_camera;
     public CameraScript cameraScript { get; private set; }
@@ -22,7 +23,7 @@ public class ReferenceManager : MonoBehaviour
     public ItemSelector itemSelectorScript { get; private set; }
     
     public GameObject inventory;
-    public InventoryInterface inventoryScript { get; private set; }
+    public InventoryInterface inventoryScript { get; set; }
 
     public CoinManager coinManager;
 
@@ -31,9 +32,6 @@ public class ReferenceManager : MonoBehaviour
     public TimerManager TimerManager;
 
     public CanvasManager canvasManager;
-
-    public int firstChapterIndex;
-    public int LoadOnClick { get; set; } //the scene index that loads when inventory start button is pressed;
 
     public Animator exitAnimator;
 
@@ -49,8 +47,6 @@ public class ReferenceManager : MonoBehaviour
 
     void Awake()
     {
-        LoadOnClick = firstChapterIndex;
-
         playerScript = player.GetComponent<PlayerScript>();
         hunterScript = hunter.GetComponent<HunterScript>();
         cameraScript = m_camera.GetComponent<CameraScript>();

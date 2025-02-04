@@ -11,15 +11,14 @@ using UnityEngine.UI;
 
 public class InventoryInterface : MonoBehaviour
 {
-    private GameObject referenceManagerObj;
-    private ReferenceManager referenceManager;
-
     public GameObject inventoryInterface; //parent object
     public Toggle primarySlotToggle; //toggle component of the primary item slot
     public Toggle secondarySlotToggle; //toggle component of the secondary item slot
     private InventorySpriteManager inventorySpriteManager;
 
     public GameObject exitButton;
+    public int LoadOnClick { get; set; } //index of the scene that gets loaded on click;
+
     public TextMeshProUGUI[] counters; //display how many of each items the player owns
     public Button[] buttons; //button components of each item slot
 
@@ -33,6 +32,14 @@ public class InventoryInterface : MonoBehaviour
 
     private void Awake()
     {
+        //set loadOnClick to the current level start index from GameData
+        try
+        {
+            LoadOnClick = GameData.Instance.levelStart[MainMenu.GetLevel()];
+        } 
+        catch (Exception e) { }
+
+        //all items in the inventory
         Halsband = new(PowerUps.Halsband);
         Doppelsprung = new(PowerUps.Doppelsprung);
         GigaBeller = new(PowerUps.GigaBeller);
@@ -64,8 +71,6 @@ public class InventoryInterface : MonoBehaviour
         secondaryItem = GetItem(GameData.Instance.secondPowerUp);
         if (secondaryItem != null)
             inventorySpriteManager.DisplaySecondaryPowerUp(secondaryItem);
-
-        Debug.Log(primaryItem);
     }
 
     private void EquipItem(InventoryItem item)
@@ -209,15 +214,20 @@ public class InventoryInterface : MonoBehaviour
     //dynamically load the scene on start button click by getting LoadOnClick from ReferenceManager. This allows the scene to be changed during runtime
     public void LoadScene()
     {
-        referenceManagerObj = GameObject.Find("ReferenceManager");
-        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
-        SceneManager.LoadScene(referenceManager.LoadOnClick);
+        SceneManager.LoadScene(LoadOnClick);
     }
 
     //set the scene to be loaded on start button click manually
-    public void LoadScene(int index)
+    public void SetSceneLoad(int level)
     {
-        SceneManager.LoadScene(index);
+        if(GameData.Instance.levelStart[level - 1] == 0)
+        {
+            GameData.Instance.levelStart[level - 1] = MainMenu.GetFirstChapter(level - 1);
+            GameData.Instance.SaveData();
+        }
+
+        LoadOnClick = GameData.Instance.levelStart[level - 1];
+        Debug.Log(LoadOnClick);
     }
 
 }

@@ -42,6 +42,8 @@ public class GameData : MonoBehaviour
     public int playerHealth;
 
     //level checkpoints
+    public int[] levelStart = new int[3];
+    public int[] levelRemain = new int[3];
 
     //other
     public bool tutorialCompleted;

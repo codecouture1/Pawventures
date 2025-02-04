@@ -292,6 +292,8 @@ public class PlayerScript : MonoBehaviour
                 StartCoroutine(iFrames());
             }
             health--;
+            GameData.Instance.playerHealth--;
+            GameData.Instance.SaveData();
         }
 
         if (collision.gameObject.tag == "Kill")

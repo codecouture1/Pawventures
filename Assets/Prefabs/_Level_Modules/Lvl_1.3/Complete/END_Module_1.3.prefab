@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3e23fac34bbd146b6735feafd9a021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skipInventoryPopup: 1
+  finalChapter: 1
   nextSceneIndex: 1
 --- !u!1 &1614405184400771198
 GameObject:

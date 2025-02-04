@@ -660,17 +660,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167824600}
   m_CullTransparentMesh: 1
---- !u!114 &215837670 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2405412303123918168, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-  m_PrefabInstance: {fileID: 872930359986179604}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &259950821
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,14 +958,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 125041030}
-        m_TargetAssemblyTypeName: "MainMen\xFC, Assembly-CSharp"
-        m_MethodName: StartLevelTwo
+      - m_Target: {fileID: 1695390792}
+        m_TargetAssemblyTypeName: InventoryInterface, Assembly-CSharp
+        m_MethodName: OpenInventory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1695390792}
+        m_TargetAssemblyTypeName: InventoryInterface, Assembly-CSharp
+        m_MethodName: SetSceneLoad
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1199,46 +1200,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &525731822
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 215.2975, g: 248.2193, b: 60, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &568971622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,11 +1813,46 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3146821535008941272, guid: 3796fa35208a3a541b77f35e935ecc3b, type: 3}
   m_PrefabInstance: {fileID: 1022074986432161519}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &920394648 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7445991427973974458, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-  m_PrefabInstance: {fileID: 872930359986179604}
+--- !u!21 &994328999
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 215.2975, g: 248.2193, b: 60, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1003038980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,14 +1961,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1695390792}
+        m_TargetAssemblyTypeName: InventoryInterface, Assembly-CSharp
+        m_MethodName: SetSceneLoad
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2430,6 +2426,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273747353}
   m_CullTransparentMesh: 1
+--- !u!21 &1325092521
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 215.2975, g: 248.2193, b: 60, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1327523034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3275,14 +3311,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 125041030}
-        m_TargetAssemblyTypeName: "MainMen\xFC, Assembly-CSharp"
-        m_MethodName: StartLevelThree
+      - m_Target: {fileID: 1695390792}
+        m_TargetAssemblyTypeName: InventoryInterface, Assembly-CSharp
+        m_MethodName: OpenInventory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1695390792}
+        m_TargetAssemblyTypeName: InventoryInterface, Assembly-CSharp
+        m_MethodName: SetSceneLoad
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3417,46 +3465,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4142387853612577335, guid: 62bd27886cdfded499a0ff75dce20bf0, type: 3}
   m_PrefabInstance: {fileID: 2062127219}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1847890788
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 215.2975, g: 248.2193, b: 60, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1877675315
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,50 +3880,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2531852814510602096}
     m_Modifications:
-    - target: {fileID: 555826316009976343, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: exitButton
-      value: 
-      objectReference: {fileID: 920394648}
-    - target: {fileID: 2405412303123918168, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2405412303123918168, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2405412303123918168, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2405412303123918168, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1695390792}
-    - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 125041030}
-    - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: LoadSceneWithDelay
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: "MainMen\xFC, Assembly-CSharp"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915717747427241731, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5417618776627611917, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3996,14 +3960,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5705129177766089513, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: toggle
-      value: 
-      objectReference: {fileID: 215837670}
-    - target: {fileID: 5705129177766089513, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 1695390792}
     - target: {fileID: 6336756616422495913, guid: 6ee6ffff0e0af4b4c93abbd7dbe04eec, type: 3}
       propertyPath: m_Name
       value: Inventar

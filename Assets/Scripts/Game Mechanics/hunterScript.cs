@@ -14,7 +14,7 @@ public class HunterScript : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private GameObject player;
     private PlayerScript pScript;
-    private Animator animator;
+    public Animator animator;
 
     //--------------Stats---------------
     public float jumpStrength;
