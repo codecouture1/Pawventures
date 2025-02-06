@@ -27,6 +27,8 @@ public class ReferenceManager : MonoBehaviour
 
     public CoinManager coinManager;
 
+    public CollectibleManager collectibleManager;
+
     public GameObject deathscreen;
 
     public TimerManager TimerManager;
@@ -39,6 +41,7 @@ public class ReferenceManager : MonoBehaviour
     public Sprite gigaBeller;
     public Sprite doppelsprung;
     public Sprite münzmagnet;
+    public Sprite doubleCoins;
 
     public AudioClip halsbandSound;
     public AudioClip gigaBellerSound;

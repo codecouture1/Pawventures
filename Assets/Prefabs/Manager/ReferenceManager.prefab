@@ -58,6 +58,7 @@ MonoBehaviour:
   gigaBeller: {fileID: 2019150035397723291, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
   doppelsprung: {fileID: 7290201576444082996, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
   "m\xFCnzmagnet": {fileID: 5173416151286887653, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  doubleCoins: {fileID: -7767234033486601110, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
   halsbandSound: {fileID: 0}
   gigaBellerSound: {fileID: 0}
   doppelsprungSound: {fileID: 0}

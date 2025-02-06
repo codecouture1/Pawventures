@@ -22,7 +22,7 @@ public class PowerUpCollectible : MonoBehaviour
         referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
         itemSelector = referenceManager.itemSelectorScript;
 
-        powerUps = new IPowerUp[] { null, new Halsband(), new GigaBeller(), new Doppelsprung(), new CoinMagnet() };
+        powerUps = new IPowerUp[] { new Halsband(), new GigaBeller(), new Doppelsprung(), new CoinMagnet(), new DoubleCoins() };
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (spawnAsHalsband)
@@ -51,7 +51,7 @@ public class PowerUpCollectible : MonoBehaviour
     //randomly chooses a PowerUp from powerUps[]
     public void SetPowerUp()
     {
-        int powerUpSetter = UnityEngine.Random.Range(1, 5);
+        int powerUpSetter = UnityEngine.Random.Range(0, powerUps.Length);
         powerUp = powerUps[powerUpSetter];
     }
 }

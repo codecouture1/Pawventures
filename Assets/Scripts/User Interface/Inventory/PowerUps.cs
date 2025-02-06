@@ -6,5 +6,6 @@ public enum PowerUps
     Halsband,
     Doppelsprung,
     GigaBeller,
-    CoinMagnet
+    CoinMagnet,
+    DoubleCoins
 }
