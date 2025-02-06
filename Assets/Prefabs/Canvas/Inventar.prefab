@@ -1723,14 +1723,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc5d184df4ded0468041b0adee4b3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  halsband: {fileID: 1008570064, guid: 6e7dcc5587d6aac4eac75ec0b3212975, type: 3}
-  gigaBeller: {fileID: 597182422, guid: 6e7dcc5587d6aac4eac75ec0b3212975, type: 3}
-  doppelsprung: {fileID: -1331107064, guid: 6e7dcc5587d6aac4eac75ec0b3212975, type: 3}
-  "m\xFCnzmagnet": {fileID: 1864102195, guid: 6e7dcc5587d6aac4eac75ec0b3212975, type: 3}
-  halsband_EMPTY: {fileID: -6691069807042016819, guid: df2490f706b5d1543834daf4493cb9e7, type: 3}
-  gigaBeller_EMPTY: {fileID: -4500283034241455875, guid: df2490f706b5d1543834daf4493cb9e7, type: 3}
-  doppelsprung_EMPTY: {fileID: 1476984183130852500, guid: df2490f706b5d1543834daf4493cb9e7, type: 3}
-  "m\xFCnzmagnet_EMPTY": {fileID: 7733959030448167850, guid: df2490f706b5d1543834daf4493cb9e7, type: 3}
+  halsband: {fileID: -7143737311541787310, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  gigaBeller: {fileID: 2019150035397723291, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  doppelsprung: {fileID: 7290201576444082996, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  "m\xFCnzmagnet": {fileID: 5173416151286887653, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  halsband_EMPTY: {fileID: -2815618957937319281, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  gigaBeller_EMPTY: {fileID: 1722719754651528961, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  doppelsprung_EMPTY: {fileID: -4748534044736644876, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  "m\xFCnzmagnet_EMPTY": {fileID: 4182465339978600048, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
   primarySprite: {fileID: 8333537966493417282}
   secondarySprite: {fileID: 6823633000048427569}
   slot1: {fileID: 9184120705592954362}

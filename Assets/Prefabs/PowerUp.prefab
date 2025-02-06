@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 146.1, y: -110, z: 0}
-  m_LocalScale: {x: 1.5508916, y: 1.5508916, z: 1.5508916}
+  m_LocalScale: {x: 0.6203567, y: 0.6203567, z: 1.5508916}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: 1509257937
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -323844947, guid: 6e7dcc5587d6aac4eac75ec0b3212975, type: 3}
+  m_Sprite: {fileID: -5512841241986725962, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.5, y: 2.5}
+  m_DrawMode: 1
+  m_Size: {x: 5.75, y: 5.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -126,7 +126,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1
+  m_Radius: 2.29
 --- !u!114 &2888936749716193733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e658dc86441104b9ee7a09a8df7151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnAsHalsband: 0
 --- !u!82 &-178885087129518918
 AudioSource:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 
     public Image powerUpImg; //the powerUp sprite (may not be assigned if timer is not used by powerup)
 
-    public PowerUps powerUp;
+    [HideInInspector] public PowerUps powerUp;
 
     public bool changeColor;
 

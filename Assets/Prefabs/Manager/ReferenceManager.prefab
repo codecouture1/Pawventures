@@ -48,7 +48,17 @@ MonoBehaviour:
   hunter: {fileID: 0}
   m_camera: {fileID: 0}
   itemSelector: {fileID: 0}
-  halsband: {fileID: 1008570064, guid: 6e7dcc5587d6aac4eac75ec0b3212975, type: 3}
-  gigaBeller: {fileID: 597182422, guid: 6e7dcc5587d6aac4eac75ec0b3212975, type: 3}
-  doppelsprung: {fileID: -1331107064, guid: 6e7dcc5587d6aac4eac75ec0b3212975, type: 3}
-  "m\xFCnzmagnet": {fileID: 1864102195, guid: 6e7dcc5587d6aac4eac75ec0b3212975, type: 3}
+  inventory: {fileID: 0}
+  coinManager: {fileID: 0}
+  deathscreen: {fileID: 0}
+  TimerManager: {fileID: 0}
+  canvasManager: {fileID: 0}
+  exitAnimator: {fileID: 0}
+  halsband: {fileID: -7143737311541787310, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  gigaBeller: {fileID: 2019150035397723291, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  doppelsprung: {fileID: 7290201576444082996, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  "m\xFCnzmagnet": {fileID: 5173416151286887653, guid: e85180d23d33b094ea14517c2f2cae4e, type: 3}
+  halsbandSound: {fileID: 0}
+  gigaBellerSound: {fileID: 0}
+  doppelsprungSound: {fileID: 0}
+  "m\xFCnzmagnetSound": {fileID: 0}
