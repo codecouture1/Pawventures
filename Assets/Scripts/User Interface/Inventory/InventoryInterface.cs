@@ -22,9 +22,11 @@ public class InventoryInterface : MonoBehaviour
     public TextMeshProUGUI[] counters; //display how many of each items the player owns
     public Button[] buttons; //button components of each item slot
 
+    //the items currently *equipped* by the player
     public InventoryItem primaryItem;
     public InventoryItem secondaryItem;
 
+    //the items currently *owned by* the player
     public InventoryItem Halsband { get; private set; }
     public InventoryItem Doppelsprung { get; private set; }
     public InventoryItem GigaBeller { get; private set; }
@@ -125,6 +127,8 @@ public class InventoryInterface : MonoBehaviour
         UpdateCounters();
     }
 
+
+    //return Inventory Item based on PowerUps enum input
     private InventoryItem GetItem(PowerUps powerUp)
     {
         switch (powerUp)
@@ -137,11 +141,14 @@ public class InventoryInterface : MonoBehaviour
                 return GigaBeller;
             case (PowerUps.CoinMagnet):
                 return CoinMagnet;
+            case (PowerUps.DoubleCoins):
+                return DoubleCoins;
             default:
                 return null;
         }
     }
 
+    //sets item in specified slot to the input item
     private void SetItem(int slot, InventoryItem item)
     {
         if (slot == 1)
@@ -157,6 +164,7 @@ public class InventoryInterface : MonoBehaviour
         UpdateCounters();
     }
 
+    //returns the currently active slot as an integer
     public int GetActiveSlot()
     {
         if (primarySlotToggle.isOn)
@@ -188,6 +196,7 @@ public class InventoryInterface : MonoBehaviour
         counters[1].text = $"x{Doppelsprung.Amount}";
         counters[2].text = $"x{GigaBeller.Amount}";
         counters[3].text = $"x{CoinMagnet.Amount}";
+        counters[4].text = $"x{DoubleCoins.Amount}";
     }
 
     //opens inventory
