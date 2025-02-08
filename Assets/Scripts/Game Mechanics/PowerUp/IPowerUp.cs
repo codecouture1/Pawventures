@@ -30,6 +30,8 @@ public interface IPowerUp
                 return new GigaBeller();
             case PowerUps.CoinMagnet:
                 return new CoinMagnet();
+            case PowerUps.DoubleCoins:
+                return new DoubleCoins();
             case PowerUps.None:
                 return null;
             default:

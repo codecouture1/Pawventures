@@ -31,6 +31,7 @@ public class GameData : MonoBehaviour
     public int doubleJumpCount;
     public int coinMagnetCount;
     public int halsBandCount;
+    public int doubleCoinCount;
     public int checkPointCount;
     public int reviveCount;
 
@@ -42,8 +43,8 @@ public class GameData : MonoBehaviour
     public int playerHealth;
 
     //level checkpoints
-    public int[] levelStart = new int[3];
-    public int[] levelRemain = new int[3];
+    public int[] levelStart = new int[3]; //contains the starting scene index for each level
+    public int[] levelRemain = new int[3]; //cointains the amount of active checkpoints remaining in each level
 
     //other
     public bool tutorialCompleted;

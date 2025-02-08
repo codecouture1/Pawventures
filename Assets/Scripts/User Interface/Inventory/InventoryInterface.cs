@@ -29,6 +29,7 @@ public class InventoryInterface : MonoBehaviour
     public InventoryItem Doppelsprung { get; private set; }
     public InventoryItem GigaBeller { get; private set; }
     public InventoryItem CoinMagnet { get; private set; }
+    public InventoryItem DoubleCoins { get; private set; }
 
     private void Awake()
     {
@@ -44,6 +45,7 @@ public class InventoryInterface : MonoBehaviour
         Doppelsprung = new(PowerUps.Doppelsprung);
         GigaBeller = new(PowerUps.GigaBeller);
         CoinMagnet = new(PowerUps.CoinMagnet);
+        DoubleCoins = new(PowerUps.DoubleCoins);
 
         inventorySpriteManager = GetComponent<InventorySpriteManager>();
     }
@@ -62,6 +64,7 @@ public class InventoryInterface : MonoBehaviour
         buttons[1].onClick.AddListener(() => EquipItem(Doppelsprung));
         buttons[2].onClick.AddListener(() => EquipItem(GigaBeller));
         buttons[3].onClick.AddListener(() => EquipItem(CoinMagnet));
+        buttons[4].onClick.AddListener(() => EquipItem(DoubleCoins));
 
         //loads the items currently held by the player into the inventory
         primaryItem = GetItem(GameData.Instance.firstPowerUp);

@@ -9,11 +9,13 @@ public class InventorySpriteManager : MonoBehaviour
     public Sprite gigaBeller;
     public Sprite doppelsprung;
     public Sprite münzmagnet;
+    public Sprite doubleCoins;
 
     public Sprite halsband_EMPTY;
     public Sprite gigaBeller_EMPTY;
     public Sprite doppelsprung_EMPTY;
     public Sprite münzmagnet_EMPTY;
+    public Sprite doubleCoins_EMPTY;
 
     public Image primarySprite;
     public Image secondarySprite;
@@ -22,6 +24,7 @@ public class InventorySpriteManager : MonoBehaviour
     public Image slot2;
     public Image slot3;
     public Image slot4;
+    public Image slot5;
 
     private void Awake()
     {
@@ -49,6 +52,11 @@ public class InventorySpriteManager : MonoBehaviour
             slot4.sprite = münzmagnet;
         else
             slot4.sprite = münzmagnet_EMPTY;
+
+        if (inventory.DoubleCoins.Amount != 0)
+            slot5.sprite = doubleCoins;
+        else
+            slot5.sprite = doubleCoins_EMPTY;
     }
 
     public void DisplayPrimaryPowerUp(InventoryItem item)
@@ -69,6 +77,9 @@ public class InventorySpriteManager : MonoBehaviour
                     break;
                 case PowerUps.CoinMagnet:
                     primarySprite.sprite = münzmagnet;
+                    break;
+                case PowerUps.DoubleCoins:
+                    primarySprite.sprite = doubleCoins;
                     break;
                 default:
                     primarySprite.enabled = false;
@@ -101,6 +112,9 @@ public class InventorySpriteManager : MonoBehaviour
                     break;
                 case PowerUps.CoinMagnet:
                     secondarySprite.sprite = münzmagnet;
+                    break;
+                case PowerUps.DoubleCoins:
+                    secondarySprite.sprite = doubleCoins;
                     break;
                 default:
                     secondarySprite.enabled = false;

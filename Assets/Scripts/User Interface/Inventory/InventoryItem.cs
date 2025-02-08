@@ -25,6 +25,8 @@ public class InventoryItem
                 return GameData.Instance.gigaBellerCount;
             case PowerUps.CoinMagnet:
                 return GameData.Instance.coinMagnetCount;
+            case PowerUps.DoubleCoins:
+                return GameData.Instance.doubleCoinCount;
             default:
                 Debug.LogError("PowerUp does not Exist");
                 return 0;
@@ -76,6 +78,9 @@ public class InventoryItem
                 break;
             case PowerUps.CoinMagnet:
                 GameData.Instance.coinMagnetCount = Amount;
+                break;
+            case PowerUps.DoubleCoins:
+                GameData.Instance.doubleCoinCount = Amount;
                 break;
             default:
                 Debug.LogError("PowerUp does not Exist");
