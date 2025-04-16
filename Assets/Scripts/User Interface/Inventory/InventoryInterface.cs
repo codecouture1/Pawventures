@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using TMPro.Examples;
@@ -40,7 +41,7 @@ public class InventoryInterface : MonoBehaviour
         {
             LoadOnClick = GameData.Instance.levelStart[MainMenu.GetLevel()];
         } 
-        catch (Exception e) { }
+        catch (Exception e) { Debug.Log(e); }
 
         //all items in the inventory
         Halsband = new(PowerUps.Halsband);
@@ -227,6 +228,18 @@ public class InventoryInterface : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(LoadOnClick);
+    }
+
+    public void LoadSceneDelayed()
+    {
+        StartCoroutine(WaitThenLoadScene(1f));
+    }
+
+    private IEnumerator WaitThenLoadScene(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(LoadOnClick);
+        yield return null;
     }
 
     //set the scene to be loaded on start button click manually

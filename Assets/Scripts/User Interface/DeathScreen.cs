@@ -24,12 +24,16 @@ public class DeathScreen : MonoBehaviour
     private void OnEnable()
     {
         reviveCounter.text = $"x{GameData.Instance.reviveCount}";
-        if(GameData.Instance.reviveCount > 0)
+
+        if (GameData.Instance.reviveCount > 0)
         {
             revive.SetActive(true);
             buttons.SetActive(false);
+
+            // Start the timer and subscribe to the event
             reviveTimer.Set(4f);
-        } 
+            reviveTimer.OnTimerFinished += HandleReviveTimerFinished;
+        }
         else
         {
             revive.SetActive(false);
@@ -39,13 +43,20 @@ public class DeathScreen : MonoBehaviour
         deathSound.Play();
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        if (reviveTimer.Finished)
+        // Always unsubscribe to prevent memory leaks
+        if (reviveTimer != null)
         {
-            revive.SetActive(false);
-            buttons.SetActive(true);
+            reviveTimer.OnTimerFinished -= HandleReviveTimerFinished;
         }
+    }
+
+    // Event handler for when the timer finishes
+    private void HandleReviveTimerFinished(Timer timer)
+    {
+        revive.SetActive(false);
+        buttons.SetActive(true);
     }
 
     public void RevivePlayer()
@@ -54,5 +65,8 @@ public class DeathScreen : MonoBehaviour
         referenceManager.hunterScript.animator.SetTrigger("restart");
         GameData.Instance.reviveCount--;
         GameData.Instance.SaveData();
+
+        // Optionally stop the timer early if needed
+        reviveTimer.Stop();
     }
 }

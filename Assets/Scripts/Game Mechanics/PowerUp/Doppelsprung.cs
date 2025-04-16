@@ -31,7 +31,7 @@ public class Doppelsprung : IPowerUp
     public void ApplyPowerup()
     {
         referenceManager.TimerManager.AddTimer(Duration, Sprite, PowerUp);
-        //pScript.doubleJumpCoroutine = pScript.StartCoroutine(pScript.DoubleJump(Duration));
+        pScript.doubleJumpCoroutine = pScript.StartCoroutine(pScript.DoubleJump(Duration));
     }
 
     public Doppelsprung()

@@ -74,11 +74,8 @@ public class PlayerScript : MonoBehaviour
             run(moveSpeed);
 
             //springen
-            if (canJump && doubleJumpCoroutine == null)
-            {
-                if (Input.GetKeyDown(KeyCode.W) == true && isGrounded())
-                    Jump();    
-            }
+            if (Input.GetKeyDown(KeyCode.W) && canJump && isGrounded() && doubleJumpCoroutine == null )           
+                Jump();          
 
             //schnelles landen
             if (Input.GetKeyDown(KeyCode.S) == true && !isGrounded())
@@ -152,34 +149,23 @@ public class PlayerScript : MonoBehaviour
 
     public IEnumerator DoubleJump(float duration)
     {
+        int jumpCounter = isGrounded() ? 0 : 1; // Start at 1 if not grounded, else 0
+
         for (float elapsedTime = 0; elapsedTime <= duration; elapsedTime += Time.deltaTime)
         {
-            int jumpCounter = isGrounded() ? 0 : 1; // Start at 1 if not grounded, else 0
-
-            while (jumpCounter < 2)
+            if (jumpCounter == 2)
             {
-                if (Input.GetKeyDown(KeyCode.W))
-                {
-                    if (jumpCounter < 2) // Ensure jumpCounter is within limits
-                    {
-                        jumpCounter++;
-                        Debug.Log($"Grounded: {isGrounded()}, JumpCounter: {jumpCounter}");
-                        if (isCrouching)
-                        {
-                            stopCrouch();
-                        }
-                        myRigidbody2D.linearVelocity = Vector2.up * jumpStrength;
-                        audioSource.Stop();
-                        audioSource.clip = jumpSound;
-                        audioSource.Play();
-                        yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.W)); // Wait for key release before proceeding
-                        yield return null;
-                    }
-                }
-                yield return null; // Wait for the next frame
+                yield return new WaitUntil(() => isGrounded());
+                jumpCounter = 0;
             }
 
-            yield return null;
+            if (Input.GetKeyDown(KeyCode.W) && canJump && jumpCounter < 2)
+            {
+                    Jump();
+                    jumpCounter++;
+                    Debug.Log(jumpCounter);
+            }          
+            yield return null; // Wait for the next frame            
         }
         doubleJumpCoroutine = null;
     }
@@ -260,6 +246,7 @@ public class PlayerScript : MonoBehaviour
         health = 1;
         referenceManager.hunterScript.ResetPosition();
         StartCoroutine(iFrames());
+
     }
 
     //**********************************iFrames**********************************

@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class Timer : MonoBehaviour
 {
-    public Image bar; //the progress bar of the timer
-
-    public Image powerUpImg; //the powerUp sprite (may not be assigned if timer is not used by powerup)
+    public Image bar; // The progress bar of the timer
+    public Image powerUpImg; // The powerUp sprite (may not be assigned if timer is not used by powerup)
 
     [HideInInspector] public PowerUps powerUp;
 
@@ -18,7 +18,10 @@ public class Timer : MonoBehaviour
 
     private Coroutine timerCoroutine;
 
-    public bool Finished { get; private set; } //returns true as soon as the timer is finished
+    public bool Finished { get; private set; } // Returns true when the timer is finished
+
+    // Event triggered when the timer finishes
+    public event Action<Timer> OnTimerFinished;
 
     public void Set(float duration)
     {
@@ -28,47 +31,38 @@ public class Timer : MonoBehaviour
         timerCoroutine = StartCoroutine(StartTimer(duration));
     }
 
-    //set timer UI with custom Sprite for PowerUps
+    // Set timer UI with custom sprite for PowerUps
     public void Set(float duration, Sprite sprite, PowerUps powerUp)
     {
         this.powerUp = powerUp;
         powerUpImg.sprite = sprite;
+
         if (timerCoroutine != null)
             StopCoroutine(timerCoroutine);
 
         timerCoroutine = StartCoroutine(StartTimer(duration));
     }
 
-
-
     private IEnumerator StartTimer(float duration)
     {
-        //set Finished to false
+        // Set Finished to false
         Finished = false;
 
-        //ensure fill amount is max
+        // Ensure fill amount is max
         bar.fillAmount = 1f;
         for (float elapsedTime = 0; elapsedTime <= duration; elapsedTime += Time.deltaTime)
         {
             bar.fillAmount = Mathf.Lerp(1f, 0f, elapsedTime / duration);
 
-            //change color
+            // Change color
             if (changeColor)
             {
                 float progress = elapsedTime / duration; // Normalized time (0 to 1)
 
-                if (progress < 0.5f)
-                {
-                    // First half (Green to Yellow)
-                    bar.color = Color.Lerp(startColor, midColor, progress * 2);
-                }
-                else
-                {
-                    // Second half (Yellow to Red)
-                    bar.color = Color.Lerp(midColor, endColor, (progress - 0.5f) * 2);
-                }
+                bar.color = progress < 0.5f ?
+                    Color.Lerp(startColor, midColor, progress * 2) :
+                    Color.Lerp(midColor, endColor, (progress - 0.5f) * 2);
             }
-
 
             yield return null;
         }
@@ -78,8 +72,18 @@ public class Timer : MonoBehaviour
 
     public void Stop()
     {
-        timerCoroutine = null;
+        if (timerCoroutine != null)
+        {
+            StopCoroutine(timerCoroutine);
+            timerCoroutine = null;
+        }
+
         Finished = true;
-        gameObject.SetActive(false);
+
+        // Invoke the event when the timer finishes
+        OnTimerFinished?.Invoke(this);
+       
+        if(changeColor)
+            Destroy(gameObject);
     }
 }
