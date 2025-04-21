@@ -33,11 +33,11 @@ public class PlaySoundOnCollide : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(WaitThenStop(0.5f));
+            StartCoroutine(WaitUntil(0.5f));
         }
     }
 
-    private IEnumerator WaitThenStop(float seconds)
+    private IEnumerator WaitUntil(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         audioSource.Stop();
