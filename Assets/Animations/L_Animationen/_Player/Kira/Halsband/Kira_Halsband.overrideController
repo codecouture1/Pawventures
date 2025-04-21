@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Kira_Halsband
+  m_Controller: {fileID: 9100000, guid: 6c4e9879a6af0af4fb07bd2ec7ea8cc5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e62501e5a13e01643bc3f9b94dbb2284, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 473a6ddcf410b524b867c1c52b9b9be0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b14bd2a03c8b6354084cdc1113738abc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f6b81f62576d0874caf163ff4f89d0db, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ed9fa311aba76a843affa17dc9edba58, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 07139b23fc27d0049b1375105bb5c4cc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f3e64ac1ff6c3f24eb18817e1043f2a8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d7b5d8563c230e1449ca1c3bcd6c3181, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 365e03673dea1b847ab02c34561668dc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 19f4f9afd2b0c364390942a01280920f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 695050c9ba643f647888e888aa499055, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 80fd1f5447f0fa944835489db56f9573, type: 2}

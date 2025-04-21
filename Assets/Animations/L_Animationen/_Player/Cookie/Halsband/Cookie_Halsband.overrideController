@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cookie_Halsband
+  m_Controller: {fileID: 9100000, guid: 6c4e9879a6af0af4fb07bd2ec7ea8cc5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e62501e5a13e01643bc3f9b94dbb2284, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 870c41bb1d5b8bb479587c90aa8b18f6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b14bd2a03c8b6354084cdc1113738abc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 45d4d8f73a3a0d6439b043f6faeaacf3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ed9fa311aba76a843affa17dc9edba58, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 78bdd48651e8b0d4db727a504c1c911f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f3e64ac1ff6c3f24eb18817e1043f2a8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1cbedc48be043ec4ea704fa4fbeb4813, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 365e03673dea1b847ab02c34561668dc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ab1b225412e2e374d9063b528dadbd67, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 695050c9ba643f647888e888aa499055, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 60b228f0287ae654785bf5cf70139dec, type: 2}
