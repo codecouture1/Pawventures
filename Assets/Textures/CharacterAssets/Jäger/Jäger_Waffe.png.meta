@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: 2f1613fbc16984846b765a8c10cccef0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3494590604843873260
+    second: "J\xE4ger_Waffe_0"
+  - first:
+      213: 8463661204566723187
+    second: "J\xE4ger_Waffe_1"
+  - first:
+      213: 3946113767146168927
+    second: "J\xE4ger_Waffe_2"
+  - first:
+      213: -7367320583502364179
+    second: "J\xE4ger_Waffe_3"
+  - first:
+      213: -7388670088947677733
+    second: "J\xE4ger_Waffe_4"
+  - first:
+      213: -7360055396005307396
+    second: "J\xE4ger_Waffe_5"
+  - first:
+      213: 7710553065135507623
+    second: "J\xE4ger_Waffe_6"
+  - first:
+      213: -3586708248292971642
+    second: "J\xE4ger_Waffe_7"
+  - first:
+      213: 418157281160268798
+    second: "J\xE4ger_Waffe_8"
+  - first:
+      213: 8640564225521907643
+    second: "J\xE4ger_Waffe_9"
+  - first:
+      213: 162823451606098857
+    second: "J\xE4ger_Waffe_10"
+  - first:
+      213: -6197334229911373175
+    second: "J\xE4ger_Waffe_11"
+  - first:
+      213: -2105956903259708574
+    second: "J\xE4ger_Waffe_12"
+  - first:
+      213: 381059158710365854
+    second: "J\xE4ger_Waffe_13"
+  - first:
+      213: 5046532104923035377
+    second: "J\xE4ger_Waffe_14"
+  - first:
+      213: -3530330414172826904
+    second: "J\xE4ger_Waffe_15"
+  - first:
+      213: -6165601903385093613
+    second: "J\xE4ger_Waffe_16"
+  - first:
+      213: -1218988936537638451
+    second: "J\xE4ger_Waffe_17"
+  - first:
+      213: 3628532617976665349
+    second: "J\xE4ger_Waffe_18"
+  - first:
+      213: -5449056837244661958
+    second: "J\xE4ger_Waffe_19"
+  - first:
+      213: 2417638914271857863
+    second: "J\xE4ger_Waffe_20"
+  - first:
+      213: 8902601809972746728
+    second: "J\xE4ger_Waffe_21"
+  - first:
+      213: -7142488930041251690
+    second: "J\xE4ger_Waffe_22"
+  - first:
+      213: 6306259761400900282
+    second: "J\xE4ger_Waffe_23"
+  - first:
+      213: -6022831378881961554
+    second: "J\xE4ger_Waffe_24"
+  - first:
+      213: -4778658895145574976
+    second: "J\xE4ger_Waffe_25"
+  - first:
+      213: -1039342866450346244
+    second: "J\xE4ger_Waffe_26"
+  - first:
+      213: 1990903756886782491
+    second: "J\xE4ger_Waffe_27"
+  - first:
+      213: -5614066133763263673
+    second: "J\xE4ger_Waffe_28"
+  - first:
+      213: -9082412646206683403
+    second: "J\xE4ger_Waffe_29"
+  - first:
+      213: 8688457979895865900
+    second: "J\xE4ger_Waffe_30"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1139
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce3f225d3a74f7030800000000000000
+      internalID: 3494590604843873260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_1"
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a447de507f47570800000000000000
+      internalID: 8463661204566723187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_2"
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f52a606509963c630800000000000000
+      internalID: 3946113767146168927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_3"
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de10be986f402c990800000000000000
+      internalID: -7367320583502364179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_4"
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd548b173bb267990800000000000000
+      internalID: -7388670088947677733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_5"
+      rect:
+        serializedVersion: 2
+        x: 5695
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb18e1dc94dbd990800000000000000
+      internalID: -7360055396005307396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_6"
+      rect:
+        serializedVersion: 2
+        x: 6834
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a883351923610b60800000000000000
+      internalID: 7710553065135507623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_7"
+      rect:
+        serializedVersion: 2
+        x: 7973
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ba883f9d3793ec0800000000000000
+      internalID: -3586708248292971642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_8"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb0dcbe4d79dc500800000000000000
+      internalID: 418157281160268798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_9"
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb77e29226379e770800000000000000
+      internalID: 8640564225521907643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_10"
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3a51a0117724200800000000000000
+      internalID: 162823451606098857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_11"
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a73cf4a55aef9a0800000000000000
+      internalID: -6197334229911373175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_12"
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2636ce4ba5326c2e0800000000000000
+      internalID: -2105956903259708574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_13"
+      rect:
+        serializedVersion: 2
+        x: 5695
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e2751394bc94500800000000000000
+      internalID: 381059158710365854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_14"
+      rect:
+        serializedVersion: 2
+        x: 6834
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6ba853632e80640800000000000000
+      internalID: 5046532104923035377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_15"
+      rect:
+        serializedVersion: 2
+        x: 7973
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2987b513fb10fc0800000000000000
+      internalID: -3530330414172826904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_16"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a52425cb16f6aa0800000000000000
+      internalID: -6165601903385093613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_17"
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9fa8c4508451fe0800000000000000
+      internalID: -1218988936537638451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_18"
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505da66f0332b5230800000000000000
+      internalID: 3628532617976665349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_19"
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f4e174daf0164b0800000000000000
+      internalID: -5449056837244661958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_20"
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ccc55888cd2d8120800000000000000
+      internalID: 2417638914271857863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_21"
+      rect:
+        serializedVersion: 2
+        x: 5695
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e9dc2c9d256c8b70800000000000000
+      internalID: 8902601809972746728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_22"
+      rect:
+        serializedVersion: 2
+        x: 6834
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6983bb02928c0ec90800000000000000
+      internalID: -7142488930041251690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_23"
+      rect:
+        serializedVersion: 2
+        x: 7973
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abae3ab47d5548750800000000000000
+      internalID: 6306259761400900282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_24"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea12aaf65ca9a6ca0800000000000000
+      internalID: -6022831378881961554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_25"
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd5614ad0bceadb0800000000000000
+      internalID: -4778658895145574976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_26"
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe046d6b238391f0800000000000000
+      internalID: -1039342866450346244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_27"
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b123a3b2b6c11ab10800000000000000
+      internalID: 1990903756886782491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_28"
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7437d7f8894d612b0800000000000000
+      internalID: -5614066133763263673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_29"
+      rect:
+        serializedVersion: 2
+        x: 5695
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6c557a1d9c4f180800000000000000
+      internalID: -9082412646206683403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "J\xE4ger_Waffe_30"
+      rect:
+        serializedVersion: 2
+        x: 6834
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c22e991df7a939870800000000000000
+      internalID: 8688457979895865900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d7085a31386536a4892f0ebb80654b93
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "J\xE4ger_Waffe_0": 3494590604843873260
+      "J\xE4ger_Waffe_1": 8463661204566723187
+      "J\xE4ger_Waffe_10": 162823451606098857
+      "J\xE4ger_Waffe_11": -6197334229911373175
+      "J\xE4ger_Waffe_12": -2105956903259708574
+      "J\xE4ger_Waffe_13": 381059158710365854
+      "J\xE4ger_Waffe_14": 5046532104923035377
+      "J\xE4ger_Waffe_15": -3530330414172826904
+      "J\xE4ger_Waffe_16": -6165601903385093613
+      "J\xE4ger_Waffe_17": -1218988936537638451
+      "J\xE4ger_Waffe_18": 3628532617976665349
+      "J\xE4ger_Waffe_19": -5449056837244661958
+      "J\xE4ger_Waffe_2": 3946113767146168927
+      "J\xE4ger_Waffe_20": 2417638914271857863
+      "J\xE4ger_Waffe_21": 8902601809972746728
+      "J\xE4ger_Waffe_22": -7142488930041251690
+      "J\xE4ger_Waffe_23": 6306259761400900282
+      "J\xE4ger_Waffe_24": -6022831378881961554
+      "J\xE4ger_Waffe_25": -4778658895145574976
+      "J\xE4ger_Waffe_26": -1039342866450346244
+      "J\xE4ger_Waffe_27": 1990903756886782491
+      "J\xE4ger_Waffe_28": -5614066133763263673
+      "J\xE4ger_Waffe_29": -9082412646206683403
+      "J\xE4ger_Waffe_3": -7367320583502364179
+      "J\xE4ger_Waffe_30": 8688457979895865900
+      "J\xE4ger_Waffe_4": -7388670088947677733
+      "J\xE4ger_Waffe_5": -7360055396005307396
+      "J\xE4ger_Waffe_6": 7710553065135507623
+      "J\xE4ger_Waffe_7": -3586708248292971642
+      "J\xE4ger_Waffe_8": 418157281160268798
+      "J\xE4ger_Waffe_9": 8640564225521907643
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

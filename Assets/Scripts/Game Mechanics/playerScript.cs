@@ -10,10 +10,13 @@ public class PlayerScript : MonoBehaviour
 
     //-------Objects & Components-------
     public Rigidbody2D myRigidbody2D;
-    public BoxCollider2D myBoxCollider2D;
     private GameObject m_Camera;
     private CameraScript camScript;
     private AudioSource audioSource;
+
+    public BoxCollider2D myBoxCollider2D;
+    private Vector2 defaultColliderSize;
+    private Vector2 defaultColliderOffet;
 
     //--------------Stats---------------
     public float jumpStrength;
@@ -55,6 +58,9 @@ public class PlayerScript : MonoBehaviour
         health = GameData.Instance.playerHealth;
         if (GameData.Instance.playerHealth < 1)
             health = 1;
+
+        defaultColliderSize = myBoxCollider2D.size;
+        defaultColliderOffet = myBoxCollider2D.offset;
 
         moveSpeed = DEFAULT_MOVESPEED;
         m_Camera = GameObject.FindGameObjectWithTag("Camera");
@@ -184,8 +190,14 @@ public class PlayerScript : MonoBehaviour
         audioSource.clip = slideSound;
         audioSource.Play();
 
-        //crouch height
-        setCollider(0.65f, 0.25f, 0f, -0.125f);
+        //set crouch height
+        float crouchHeight = defaultColliderSize.y / 2;
+
+        setCollider(
+            defaultColliderSize.x, 
+            crouchHeight, 
+            defaultColliderOffet.x, 
+            crouchHeight * -0.5f);
 
         float elapsedTime = 0f;
         while (elapsedTime < duration)
@@ -205,6 +217,7 @@ public class PlayerScript : MonoBehaviour
         isCrouching = false;
     }
 
+    //sets the player collider back to default values
     public void stopCrouch()
     {
         if (crouchRoutine != null)
@@ -212,7 +225,8 @@ public class PlayerScript : MonoBehaviour
             StopCoroutine(crouchRoutine);
         }
 
-        setCollider(0.65f, 0.5f, 0f, 0f);
+        myBoxCollider2D.size = defaultColliderSize;
+        myBoxCollider2D.offset = defaultColliderOffet;
 
         isCrouching = false;
         StartCoroutine(CrouchCooldown());

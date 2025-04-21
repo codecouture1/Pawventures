@@ -18,6 +18,7 @@ public class HunterScript : MonoBehaviour
 
     //--------------Stats---------------
     public float jumpStrength;
+    public float playerOffset; //the default distance to the player
     private float moveSpeed;
     private bool jumping = false;
     private float CurrentXPosition;
@@ -120,7 +121,7 @@ public class HunterScript : MonoBehaviour
         while (time < duration)
         {
             // Calculate target position
-            float targetPosition = player.transform.position.x - 22f;
+            float targetPosition = player.transform.position.x - playerOffset;
 
             // Interpolate towards the target
             Vector3 currentPosition = transform.position;
@@ -148,7 +149,7 @@ public class HunterScript : MonoBehaviour
 
     public void ResetPosition()
     {
-        float targetPosition = player.transform.position.x - 22f;
+        float targetPosition = player.transform.position.x - playerOffset;
         Vector3 currentPosition = new(targetPosition, 1f, 0f);
         transform.position = currentPosition;
     }

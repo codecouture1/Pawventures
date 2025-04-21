@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: c5537eb2b9792184b8fe3880eb6c3ab4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3250337117506200794
+    second: Zeitungsmann_0
+  - first:
+      213: -5491246414460900317
+    second: Zeitungsmann_1
+  - first:
+      213: 539439018977449
+    second: Zeitungsmann_2
+  - first:
+      213: -8490945894308198788
+    second: Zeitungsmann_3
+  - first:
+      213: 1488065764552673165
+    second: Zeitungsmann_4
+  - first:
+      213: -6552670004832889682
+    second: Zeitungsmann_5
+  - first:
+      213: 7001429319958530841
+    second: Zeitungsmann_6
+  - first:
+      213: -5677993485865470019
+    second: Zeitungsmann_7
+  - first:
+      213: 8817212600303197586
+    second: Zeitungsmann_8
+  - first:
+      213: -905380597005859151
+    second: Zeitungsmann_9
+  - first:
+      213: -9189411933618808306
+    second: Zeitungsmann_10
+  - first:
+      213: 8941591723188817124
+    second: Zeitungsmann_11
+  - first:
+      213: 7039034858312136713
+    second: Zeitungsmann_12
+  - first:
+      213: -4632013209737102056
+    second: Zeitungsmann_13
+  - first:
+      213: 7629009095409977593
+    second: Zeitungsmann_14
+  - first:
+      213: -5096126178119260067
+    second: Zeitungsmann_15
+  - first:
+      213: -2534963731450211570
+    second: Zeitungsmann_16
+  - first:
+      213: 6257720674714881836
+    second: Zeitungsmann_17
+  - first:
+      213: -5519129914115251999
+    second: Zeitungsmann_18
+  - first:
+      213: 1547559539158550471
+    second: Zeitungsmann_19
+  - first:
+      213: 760705119612685953
+    second: Zeitungsmann_20
+  - first:
+      213: -4149667509767755502
+    second: Zeitungsmann_21
+  - first:
+      213: 712205529782032360
+    second: Zeitungsmann_22
+  - first:
+      213: 2791956311294868949
+    second: Zeitungsmann_23
+  - first:
+      213: -5618244522031163057
+    second: Zeitungsmann_24
+  - first:
+      213: 6274112619043497787
+    second: Zeitungsmann_25
+  - first:
+      213: 6940522820543223636
+    second: Zeitungsmann_26
+  - first:
+      213: 4805837264121396615
+    second: Zeitungsmann_27
+  - first:
+      213: -3821301739831970614
+    second: Zeitungsmann_28
+  - first:
+      213: 3383673871861187648
+    second: Zeitungsmann_29
+  - first:
+      213: 3072760493162861316
+    second: Zeitungsmann_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zeitungsmann_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad4693923648b1d20800000000000000
+      internalID: 3250337117506200794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_1
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32cabebda7c2bc3b0800000000000000
+      internalID: -5491246414460900317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_2
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a8aa1fed9ae10000800000000000000
+      internalID: 539439018977449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_3
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76c2b232b91a2a80800000000000000
+      internalID: -8490945894308198788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_4
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d870592cdeba6a410800000000000000
+      internalID: 1488065764552673165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_5
+      rect:
+        serializedVersion: 2
+        x: 5695
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea4149f195d3015a0800000000000000
+      internalID: -6552670004832889682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_6
+      rect:
+        serializedVersion: 2
+        x: 6834
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b02201fd21a2160800000000000000
+      internalID: 7001429319958530841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_7
+      rect:
+        serializedVersion: 2
+        x: 7973
+        y: 3418
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7b1060207b331b0800000000000000
+      internalID: -5677993485865470019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d9b26f4280d5a70800000000000000
+      internalID: 8817212600303197586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_9
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b64fe8d4217f63f0800000000000000
+      internalID: -905380597005859151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_10
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a5ae1b886a87080800000000000000
+      internalID: -9189411933618808306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_11
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec0e333c4ae61c70800000000000000
+      internalID: 8941591723188817124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_12
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9087943c8ecafa160800000000000000
+      internalID: 7039034858312136713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_13
+      rect:
+        serializedVersion: 2
+        x: 5695
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81df3b6f688c7bfb0800000000000000
+      internalID: -4632013209737102056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_14
+      rect:
+        serializedVersion: 2
+        x: 6834
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8c2202a5fafd960800000000000000
+      internalID: 7629009095409977593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_15
+      rect:
+        serializedVersion: 2
+        x: 7973
+        y: 2279
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d58e1aecd3ce649b0800000000000000
+      internalID: -5096126178119260067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e035964caeff1dcd0800000000000000
+      internalID: -2534963731450211570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_17
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2f8fff7cc3e7d650800000000000000
+      internalID: 6257720674714881836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_18
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e0adefa59c1863b0800000000000000
+      internalID: -5519129914115251999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_19
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7005893390a7510800000000000000
+      internalID: 1547559539158550471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_20
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ec551a6419e8a00800000000000000
+      internalID: 760705119612685953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_21
+      rect:
+        serializedVersion: 2
+        x: 5695
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2192050c26b6966c0800000000000000
+      internalID: -4149667509767755502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_22
+      rect:
+        serializedVersion: 2
+        x: 6834
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e71ab9e72342e900800000000000000
+      internalID: 712205529782032360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_23
+      rect:
+        serializedVersion: 2
+        x: 7973
+        y: 1140
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ddf32309750fb620800000000000000
+      internalID: 2791956311294868949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f495c0bbf5cf702b0800000000000000
+      internalID: -5618244522031163057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_25
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3722e27f20221750800000000000000
+      internalID: 6274112619043497787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_26
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45798f99bb0b15060800000000000000
+      internalID: 6940522820543223636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_27
+      rect:
+        serializedVersion: 2
+        x: 3417
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d7a408783c1b240800000000000000
+      internalID: 4805837264121396615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_28
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4bbb1505208fac0800000000000000
+      internalID: -3821301739831970614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_29
+      rect:
+        serializedVersion: 2
+        x: 5695
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0448e00857935fe20800000000000000
+      internalID: 3383673871861187648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zeitungsmann_30
+      rect:
+        serializedVersion: 2
+        x: 6834
+        y: 1
+        width: 1139
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40393da6363a4aa20800000000000000
+      internalID: 3072760493162861316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 775bdae1da0cd994fa1c6cfdcd48a0fc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Zeitungsmann_0: 3250337117506200794
+      Zeitungsmann_1: -5491246414460900317
+      Zeitungsmann_10: -9189411933618808306
+      Zeitungsmann_11: 8941591723188817124
+      Zeitungsmann_12: 7039034858312136713
+      Zeitungsmann_13: -4632013209737102056
+      Zeitungsmann_14: 7629009095409977593
+      Zeitungsmann_15: -5096126178119260067
+      Zeitungsmann_16: -2534963731450211570
+      Zeitungsmann_17: 6257720674714881836
+      Zeitungsmann_18: -5519129914115251999
+      Zeitungsmann_19: 1547559539158550471
+      Zeitungsmann_2: 539439018977449
+      Zeitungsmann_20: 760705119612685953
+      Zeitungsmann_21: -4149667509767755502
+      Zeitungsmann_22: 712205529782032360
+      Zeitungsmann_23: 2791956311294868949
+      Zeitungsmann_24: -5618244522031163057
+      Zeitungsmann_25: 6274112619043497787
+      Zeitungsmann_26: 6940522820543223636
+      Zeitungsmann_27: 4805837264121396615
+      Zeitungsmann_28: -3821301739831970614
+      Zeitungsmann_29: 3383673871861187648
+      Zeitungsmann_3: -8490945894308198788
+      Zeitungsmann_30: 3072760493162861316
+      Zeitungsmann_4: 1488065764552673165
+      Zeitungsmann_5: -6552670004832889682
+      Zeitungsmann_6: 7001429319958530841
+      Zeitungsmann_7: -5677993485865470019
+      Zeitungsmann_8: 8817212600303197586
+      Zeitungsmann_9: -905380597005859151
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

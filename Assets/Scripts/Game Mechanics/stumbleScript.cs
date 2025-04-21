@@ -6,6 +6,9 @@ using Unity.Cinemachine;
 
 public class StumbleScript : MonoBehaviour
 {
+    private GameObject referenceManagerObj;
+    private ReferenceManager referenceManager;
+
     private BoxCollider2D coll;
     private GameObject player;
     private PlayerScript pScript;
@@ -16,8 +19,11 @@ public class StumbleScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        referenceManagerObj = GameObject.Find("ReferenceManager");
+        referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+
         m_Camera = GameObject.FindGameObjectWithTag("Camera");
-        player = GameObject.Find("Player");
+        player = referenceManager.player;
         pScript = player.GetComponent<PlayerScript>();
         coll = GetComponent<BoxCollider2D>();
         animationManager = player.GetComponent<PlayerAnimationManager>();
