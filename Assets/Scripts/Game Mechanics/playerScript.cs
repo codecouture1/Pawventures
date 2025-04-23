@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -73,6 +74,7 @@ public class PlayerScript : MonoBehaviour
   
     void Update()
     {
+        Debug.Log(doubleJumpCoroutine);
 
         if (alive())
         {
@@ -156,23 +158,38 @@ public class PlayerScript : MonoBehaviour
     public IEnumerator DoubleJump(float duration)
     {
         int jumpCounter = isGrounded() ? 0 : 1; // Start at 1 if not grounded, else 0
+        float elapsedTime = 0f;
 
-        for (float elapsedTime = 0; elapsedTime <= duration; elapsedTime += Time.deltaTime)
+        while (elapsedTime < duration)
         {
             if (jumpCounter == 2)
             {
-                yield return new WaitUntil(() => isGrounded());
-                jumpCounter = 0;
+                // Wait for the player to land, but also check if the duration has expired
+                while (!isGrounded() && elapsedTime < duration)
+                {
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
+
+                // Reset jump counter if grounded
+                if (isGrounded())
+                {
+                    jumpCounter = 0;
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.W) && canJump && jumpCounter < 2)
             {
-                    Jump();
-                    jumpCounter++;
-                    Debug.Log(jumpCounter);
-            }          
-            yield return null; // Wait for the next frame            
+                Jump();
+                jumpCounter++;
+                Debug.Log(jumpCounter);
+            }
+
+            elapsedTime += Time.deltaTime;
+            yield return null; // Wait for the next frame
         }
+
+        // Ensure the coroutine ends properly
         doubleJumpCoroutine = null;
     }
 
