@@ -10,8 +10,8 @@ public class LevelBuilder : MonoBehaviour
     private Transform parentTransform; //transform of the empty parentobject
 
     public int numberOfModules; //the number of modules to be spawned
-    public float coinSpawnChance;
-    public float powerupSpawnChance;
+    public float coinSpawnChance; //the chance for coins to spawn in each module
+    public float powerupSpawnChance; //the chance for a powerup to spawn in each module
 
     //Array containing all prefabs that can be spawned. Will be assigned to Modules in modules[]
     public GameObject[] modulePrefabs;
