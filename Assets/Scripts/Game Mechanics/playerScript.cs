@@ -74,7 +74,6 @@ public class PlayerScript : MonoBehaviour
   
     void Update()
     {
-        Debug.Log(doubleJumpCoroutine);
 
         if (alive())
         {

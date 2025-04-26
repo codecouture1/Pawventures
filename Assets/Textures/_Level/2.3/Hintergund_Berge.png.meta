@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hintergund_Berge_0: 5355783474418945409
+      Hintergund_Berge_1: -8402070501095264017
+      Hintergund_Berge_2: 1592437865912400545
+      Hintergund_Berge_3: -7970664829711377789
+      Hintergund_Berge_4: -1156697951691180219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

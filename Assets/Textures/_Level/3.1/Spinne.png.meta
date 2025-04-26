@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7b148a729ce6e094fa033fc8bb15e53d
+guid: a0aca52d4c493304e9881bd5e7a7bdb4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -222319891200828918
-    second: Auto 4_0
+      213: 1161797203909147556
+    second: Spinne_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Auto 4_0
+      name: Spinne_0
       rect:
         serializedVersion: 2
-        x: 1023
-        y: 484
-        width: 802
-        height: 263
+        x: 55
+        y: 30
+        width: 70
+        height: 921
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0a9872ac392aecf0800000000000000
-      internalID: -222319891200828918
+      spriteID: 4abfb08c6688f1010800000000000000
+      internalID: 1161797203909147556
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Auto 4_0: -222319891200828918
+      Spinne_0: 1161797203909147556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

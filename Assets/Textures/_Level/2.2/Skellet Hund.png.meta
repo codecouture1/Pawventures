@@ -472,7 +472,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Skellet Hund_0: -5068145839719884022
+      Skellet Hund_1: 3375092272116726790
+      Skellet Hund_10: 7197386846413791345
+      Skellet Hund_11: 8455120289494144867
+      Skellet Hund_12: 5293608189636208733
+      Skellet Hund_13: 260314881316929592
+      Skellet Hund_2: -5299886881509121627
+      Skellet Hund_3: 3409063819731060341
+      Skellet Hund_4: -1627306006231646182
+      Skellet Hund_5: 2190701524602459032
+      Skellet Hund_6: 1189119062075397062
+      Skellet Hund_7: 9100763354016188460
+      Skellet Hund_8: 7801449109319118746
+      Skellet Hund_9: 4426285090585860898
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
