@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class Checkpoint : MonoBehaviour
 {
-    public TextMeshProUGUI checkpointCounter;
-    public TextMeshProUGUI remainingUses;
+    public TextMeshProUGUI checkpointCounter; //how many checkpoints items the player owns
+    public TextMeshProUGUI remainingUses; //how many checkpoint uses are remaining
 
     public GameObject CheckpointMenu;
     public GameObject CheckpointRemaining;
