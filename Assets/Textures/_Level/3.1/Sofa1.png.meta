@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sofa1_0: -8863489210391237226
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

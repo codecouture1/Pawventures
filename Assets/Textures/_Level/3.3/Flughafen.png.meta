@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Flughafen_0: -5030737912673765409
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

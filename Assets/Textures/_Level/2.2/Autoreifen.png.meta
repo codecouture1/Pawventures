@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Autoreifen_0: -32274928270391831
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

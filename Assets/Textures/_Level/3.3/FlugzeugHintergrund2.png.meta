@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FlugzeugHintergrund2_0: -894980609827818446
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
