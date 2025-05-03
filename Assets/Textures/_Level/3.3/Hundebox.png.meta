@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hundebox_0: 1514795610766943196
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

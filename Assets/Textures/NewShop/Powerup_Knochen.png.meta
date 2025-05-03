@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Powerup_Knochen_0: 830586699301699197
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

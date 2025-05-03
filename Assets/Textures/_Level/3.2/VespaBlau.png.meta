@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      VespaBlau_0: -4412825755978255013
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

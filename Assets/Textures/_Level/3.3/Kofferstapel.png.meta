@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kofferstapel_0: 1413360745058790213
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

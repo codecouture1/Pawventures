@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Weinfass_0: -3171071998024746097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

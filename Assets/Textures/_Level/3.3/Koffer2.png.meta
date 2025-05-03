@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Koffer2_0: 8169553026428491921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

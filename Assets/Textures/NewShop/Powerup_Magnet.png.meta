@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Powerup_Magnet_0: 4522177967490274445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 51ba6eb605f4f6348b2a39f21d62a412
+guid: fbee761eff3cac147bcd817e68195a63
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6165129396001983470
-    second: Unbenanntes_Projekt 5 Kopie 4_0
+      213: 8870492280918211931
+    second: L1A2_ducken_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Unbenanntes_Projekt 5 Kopie 4_0
+      name: L1A2_ducken_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 54
-        width: 376
-        height: 547
+        x: 36
+        y: 57
+        width: 1467
+        height: 615
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eeb440b7580fe8550800000000000000
-      internalID: 6165129396001983470
+      spriteID: b5d79fa4bb15a1b70800000000000000
+      internalID: 8870492280918211931
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Unbenanntes_Projekt 5 Kopie 4_0: 6165129396001983470
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

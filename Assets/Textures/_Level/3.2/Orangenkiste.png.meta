@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Orangenkiste_0: -9042827669820976102
+      Orangenkiste_1: 5695035053213513071
+      Orangenkiste_2: 5296402109586714060
+      Orangenkiste_3: -5175257785801688893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

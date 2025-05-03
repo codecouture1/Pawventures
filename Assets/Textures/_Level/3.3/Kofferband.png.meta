@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kofferband_0: 1219883390636133757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
