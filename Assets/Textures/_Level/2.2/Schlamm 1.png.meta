@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Schlamm 1_0: 5771511099016936524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
