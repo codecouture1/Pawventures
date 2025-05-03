@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      L1A2_ducken_0: 8870492280918211931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
