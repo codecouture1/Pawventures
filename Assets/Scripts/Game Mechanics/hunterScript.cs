@@ -22,6 +22,7 @@ public class HunterScript : MonoBehaviour
     private float moveSpeed;
     private bool jumping = false;
     private float CurrentXPosition;
+    public bool close; //true if hunter is close to player
 
     //----------ground check------------
     public Vector2 boxSize;
@@ -37,6 +38,7 @@ public class HunterScript : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         pScript = player.GetComponent<PlayerScript>();
+        close = false;
 
         Physics2D.IgnoreLayerCollision(9, 8);
         animator = GetComponent<Animator>();
@@ -63,6 +65,11 @@ public class HunterScript : MonoBehaviour
 
         //jumps automatically if not grounded
         jump();
+
+        if (close)
+        {
+            StartCoroutine(ResetCountdown());
+        }
     }
 
     //ground check
@@ -145,6 +152,7 @@ public class HunterScript : MonoBehaviour
         moveSpeed = pScript.moveSpeed;
         positionResetComplete = true;
         positionResetComplete = false;
+        close = false;
     }
 
     public void ResetPosition()
@@ -152,6 +160,14 @@ public class HunterScript : MonoBehaviour
         float targetPosition = player.transform.position.x - playerOffset;
         Vector3 currentPosition = new(targetPosition, 1f, 0f);
         transform.position = currentPosition;
+        close = false;
+    }
+
+    private IEnumerator ResetCountdown()
+    {
+        yield return new WaitForSeconds(20f);
+
+        StartCoroutine(ResetPositionCoroutine());
     }
 }
 

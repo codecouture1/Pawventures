@@ -38,6 +38,7 @@ public class StumbleScript : MonoBehaviour
             pScript.stopCrouch();
             StartCoroutine(SlowDownCoroutine(15.5f, 0.6f));
             StartCoroutine(camScript.Rumble(4f, 0.6f));
+            referenceManager.hunterScript.close = true;
         }
     }
 

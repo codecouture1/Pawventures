@@ -10,6 +10,7 @@ public class LevelModule
         PowerUp,
         Polaroid,
     }
+    public readonly int id;
 
     public readonly float width;
 
@@ -26,10 +27,11 @@ public class LevelModule
     private const int coinIndex = 0; //the coin container must always have the index 0 within the prefab
     private const int powerUpIndex = 1; //the powerup container must always have the index 0 within the prefab
 
-    public LevelModule(GameObject prefab)
+    public LevelModule(GameObject prefab, int id)
     {
         this.prefab = prefab;
         width = GetWidth();
+        this.id = id;
     }
 
 
