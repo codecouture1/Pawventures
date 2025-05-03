@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 3ec7bf6025fdb12468c9ba10dc160eac
+guid: b20581c72f1718646997514c736cf7c2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3671649666336002286
-    second: TischHinderniss_Vorne_0
+      213: -9092084323592749393
+    second: L1A3_springen ohne landen_0
+  - first:
+      213: -5543172821841886120
+    second: L1A3_springen ohne landen_1
+  - first:
+      213: 1219181775603283936
+    second: L1A3_springen ohne landen_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +119,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TischHinderniss_Vorne_0
+      name: L1A3_springen ohne landen_1
       rect:
         serializedVersion: 2
-        x: 102
-        y: 60
-        width: 912
-        height: 509
+        x: 0
+        y: 0
+        width: 950
+        height: 352
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee093a51be154f230800000000000000
-      internalID: 3671649666336002286
+      spriteID: 854c38100b1b213b0800000000000000
+      internalID: -5543172821841886120
       vertices: []
       indices: 
       edges: []
@@ -138,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f29dc73cc7d33c749af27689b57bd999
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +154,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TischHinderniss_Vorne_0: 3671649666336002286
+      L1A3_springen ohne landen_1: -5543172821841886120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

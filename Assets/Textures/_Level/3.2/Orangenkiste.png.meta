@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 3ec7bf6025fdb12468c9ba10dc160eac
+guid: e5b68347dc920d44ea58be9b57eeb203
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3671649666336002286
-    second: TischHinderniss_Vorne_0
+      213: -9042827669820976102
+    second: Orangenkiste_0
+  - first:
+      213: 5695035053213513071
+    second: Orangenkiste_1
+  - first:
+      213: 5296402109586714060
+    second: Orangenkiste_2
+  - first:
+      213: -5175257785801688893
+    second: Orangenkiste_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TischHinderniss_Vorne_0
+      name: Orangenkiste_0
       rect:
         serializedVersion: 2
-        x: 102
-        y: 60
-        width: 912
-        height: 509
+        x: 358
+        y: 308
+        width: 17
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee093a51be154f230800000000000000
-      internalID: 3671649666336002286
+      spriteID: a145f3f252c618280800000000000000
+      internalID: -9042827669820976102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orangenkiste_1
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 304
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6570321534d80f40800000000000000
+      internalID: 5695035053213513071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orangenkiste_2
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 13
+        width: 532
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccdab8938a9908940800000000000000
+      internalID: 5296402109586714060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orangenkiste_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 10
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c83738a67acd28b0800000000000000
+      internalID: -5175257785801688893
       vertices: []
       indices: 
       edges: []
@@ -147,8 +222,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      TischHinderniss_Vorne_0: 3671649666336002286
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

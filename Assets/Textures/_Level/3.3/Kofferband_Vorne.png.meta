@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3ec7bf6025fdb12468c9ba10dc160eac
+guid: f6bd005d0877ae44997ed3497d368adb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3671649666336002286
-    second: TischHinderniss_Vorne_0
+      213: 8717337124884735279
+    second: Kofferband_Vorne_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TischHinderniss_Vorne_0
+      name: Kofferband_Vorne_0
       rect:
         serializedVersion: 2
-        x: 102
-        y: 60
-        width: 912
-        height: 509
+        x: 566
+        y: 28
+        width: 568
+        height: 430
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee093a51be154f230800000000000000
-      internalID: 3671649666336002286
+      spriteID: f25641cbde33af870800000000000000
+      internalID: 8717337124884735279
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 96fc0c986b3ba0c4aa98c57366e593af
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TischHinderniss_Vorne_0: 3671649666336002286
+      Kofferband_Vorne_0: 8717337124884735279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
