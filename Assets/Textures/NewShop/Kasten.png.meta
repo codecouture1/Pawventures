@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: a865082be164de24e82056c073c97b45
+guid: 22559123213ecce4d9d7989a32f2e994
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6597404498399561785
-    second: "Charli_J\xE4ger_0"
-  - first:
-      213: 4676528237184957640
-    second: "Charli_J\xE4ger_1"
-  - first:
-      213: 8490262104441686012
-    second: "Charli_J\xE4ger_2"
-  - first:
-      213: 1594149039918150075
-    second: "Charli_J\xE4ger_3"
+      213: 92240836024752385
+    second: Kasten_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -122,89 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Charli_J\xE4ger_0"
+      name: Kasten_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 720
-        height: 1040
+        x: 353
+        y: 248
+        width: 564
+        height: 848
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: afbbb358d3610be499bd61736d2c2e87
-      internalID: 818691908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Charli_J\xE4ger_1"
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 0
-        width: 720
-        height: 1040
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73e3b1469653c0044bb7767069e9344d
-      internalID: 1573596192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Charli_J\xE4ger_2"
-      rect:
-        serializedVersion: 2
-        x: 1440
-        y: 0
-        width: 720
-        height: 1040
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76c93a04cf41f6840ab6ab0e3d6cf673
-      internalID: -760789716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Charli_J\xE4ger_3"
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 0
-        width: 720
-        height: 1040
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e05f4994f8ef5d4dade8a63291f60b3
-      internalID: 1125746592
+      spriteID: 1095a093d84b74100800000000000000
+      internalID: 92240836024752385
       vertices: []
       indices: 
       edges: []
@@ -213,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5c3b4201584af344bb1506532231c6f2
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -222,11 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "Charli_J\xE4ger_0": 818691908
-      "Charli_J\xE4ger_1": 1573596192
-      "Charli_J\xE4ger_2": -760789716
-      "Charli_J\xE4ger_3": 1125746592
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
