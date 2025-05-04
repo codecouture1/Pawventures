@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3225021954234564758}
   - component: {fileID: 2502529478132655299}
   m_Layer: 0
-  m_Name: Player_Charli
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +188,6 @@ MonoBehaviour:
   isCrouching: 0
   canJump: 1
   canCrouch: 1
-  doubleJump: 0
   slowed: 0
   slowChallengeFailed: 0
   boxSize: {x: 5.98, y: 0.75}
@@ -346,3 +345,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e0cfd0e4b71044faa2af8ed4ad70af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinMagnet: {fileID: 2749744171676317327, guid: 7287b1a22e0948d46a7345e8682dad48, type: 3}
+  amount: 0
