@@ -4,6 +4,7 @@ public class CoinMagnet : IPowerUp
 {
     private GameObject referenceManagerObj;
     private ReferenceManager referenceManager;
+    private CollectibleManager collectibleManager;
 
     public PowerUps PowerUp
     {
@@ -27,7 +28,7 @@ public class CoinMagnet : IPowerUp
 
     public void ApplyPowerup()
     {
-        Debug.Log("TODO");
+        collectibleManager.StartCoroutine(collectibleManager.CoinMagnetCoroutine(Duration));
         referenceManager.TimerManager.AddTimer(Duration, Sprite, PowerUp);
     }
 
@@ -35,5 +36,6 @@ public class CoinMagnet : IPowerUp
     {
         referenceManagerObj = GameObject.Find("ReferenceManager");
         referenceManager = referenceManagerObj.GetComponent<ReferenceManager>();
+        collectibleManager = referenceManager.collectibleManager;
     }
 }
