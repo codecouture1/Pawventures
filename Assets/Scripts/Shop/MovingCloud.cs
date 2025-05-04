@@ -2,11 +2,11 @@ using UnityEngine;
 
 
 
-public class MovingClouds : MonoBehaviour
+public class MovingCloud : MonoBehaviour
 
 {
 
-  public GameObject cloudPrefab; // The cloud prefab
+public Image cloudImage;
 
   public float spawnInterval = 2f; // Time between spawns
 

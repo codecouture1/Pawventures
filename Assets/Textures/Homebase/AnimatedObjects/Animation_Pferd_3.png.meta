@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2799c0addabde114cab6abc544409421
+guid: 0c2c8ae33d5315a4d96ad1de6bd7caae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4406989637249205536
-    second: Shop_MM_Button_0
+      213: -7750151593403540565
+    second: Animation_Pferd_3_0
+  - first:
+      213: -5911434679277960490
+    second: Animation_Pferd_3_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +116,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shop_MM_Button_0
+      name: Animation_Pferd_3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 310
-        height: 269
+        x: 989
+        y: 1235
+        width: 720
+        height: 344
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0eafeee264a37d2c0800000000000000
-      internalID: -4406989637249205536
+      spriteID: bab11c7103ee17490800000000000000
+      internalID: -7750151593403540565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation_Pferd_3_1
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 1146
+        width: 58
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d246b4ba7d56fda0800000000000000
+      internalID: -5911434679277960490
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e2e6a20af928a1440a1e89c7a72958a3
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Shop_MM_Button_0: -4406989637249205536
+      Animation_Pferd_3_0: -7750151593403540565
+      Animation_Pferd_3_1: -5911434679277960490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
