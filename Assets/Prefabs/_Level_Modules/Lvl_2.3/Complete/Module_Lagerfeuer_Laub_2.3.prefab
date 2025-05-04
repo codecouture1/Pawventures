@@ -87,7 +87,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 60, y: 30}
+  m_Size: {x: 70, y: 30}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -371,19 +371,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2727917260115911572, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_Size.x
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2727917260115911572, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_Offset.x
-      value: 15
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 2727917260115911572, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4784870768665733865, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_Size.x
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4784870768665733865, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_Sprite
@@ -661,7 +661,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714983480376392404, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 714983480376392404, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -705,19 +705,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2727917260115911572, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_Size.x
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2727917260115911572, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_Offset.x
-      value: 15
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 2727917260115911572, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4784870768665733865, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_Size.x
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4784870768665733865, guid: e642fd9ebf0483340885be2afd9eafe2, type: 3}
       propertyPath: m_Sprite

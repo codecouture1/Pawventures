@@ -15,6 +15,7 @@ public class HunterScript : MonoBehaviour
     private GameObject player;
     private PlayerScript pScript;
     public Animator animator;
+    private Coroutine resetPositionCoroutine;
 
     //--------------Stats---------------
     public float jumpStrength;
@@ -66,9 +67,9 @@ public class HunterScript : MonoBehaviour
         //jumps automatically if not grounded
         jump();
 
-        if (close)
+        if (close && resetPositionCoroutine == null)
         {
-            StartCoroutine(ResetCountdown());
+            resetPositionCoroutine = StartCoroutine(ResetCountdown());
         }
     }
 
@@ -147,12 +148,14 @@ public class HunterScript : MonoBehaviour
             yield return null;
             time += Time.deltaTime;
         }
+        Debug.Log("Hunter reached the target position.");
 
         // Restore the player's move speed
         moveSpeed = pScript.moveSpeed;
         positionResetComplete = true;
         positionResetComplete = false;
         close = false;
+        resetPositionCoroutine = null;
     }
 
     public void ResetPosition()
