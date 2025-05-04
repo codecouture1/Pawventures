@@ -18,6 +18,6 @@ public class MoonScipt : MonoBehaviour
 
     void Update()
     {
-        transform.position = transform.position + (Vector3.right * referenceManager.playerScript.GetMoveSpeed() * Time.deltaTime);
+        transform.position = new Vector3(transform.position.x, 19.8f, transform.position.z);
     }
 }

@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7599196188127806710}
   - component: {fileID: 4080006709095601799}
   - component: {fileID: 8596629156164226368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Holz-Zaun_Vorne
   m_TagString: Untagged
   m_Icon: {fileID: 0}

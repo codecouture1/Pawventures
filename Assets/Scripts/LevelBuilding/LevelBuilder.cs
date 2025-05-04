@@ -43,18 +43,23 @@ public class LevelBuilder : MonoBehaviour
             //pick a random Module from modules[]
             currentModule = modules[Random.Range(0, modules.Length)];
 
+            //make sure the same module is not spawned twice in a row
+            while (currentModule.id.Equals(previous?.id))          
+                currentModule = modules[Random.Range(0, modules.Length)];
+            
             //spawn prefab and attatch it to the parent object
             currentModule.instance = Instantiate(currentModule.prefab, new Vector3(x, 0, 0), Quaternion.identity, parentTransform);
 
             //calculate spawn position for next module (-0.05f for seamless blending)
             x += currentModule.GetWidth() - 0.05f;
-  
 
-            /*TODO: spawn Polaroid
-            currentModule.Spawn(LevelModule.Collectible.Polaroid)
-            */
-
-            currentModule.Spawn(LevelModule.Collectible.PowerUp, ChanceOf(powerupSpawnChance));
+            //spawn collectibles
+            if (previous != null)
+            {
+                if(!previous.ContainsPowerUp)
+                    currentModule.Spawn(LevelModule.Collectible.PowerUp, ChanceOf(powerupSpawnChance));
+            }                   
+            
             if(!currentModule.ContainsPowerUp)
                 currentModule.Spawn(LevelModule.Collectible.Coins, ChanceOf(coinSpawnChance));
 
@@ -73,7 +78,7 @@ public class LevelBuilder : MonoBehaviour
 
         foreach (GameObject modulePrefab in modulePrefabs)
         {
-            modules[index] = new LevelModule(modulePrefab);
+            modules[index] = new LevelModule(modulePrefab, index);
 
             index++;
         }
