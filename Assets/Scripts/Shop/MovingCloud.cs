@@ -6,7 +6,7 @@ public class MovingCloud : MonoBehaviour
 
 {
 
-public Image cloudImage;
+public GameObject cloudPrefab;
 
   public float spawnInterval = 2f; // Time between spawns
 
