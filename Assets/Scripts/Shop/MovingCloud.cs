@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -6,15 +7,16 @@ public class MovingCloud : MonoBehaviour
 
 {
 
-public Image cloudImage;
+    public Image cloudImage;
 
-  public float spawnInterval = 2f; // Time between spawns
+    public float spawnInterval = 2f; // Time between spawns
 
-  public Transform[] spawnPoints; // Array of spawn points
+    public Transform[] spawnPoints; // Array of spawn points
+
+    public GameObject cloudPrefab; // Cloud prefab to spawn
 
 
-
-  private void Start()
+    private void Start()
 
   {
 
