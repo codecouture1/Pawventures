@@ -48,6 +48,8 @@ public class ReferenceManager : MonoBehaviour
     public AudioClip doppelsprungSound;
     public AudioClip münzmagnetSound;
 
+    public GameObject finalAnimation;
+
     void Awake()
     {
         playerScript = player.GetComponent<PlayerScript>();

@@ -1585,7 +1585,7 @@ MonoBehaviour:
   shopPanel: {fileID: 1909120033}
   powerUp: 7
   ItemName: Wiederbelebung
-  Price: 600
+  Price: 250
   Sprite: {fileID: -427508982433149365, guid: 611c196f3586f9542a7bd5ca92fe66cb, type: 3}
   description: Akitviere dieses Item direkt nach deinem Tod, um dich wiederzubeleben.
 --- !u!114 &684497207
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   shopPanel: {fileID: 1909120033}
   powerUp: 4
   ItemName: Magnet
-  Price: 400
+  Price: 150
   Sprite: {fileID: 4522177967490274445, guid: 1e7279c1e9f548148987b012223af216, type: 3}
   description: "Dieser Magnet sammelt automatisch alle M\xFCnzen in deiner N\xE4he
     ein!"
@@ -2310,7 +2310,7 @@ MonoBehaviour:
   shopPanel: {fileID: 1909120033}
   powerUp: 1
   ItemName: Halsband
-  Price: 250
+  Price: 100
   Sprite: {fileID: -8599806951457841062, guid: 324bbe38ca2e8db40b07951304c79efd, type: 3}
   description: "Dieses Halsband sch\xFCtzt dich vor einem Treffer deines Gegners."
 --- !u!114 &938901309
@@ -2910,7 +2910,7 @@ MonoBehaviour:
   shopPanel: {fileID: 1909120033}
   powerUp: 2
   ItemName: Proteinknochen
-  Price: 300
+  Price: 200
   Sprite: {fileID: 830586699301699197, guid: 0e0befba5bd90f148b70a64767e41d26, type: 3}
   description: "Dieser Proteinknochen verleiht dir extra Muskelkraft und l\xE4sst
     dich doppelt so hoch springen."
@@ -4259,7 +4259,7 @@ MonoBehaviour:
   shopPanel: {fileID: 1909120033}
   powerUp: 3
   ItemName: Giga-Beller
-  Price: 400
+  Price: 250
   Sprite: {fileID: -5475727059959745584, guid: 7c2f5ea8099867d4da9c70db9ffc9a04, type: 3}
   description: "Schrecke deinen Verfolger zur\xFCck!"
 --- !u!114 &1684340660
@@ -5345,7 +5345,7 @@ MonoBehaviour:
   shopPanel: {fileID: 1909120033}
   powerUp: 6
   ItemName: Checkpoint
-  Price: 750
+  Price: 350
   Sprite: {fileID: 6031057340766818260, guid: 0ee58afe970a3344e96f065a801bd703, type: 3}
   description: "Aktiviere einen Checkpoint, w\xE4hrend Du spielst, um nach deinem
     Tod wieder im Spiel starten zu k\xF6nnen."

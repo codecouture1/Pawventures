@@ -54,11 +54,20 @@ public class SlowScript : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            // Stop the player's vertical velocity to prevent jumping 
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f); // Reset vertical velocity
+            }
+
+            pScript.moveSpeed = slowSpeed;
+            pScript.canJump = false;
             pScript.stopCrouch();
             pScript.slowChallengeFailed = false;
             pScript.slowed = true;
 
-            //zoom Coroutine (zooming in)
+            // Zoom Coroutine (zooming in)
             if (zoomCoroutine != null)
             {
                 StopCoroutine(zoomCoroutine);
@@ -66,11 +75,8 @@ public class SlowScript : MonoBehaviour
             zoomCoroutine = StartCoroutine(camScript.Zoom(30f, 0f, 0f, 15f, false));
             camScript.Rumble(1.25f);
 
-            //slow Challeenge Coroutine
+            // Slow Challenge Coroutine
             slowChallengeCoroutine = StartCoroutine(SlowChallenge());
-
-            pScript.moveSpeed = slowSpeed;
-            pScript.canJump = false;
         }
     }
 
