@@ -6,6 +6,7 @@ using static Unity.VisualScripting.Member;
 public class PlaySoundOnCollide : MonoBehaviour
 {
     private AudioSource audioSource;
+    public bool keepPlayingOnExit = false;
 
     private void Awake()
     {
@@ -33,6 +34,10 @@ public class PlaySoundOnCollide : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            if (keepPlayingOnExit)
+            {
+                return;
+            }
             StartCoroutine(WaitUntil(0.5f));
         }
     }

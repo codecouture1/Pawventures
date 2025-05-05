@@ -9,6 +9,14 @@ public class CoinManager : MonoBehaviour
     void Update()
     {
         coinText.text = GameData.Instance.coinCount.ToString();
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                AddCoins(1000);
+            }
+        }
     }
 
     // Add coins and save the updated data
